@@ -303,13 +303,6 @@ const PORTFOLIO_PROJECTS = [
       media: [{ type: "vimeo", url: "https://vimeo.com/670864058" }],
       stills: [],
       railHTML:
-        '<p class="project-rail-h">Twitter</p>' +
-        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/1_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 1" /></div>' +
-        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/2_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 2" /></div>' +
-        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/3_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 3" /></div>' +
-        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/4_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 4" /></div>' +
-        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/5_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 5" /></div>' +
-        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/6_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 6" /></div>' +
         '<p class="project-rail-h">Documentary</p>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/526462857?title=0&byline=0&portrait=0" title="Lexus IS Wax — documentary" ' +
@@ -320,7 +313,14 @@ const PORTFOLIO_PROJECTS = [
         '<p class="project-rail-h">Build demo</p>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/502303302?title=0&byline=0&portrait=0" title="Lexus IS Wax — build demo" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>',
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<p class="project-rail-h">X</p>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/1_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — X 1" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/2_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — X 2" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/3_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — X 3" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/4_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — X 4" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/5_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — X 5" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/6_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — X 6" /></div>',
     },
   },
   {
@@ -450,18 +450,30 @@ const PORTFOLIO_PROJECTS = [
   },
   {
     id: "10",
-    slug: "four-corners-brewing",
-    title: "Four Corners Brewing",
+    slug: "chingon-pong",
+    title: "Chingon Pong",
     thumb: "thumbs/four_corners_brewing.png",
-    cardTags: "arcade game",
-    tags: ["general"],
-    vimeo: "",
+    cardTags: "arcade, interactive, beer",
+    tags: ["general", "tech"],
+    vimeo: "https://vimeo.com/296117526",
     detail: {
-      bodyHTML: "<p>Case study in progress.</p>",
-      media: [{ type: "image", src: "thumbs/four_corners_brewing.png", alt: "Four Corners Brewing" }],
+      bodyHTML:
+        "<p>When Four Corners Brewing came to Team One, we built a beer pong-inspired arcade game to generate awareness around their unique 360&deg;-opening cans.</p>" +
+        "<p>Players had one minute to sink balls into open Four Corners cans. Each hit triggered a custom animation inspired by the art and personality of that can.</p>" +
+        "<p>Guests loved it. Four Corners loved it. Constellation loved it enough to ask for a portable version.</p>" +
+        "<p>Hard as hell to build in-house.</p>" +
+        "<p>But it hit all my favorite things:</p>" +
+        "<p>Technology. Gaming. Music. Beer.</p>" +
+        '<p class="case-study-sect"><i>The Tech</i></p>' +
+        "<p>Laser sensors detected when balls passed through the cans<br>" +
+        "Arduino handled inputs, scoring, and timing<br>" +
+        "Raspberry Pi drove visuals, animations, and sound</p>",
+      media: [
+        { type: "vimeo", url: "https://vimeo.com/296117526", alt: "Chingon Pong — case study" },
+      ],
       stillsLabel: false,
       stills: [
-        { src: "stills/four-corners-brewing/four-corners-brewing.jpg", alt: "Four Corners Brewing" },
+        { src: "stills/four-corners-brewing/four-corners-brewing.jpg", alt: "Chingon Pong" },
       ],
     },
   },

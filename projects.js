@@ -241,7 +241,7 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/lexus_is_wax.webp",
     cardTags: "technology, pitchfork, wired",
     tags: ["tech", "general"],
-    vimeo: "https://vimeo.com/644584180",
+    vimeo: "https://vimeo.com/670864058",
     detail: {
       bodyHTML:
         "<p class=\"case-study-line\">Clio Awards — Bronze, Public Relations</p>" +
@@ -252,8 +252,27 @@ const PORTFOLIO_PROJECTS = [
         "<p>Fun fact: it didn’t skip—even over bumps.</p>" +
         "<p>The result: a sport sedan that felt unexpected, analog, and alive—and helped push the IS to become the #2 top-selling car in the U.S.</p>" +
         "<p>Featured in Pitchfork, Wired, Uncrate, Hypebeast, Car and Driver, Motor1, MotorTrend, and Jalopnik.</p>",
-      media: [{ type: "vimeo", url: "https://vimeo.com/644584180" }],
+      media: [{ type: "vimeo", url: "https://vimeo.com/670864058" }],
       stills: [],
+      railHTML:
+        '<p class="project-rail-h">Twitter</p>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/1_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 1" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/2_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 2" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/3_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 3" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/4_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 4" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/5_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 5" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/6_twitter.png" width="1600" height="900" loading="lazy" decoding="async" alt="Lexus IS Wax — Twitter 6" /></div>' +
+        '<p class="project-rail-h">Documentary</p>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/526462857?title=0&byline=0&portrait=0" title="Lexus IS Wax — documentary" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<p class="project-rail-h">Wired photo essay</p>' +
+        '<div class="project-rail__figure"><img src="stills/lexus-is-wax/1_wired_essay.png" width="1600" height="900" loading="lazy" decoding="async" alt="Wired photo essay" /></div>' +
+        '<p class="project-rail__linkline"><a href="https://www.wired.com/sponsored/story/creating-a-vinyl-record-player-system-for-a-car/" target="_blank" rel="noopener noreferrer">Creating a vinyl record player system for a car — WIRED</a></p>' +
+        '<p class="project-rail-h">Build demo</p>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/502303302?title=0&byline=0&portrait=0" title="Lexus IS Wax — build demo" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>',
     },
   },
   {

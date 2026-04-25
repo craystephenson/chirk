@@ -859,6 +859,20 @@ main {
   vertical-align: top;
 }
 
+.project-rail-extra .project-rail__linkline {
+  margin: 0 0 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.project-rail-extra .project-rail__linkline a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .project-thumb {
   position: relative;
   display: block;

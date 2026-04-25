@@ -3,6 +3,10 @@
  * Homepage: /thumbs/ (see thumbs/dimensions.txt).
  * Case-study stills: /stills/<project>/ (see stills/README.txt).
  * Use detail.body (plain) or detail.bodyHTML (for links; recognition, etc.)
+ * HTML pattern: p.case-study-title (project name, UPPERcase via CSS, not bold), then
+ * p.case-study-line for each award/recognition/press line (one block per line), then
+ * p.case-study-sect: <i>Insight</i> / <i>Idea</i> / <i>Objective</i> (italic section labels, not h1–h3).
+ * Optional: detail.railHTML — HTML in the right column below stills (e.g. extra Vimeo embeds).
  */
 const PORTFOLIO_PROJECTS = [
   {
@@ -14,10 +18,11 @@ const PORTFOLIO_PROJECTS = [
     tags: ["general"],
     vimeo: "https://vimeo.com/884917302",
     detail: {
-      body:
-        "When Honda announced they would be carbon neutral by 2050, you might think, yeah, right, keep dreaming—just another car company jumping on the sustainability bandwagon. But the reality is, Honda has been setting the bar for lowering emissions since day one.\n\n" +
-        "So to prove their commitment, we worked with the directorial duo powerhouse Smith and Foulkes to create a spiraling sixty-second first-person journey through nearly a dozen past, present and future Honda breakthroughs in the pursuit of carbon neutrality. Employing an ambitious VFX strategy that included CG, miniatures, animation, illustration, green screen, CAD, and AI.\n\n" +
-        "Proving that to achieve something as ambitious as carbon neutrality, you have to keep dreaming.",
+      bodyHTML:
+        '<p class="case-study-title">Honda | Keep Dreaming</p>' +
+        "<p>When Honda announced they would be carbon neutral by 2050, you might think, yeah, right, keep dreaming—just another car company jumping on the sustainability bandwagon. But the reality is, Honda has been setting the bar for lowering emissions since day one.</p>" +
+        "<p>So to prove their commitment, we worked with the directorial duo powerhouse Smith and Foulkes to create a spiraling sixty-second first-person journey through nearly a dozen past, present and future Honda breakthroughs in the pursuit of carbon neutrality. Employing an ambitious VFX strategy that included CG, miniatures, animation, illustration, green screen, CAD, and AI.</p>" +
+        "<p>Proving that to achieve something as ambitious as carbon neutrality, you have to keep dreaming.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/884917302" }],
       stills: [
         { src: "stills/honda/PROLOGUE_SCREENGRAB_0000_Layer+Comp+1.webp", alt: "Honda Keep Dreaming prologue 1" },
@@ -42,20 +47,19 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/935982647",
     detail: {
       bodyHTML:
-        '<h3 class="project-block-h">Awards</h3>' +
-        '<p class="project-award"><strong>Shorty Awards × 2</strong><br>Gold — Animation<br>Silver — Automotive</p>' +
-        "<p class=\"project-award\"><strong>ADDYs</strong><br>Silver — Innovation in Interactive</p>" +
-        "<p class=\"project-award\"><strong>The One Show</strong><br>Finalist</p>" +
-        '<h3 class="project-block-h">Recognition</h3>' +
-        '<p class="project-detail__recognition">' +
-        '<a href="https://adage.com/article/marketing-news-strategy/honda-offers-ai-generated-create-your-own-adventure-videos-around-new-suv/2546561" target="_blank" rel="noopener noreferrer">Ad Age</a>, ' +
-        '<a href="https://finance.yahoo.com/news/honda-leverages-ai-dream-generator-090000510.html" target="_blank" rel="noopener noreferrer">Marketing Dive</a>, ' +
-        '<a href="https://shortyawards.com/17th/amazon-honda-dream-generator" target="_blank" rel="noopener noreferrer">Shorty Awards</a>, ' +
-        '<a href="https://www.lovethework.com/work-awards/campaigns/honda-dream-generator-1618272" target="_blank" rel="noopener noreferrer">Cannes Love The Work</a>, ' +
-        '<a href="https://www.designrush.com/news/honda-and-amazon-ads-team-up-to-create-dream-generator" target="_blank" rel="noopener noreferrer">Design Rush</a>, ' +
-        '<a href="https://thedrumawards.com/live/en/page/content-results" target="_blank" rel="noopener noreferrer">The Drum Awards</a>, ' +
-        '<a href="https://www.aaflosangeles.org/2025-winners-list" target="_blank" rel="noopener noreferrer">AAF LA</a>' +
-        "</p>" +
+        '<p class="case-study-title">Honda dream generator</p>' +
+        '<p class="case-study-line">Shorty Awards × 2</p>' +
+        '<p class="case-study-line">Gold — Animation</p>' +
+        '<p class="case-study-line">Silver — Automotive</p>' +
+        '<p class="case-study-line">ADDYs — Silver, Innovation in Interactive</p>' +
+        '<p class="case-study-line">The One Show — Finalist</p>' +
+        '<p class="case-study-line"><a href="https://adage.com/article/marketing-news-strategy/honda-offers-ai-generated-create-your-own-adventure-videos-around-new-suv/2546561" target="_blank" rel="noopener noreferrer">Ad Age</a></p>' +
+        '<p class="case-study-line"><a href="https://finance.yahoo.com/news/honda-leverages-ai-dream-generator-090000510.html" target="_blank" rel="noopener noreferrer">Marketing Dive</a></p>' +
+        '<p class="case-study-line"><a href="https://shortyawards.com/17th/amazon-honda-dream-generator" target="_blank" rel="noopener noreferrer">Shorty Awards</a></p>' +
+        '<p class="case-study-line"><a href="https://www.lovethework.com/work-awards/campaigns/honda-dream-generator-1618272" target="_blank" rel="noopener noreferrer">Cannes Love The Work</a></p>' +
+        '<p class="case-study-line"><a href="https://www.designrush.com/news/honda-and-amazon-ads-team-up-to-create-dream-generator" target="_blank" rel="noopener noreferrer">Design Rush</a></p>' +
+        '<p class="case-study-line"><a href="https://thedrumawards.com/live/en/page/content-results" target="_blank" rel="noopener noreferrer">The Drum Awards</a></p>' +
+        '<p class="case-study-line"><a href="https://www.aaflosangeles.org/2025-winners-list" target="_blank" rel="noopener noreferrer">AAF LA</a></p>' +
         "<p>Honda and AI have something in common: they both bring dreams to life.</p>" +
         "<p>To make the Honda Prologue feel more fun and approachable for families, we partnered with Amazon to create The Honda Dream Generator—an AI-powered experience that turned simple family inputs into custom animated adventure films.</p>" +
         "<p>Families chose who they wanted to travel with and where they wanted to go. From there, AI generated a one-of-a-kind dream film, sending them through jungles, cloud forests, deep space, microscopic gardens, and more.</p>" +
@@ -75,6 +79,7 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/1171158209",
     detail: {
       bodyHTML:
+        '<p class="case-study-title">The Dream Phone</p>' +
         "<p><i>A Raspberry Pi–powered rotary phone that uses real-time voice AI and modular persona prompts to let you call the past—delivering modern intelligence through a perfectly preserved analog illusion.</i></p>" +
         "<p>The rotary phone.</p>" +
         "<p>If you grew up with one, then it probably conjures up a certain feeling. When you pick up the handle, turn the dial and listen to the clicks, there is a warmth, a familiarity. But today, it is nothing more than a link to the past. And the voice on the other end has long since grown silent.</p>" +
@@ -91,7 +96,7 @@ const PORTFOLIO_PROJECTS = [
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/1171158209?title=0&byline=0&portrait=0" title="The Dream Phone — demo" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
-        '<h3 class="project-block-h">THE TECH</h3>' +
+        '<p class="case-study-sect"><i>The tech</i></p>' +
         "<p><i>Hardware</i></p>" +
         "<p>Raspberry Pi Zero 2 W — the brain inside the phone<br>" +
         "Rotary dial + hook switch — physical input system<br>" +
@@ -131,19 +136,35 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/670863804",
     detail: {
       bodyHTML:
-        '<h3 class="project-block-h">Recognition</h3>' +
-        "<p><strong>Press coverage</strong><br>" +
-        "Ad Age, Marketing Dive, SlashGear, Car and Driver, CNET, Hypebeast, Baller Status</p>" +
-        "<p><strong>Industry response</strong><br>" +
-        "Called “the model for marketers” by Twitch’s CEO</p>" +
-        "<p><strong>Lexus IS — Gamers’ IS</strong></p>" +
+        '<p class="case-study-title">Lexus | Gamers’ IS</p>' +
+        '<p class="case-study-line">Ad Age</p>' +
+        '<p class="case-study-line">Marketing Dive</p>' +
+        '<p class="case-study-line">SlashGear</p>' +
+        '<p class="case-study-line">Car and Driver</p>' +
+        '<p class="case-study-line">CNET</p>' +
+        '<p class="case-study-line">Hypebeast</p>' +
+        '<p class="case-study-line">Baller Status</p>' +
+        '<p class="case-study-line">Called “the model for marketers” by Twitch’s CEO</p>' +
         "<p>How do you get Twitch gamers to consider the Lexus IS?</p>" +
         "<p>Definitely not with a commercial.</p>" +
         "<p>Instead, we built the world’s first mobile gaming space: Gamers’ IS. Partnering with Twitch streamer Fuslie, we let her livestream audience vote on the gaming features they wanted most—then turned their dream build into a real, one-of-one Lexus.</p>" +
         "<p>The finished car was revealed on a second livestream, packed with gamer-approved details, from RGB lighting to a fully integrated gaming setup.</p>" +
         "<p>The results were huge. The initiative helped contribute to a 178% spike in IS sales and helped push the Lexus IS to become the #2 top-selling car in the U.S.—a serious win for a sport sedan in a category most people had written off.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/670863804" }],
-      stills: [],
+      stills: [
+        { src: "stills/lexus-gamers-is/1.png", alt: "Gamers' IS 1" },
+        { src: "stills/lexus-gamers-is/2.png", alt: "Gamers' IS 2" },
+        { src: "stills/lexus-gamers-is/3.png", alt: "Gamers' IS 3" },
+        { src: "stills/lexus-gamers-is/4.png", alt: "Gamers' IS 4" },
+        { src: "stills/lexus-gamers-is/5.gif", alt: "Gamers' IS 5" },
+      ],
+      railHTML:
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/526343448?title=0&byline=0&portrait=0" title="Gamers’ IS — livestream recap" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/526328758?title=0&byline=0&portrait=0" title="Gamers’ IS" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>',
     },
   },
   {
@@ -153,36 +174,23 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/grammys.webp",
     cardTags: "integrated",
     tags: ["general"],
-    vimeo: "https://vimeo.com/20124183",
+    vimeo: "https://vimeo.com/20124076",
     detail: {
       bodyHTML:
-        '<p class="project-detail__recognition"><strong>Recognition:</strong> ' +
-        '<a href="http://www.graphis.com/entry/c2ad319e-4b31-11e2-a2c9-f23c91dffdec/" target="_blank" rel="noopener noreferrer">Graphis</a>, ' +
-        '<a href="http://thefwa.com/shortlist/music-is-life-is-music" target="_blank" rel="noopener noreferrer">The FWA</a>, ' +
-        '<a href="http://www.commarts.com/exhibit/musicislifeismusic.html" target="_blank" rel="noopener noreferrer">Communications Arts Exhibit</a>, D&amp;AD Pencil, Webby Awards</p>' +
+        '<p class="case-study-title">GRAMMYs</p>' +
+        '<p class="case-study-line"><a href="http://www.graphis.com/entry/c2ad319e-4b31-11e2-a2c9-f23c91dffdec/" target="_blank" rel="noopener noreferrer">Graphis</a></p>' +
+        '<p class="case-study-line"><a href="http://thefwa.com/shortlist/music-is-life-is-music" target="_blank" rel="noopener noreferrer">The FWA</a></p>' +
+        '<p class="case-study-line"><a href="http://www.commarts.com/exhibit/musicislifeismusic.html" target="_blank" rel="noopener noreferrer">Communications Arts Exhibit</a></p>' +
+        "<p class=\"case-study-line\">D&amp;AD Pencil</p>" +
+        "<p class=\"case-study-line\">Webby Awards</p>" +
         "<p>How do you get music lovers excited about the GRAMMYs again? You create a groundbreaking social media platform " +
         "that gives them the ability to share the soundtrack of their lives.</p>" +
         "<p>Our platform allowed users to tag a song to a location. Then describe a memory that the song evokes. " +
         "Giving music lovers the chance to author their own audio autobiographies.</p>" +
         "<p>In addition to helping concept and write the campaign's website and iOS app, I helped concept and produce " +
         "all the TV, posters, OOH and more. Which included everything from filming Katy Perry in the basement of " +
-        "Staples Center to recording Samuel Jackson at CBS.</p>" +
-        "<p><i>Broadcast</i></p>" +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/20124364?title=0&byline=0&portrait=0" title="GRAMMYs broadcast" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
-        "<p><i>App Demo Film</i></p>" +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/20124183?title=0&byline=0&portrait=0" title="App demo" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
-        "<p><i>Posters</i> — OOH, key art, and print across the campaign.</p>" +
-        "<p><i>Music Is Life Is Music</i> was a big idea with big talent that generated big results: The 53rd GRAMMYs were the " +
-        "<i>most watched in 10 years</i> with a record-breaking <i>26M viewers</i>.</p>" +
-        "<p><b>Case Study</b></p>" +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/20124076?title=0&byline=0&portrait=0" title="Case study" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>',
-      media: [{ type: "vimeo", url: "https://vimeo.com/20124183" }],
+        "Staples Center to recording Samuel Jackson at CBS.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/20124076" }],
       stills: [],
     },
   },
@@ -196,20 +204,19 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/716637087",
     detail: {
       bodyHTML:
-        '<h3 class="project-block-h">Recognition</h3>' +
-        '<p class="project-detail__recognition">' +
-        "MediaPost, Car and Driver, " +
-        '<a href="https://www.luxurydaily.com/lexus-driving-disrupted/" target="_blank" rel="noopener noreferrer">Luxury Daily</a>, ' +
-        '<a href="https://www.jalopnik.com/the-lexus-nx-4-6-is-like-beer-goggles-for-distracted-dr-1846661064/" target="_blank" rel="noopener noreferrer">Jalopnik</a>, ' +
-        '<a href="https://www.the360mag.com/tag/driving-safety/" target="_blank" rel="noopener noreferrer">360 Magazine</a>' +
-        "</p>" +
-        '<h3 class="project-block-h">Insight</h3>' +
+        '<p class="case-study-title">Lexus | Driving Disrupted</p>' +
+        '<p class="case-study-line">MediaPost</p>' +
+        "<p class=\"case-study-line\">Car and Driver</p>" +
+        '<p class="case-study-line"><a href="https://www.luxurydaily.com/lexus-driving-disrupted/" target="_blank" rel="noopener noreferrer">Luxury Daily</a></p>' +
+        '<p class="case-study-line"><a href="https://www.jalopnik.com/the-lexus-nx-4-6-is-like-beer-goggles-for-distracted-dr-1846661064/" target="_blank" rel="noopener noreferrer">Jalopnik</a></p>' +
+        '<p class="case-study-line"><a href="https://www.the360mag.com/tag/driving-safety/" target="_blank" rel="noopener noreferrer">360 Magazine</a></p>' +
+        "<p class=\"case-study-sect\"><i>Insight</i></p>" +
         "<p>4.6 seconds is the average amount of time a text takes our eyes off the road.</p>" +
-        '<h3 class="project-block-h">Objective</h3>' +
+        "<p class=\"case-study-sect\"><i>Objective</i></p>" +
         "<p>Boost awareness of how long texting and driving truly distracts drivers.</p>" +
-        '<h3 class="project-block-h">Idea</h3>' +
+        "<p class=\"case-study-sect\"><i>Idea</i></p>" +
         "<p>Use SmartTint technology in a novel way to remove a driver’s vision for 4.6 seconds—making the danger of distracted driving impossible to ignore.</p>" +
-        '<h3 class="project-block-h">Results</h3>' +
+        "<p class=\"case-study-sect\"><i>Results</i></p>" +
         "<p>224.7 million earned media impressions, with coverage in marketing, automotive, and lifestyle media including MediaPost, Car and Driver, Luxury Daily, Jalopnik, and 360 Magazine.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/716637087" }],
       stills: [],
@@ -225,14 +232,17 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/644584180",
     detail: {
       bodyHTML:
-        '<h3 class="project-block-h">Recognition</h3>' +
-        '<p class="project-award"><strong>Clio Awards</strong><br>Bronze — Public Relations</p>' +
-        "<p class=\"project-award\"><strong>The One Show</strong><br>Shortlist</p>" +
-        '<h3 class="project-block-h">Press Coverage</h3>' +
-        "<p class=\"project-detail__recognition\">" +
-        "Pitchfork, WIRED, Uncrate, Hypebeast, Car and Driver, Motor1, MotorTrend, Jalopnik" +
-        "</p>" +
-        "<p><strong>Lexus IS — Driven By Sound</strong></p>" +
+        '<p class="case-study-title">Lexus | IS Wax</p>' +
+        "<p class=\"case-study-line\">Clio Awards — Bronze, Public Relations</p>" +
+        "<p class=\"case-study-line\">The One Show — Shortlist</p>" +
+        "<p class=\"case-study-line\">Pitchfork</p>" +
+        "<p class=\"case-study-line\">WIRED</p>" +
+        "<p class=\"case-study-line\">Uncrate</p>" +
+        "<p class=\"case-study-line\">Hypebeast</p>" +
+        "<p class=\"case-study-line\">Car and Driver</p>" +
+        "<p class=\"case-study-line\">Motor1</p>" +
+        "<p class=\"case-study-line\">MotorTrend</p>" +
+        "<p class=\"case-study-line\">Jalopnik</p>" +
         "<p>To reach audiophiles, we partnered with Pitchfork, Madlib, and Kaytranada to create something that hadn’t been done in over 40 years: put a working turntable in a car.</p>" +
         "<p>And somehow, it didn’t skip. Even over bumps.</p>" +
         "<p>The Lexus IS Wax Edition turned the sport sedan into a moving vinyl experience—blending music culture, engineering, and craft in a way that made the IS feel unexpected, analog, and alive.</p>" +
@@ -260,12 +270,14 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/1186435131",
     detail: {
       bodyHTML:
-        '<p class="project-detail__recognition"><strong>Recognition:</strong> ' +
-        '<a href="https://adage.com/creativity/work/zune-arts/2960" target="_blank" rel="noopener noreferrer">Ad Age</a>, ' +
-        '<a href="http://www.aicpshow.com/show/masks/" target="_blank" rel="noopener noreferrer">AICP</a>, ' +
-        '<a href="http://www.annecy.org/about/archives/2008/official-selection/film-index:f20080749" target="_blank" rel="noopener noreferrer">Annecy Finalist</a>, ' +
-        '<a href="http://www.commarts.com/fresh/72andsunny.html" target="_blank" rel="noopener noreferrer">Communication Arts</a>, ' +
-        '<a href="http://creativity-online.com/work/zune-laika/2551" target="_blank" rel="noopener noreferrer">Creativity</a>, MoMA, One Show</p>' +
+        '<p class="case-study-title">Microsoft | Masks</p>' +
+        '<p class="case-study-line"><a href="https://adage.com/creativity/work/zune-arts/2960" target="_blank" rel="noopener noreferrer">Ad Age</a></p>' +
+        '<p class="case-study-line"><a href="http://www.aicpshow.com/show/masks/" target="_blank" rel="noopener noreferrer">AICP</a></p>' +
+        '<p class="case-study-line"><a href="http://www.annecy.org/about/archives/2008/official-selection/film-index:f20080749" target="_blank" rel="noopener noreferrer">Annecy Finalist</a></p>' +
+        '<p class="case-study-line"><a href="http://www.commarts.com/fresh/72andsunny.html" target="_blank" rel="noopener noreferrer">Communication Arts</a></p>' +
+        '<p class="case-study-line"><a href="http://creativity-online.com/work/zune-laika/2551" target="_blank" rel="noopener noreferrer">Creativity</a></p>' +
+        "<p class=\"case-study-line\">MoMA</p>" +
+        "<p class=\"case-study-line\">One Show</p>" +
         "<p>Microsoft's Zune media player was a music device that allowed users to share music wirelessly. " +
         "That may not sound too breakthrough today, but a few years back, it was pretty revolutionary.</p>" +
         '<p>So to generate awareness about this feature, my creative partner, ' +

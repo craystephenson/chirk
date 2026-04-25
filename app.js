@@ -29,6 +29,7 @@
   const elStillsGrid = document.getElementById("project-stills-grid");
   const elStillsEmpty = document.getElementById("project-stills-empty");
   const elStageNav = document.getElementById("project-stage-nav");
+  const elRailExtra = document.getElementById("project-rail-extra");
 
   if (!gridEl || !filterRoot) return;
 
@@ -390,6 +391,15 @@
     document.title = (p.title || "Project") + " — " + siteName;
 
     renderStills(p);
+    if (elRailExtra) {
+      if (d && d.railHTML) {
+        elRailExtra.innerHTML = d.railHTML;
+        elRailExtra.hidden = false;
+      } else {
+        elRailExtra.innerHTML = "";
+        elRailExtra.hidden = true;
+      }
+    }
     syncGallery();
   }
 
@@ -405,6 +415,10 @@
     if (elStills) {
       elStills.hidden = true;
       if (elStillsGrid) elStillsGrid.innerHTML = "";
+    }
+    if (elRailExtra) {
+      elRailExtra.innerHTML = "";
+      elRailExtra.hidden = true;
     }
   }
 

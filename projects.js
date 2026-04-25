@@ -1,16 +1,35 @@
 /**
  * Projects — homepage grid + case studies.
- * Paths below match filenames in /thumbs/ (see dimensions.txt).
+ * Homepage: /thumbs/ (see thumbs/dimensions.txt).
+ * Case-study stills: /stills/<project>/ (see stills/README.txt).
  */
 const PORTFOLIO_PROJECTS = [
   {
     id: "1",
     slug: "honda",
-    title: "Honda",
+    title: "Honda | Keep Dreaming",
     thumb: "thumbs/keep_dreaming.webp",
     cardTags: "broadcast",
     tags: ["general"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/884917302",
+    detail: {
+      body:
+        "When Honda announced they would be carbon neutral by 2050, you might think, yeah, right, keep dreaming—just another car company jumping on the sustainability bandwagon. But the reality is, Honda has been setting the bar for lowering emissions since day one.\n\n" +
+        "So to prove their commitment, we worked with the directorial duo powerhouse Smith and Foulkes to create a spiraling sixty-second first-person journey through nearly a dozen past, present and future Honda breakthroughs in the pursuit of carbon neutrality. Employing an ambitious VFX strategy that included CG, miniatures, animation, illustration, green screen, CAD, and AI.\n\n" +
+        "Proving that to achieve something as ambitious as carbon neutrality, you have to keep dreaming.",
+      media: [{ type: "vimeo", url: "https://vimeo.com/884917302" }],
+      stills: [
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0000_Layer+Comp+1.webp", alt: "Honda Keep Dreaming prologue 1" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0001_Layer+Comp+2.webp", alt: "Honda Keep Dreaming prologue 2" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0002_Layer+Comp+3.webp", alt: "Honda Keep Dreaming prologue 3" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0003_Layer+Comp+4.webp", alt: "Honda Keep Dreaming prologue 4" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0004_Layer+Comp+5.webp", alt: "Honda Keep Dreaming prologue 5" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0005_Layer+Comp+6.webp", alt: "Honda Keep Dreaming prologue 6" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0006_Layer+Comp+7.webp", alt: "Honda Keep Dreaming prologue 7" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0007_Layer+Comp+8.webp", alt: "Honda Keep Dreaming prologue 8" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0008_Layer+Comp+9.webp", alt: "Honda Keep Dreaming prologue 9" },
+      ],
+    },
   },
   {
     id: "2",

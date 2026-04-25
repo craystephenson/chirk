@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-site-email="charlie@charlesraymondstephenson.com">
+  <body data-site-email="charlesraymondstephenson@gmail.com">
     <header class="site-header">
       <nav class="nav" aria-label="Primary">
         <a class="nav__link nav__link--active" id="nav-work" href="#general">/ Work</a>
@@ -53,7 +53,7 @@
           </div>
           <div class="project-detail__right">
             <div class="project-stage-wrap">
-              <div class="project-stage-nav" aria-hidden="true">
+              <div class="project-stage-nav" id="project-stage-nav" aria-hidden="true">
                 <button type="button" class="project-stage-nav__btn" id="project-slide-prev" aria-label="Previous image">
                   ‹
                 </button>
@@ -64,6 +64,15 @@
               <div class="project-stage" id="project-stage"></div>
             </div>
             <div class="project-thumbs" id="project-thumbs" role="tablist" aria-label="Project gallery"></div>
+            <section class="project-stills" id="project-stills" hidden>
+              <h2 class="project-stills__label" id="project-stills-label">Stills</h2>
+              <div class="project-stills__grid" id="project-stills-grid" role="list"></div>
+              <p class="project-stills__empty" id="project-stills-empty" hidden>
+                Put image files in <code>stills/</code> (e.g. <code>stills/honda/</code>), then list them in
+                <code>projects.js</code> under <code>detail.stills</code> as
+                <code>{ src, alt }</code> items.
+              </p>
+            </section>
           </div>
         </div>
       </section>
@@ -75,13 +84,13 @@
     <footer class="site-footer">
       <p class="site-footer__contact">
         Contact:
-        <a href="mailto:charlie@charlesraymondstephenson.com">charlie@charlesraymondstephenson.com</a>
+        <a href="mailto:charlesraymondstephenson@gmail.com">charlesraymondstephenson@gmail.com</a>
       </p>
       <ul class="social" aria-label="Social links">
         <li>
           <a
             class="social__link"
-            href="mailto:charlie@charlesraymondstephenson.com"
+            href="mailto:charlesraymondstephenson@gmail.com"
             aria-label="Email"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">

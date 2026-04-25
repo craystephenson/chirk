@@ -25,6 +25,10 @@
   const btnNext = document.getElementById("project-slide-next");
   const elVimeoCta = document.getElementById("project-vimeo-cta");
   const elVimeoLink = document.getElementById("project-vimeo-link");
+  const elStills = document.getElementById("project-stills");
+  const elStillsGrid = document.getElementById("project-stills-grid");
+  const elStillsEmpty = document.getElementById("project-stills-empty");
+  const elStageNav = document.getElementById("project-stage-nav");
 
   if (!gridEl || !filterRoot) return;
 
@@ -212,7 +216,7 @@
       fig.className = "project-figure";
       const img = document.createElement("img");
       img.className = "project-figure__img";
-      img.src = m.src;
+      img.src = staticAssetUrl(m.src);
       img.alt = m.alt || "";
       img.width = 1600;
       img.height = 900;
@@ -223,6 +227,7 @@
 
   function renderThumbs() {
     elThumbs.innerHTML = "";
+    if (elStageNav) elStageNav.hidden = currentMedia.length < 2;
     if (currentMedia.length < 2) {
       elThumbs.hidden = true;
       return;
@@ -252,7 +257,7 @@
       } else {
         const im = document.createElement("img");
         im.className = "project-thumb__img";
-        im.src = m.src;
+        im.src = staticAssetUrl(m.src);
         im.alt = m.alt || "";
         t.appendChild(im);
       }
@@ -274,6 +279,51 @@
     renderStage();
   }
 
+  /** Encode each path segment so + and other chars work on static hosts (e.g. Cloudflare Pages). */
+  function staticAssetUrl(path) {
+    if (!path || path.indexOf("http") === 0) return path;
+    return path
+      .split("/")
+      .map(function (seg) {
+        return encodeURIComponent(seg);
+      })
+      .join("/");
+  }
+
+  function renderStills(p) {
+    if (!elStills || !elStillsGrid) return;
+    const d = p && p.detail;
+    if (!d || !Object.prototype.hasOwnProperty.call(d, "stills")) {
+      elStills.hidden = true;
+      elStillsGrid.innerHTML = "";
+      if (elStillsEmpty) elStillsEmpty.hidden = true;
+      return;
+    }
+    const stills = Array.isArray(d.stills) ? d.stills : [];
+    elStillsGrid.innerHTML = "";
+    if (stills.length === 0) {
+      elStills.hidden = true;
+      if (elStillsEmpty) elStillsEmpty.hidden = true;
+      return;
+    }
+    elStills.hidden = false;
+    if (elStillsEmpty) elStillsEmpty.hidden = true;
+    stills.forEach(function (s) {
+      if (!s || !s.src) return;
+      const item = document.createElement("div");
+      item.className = "project-stills__item";
+      item.setAttribute("role", "listitem");
+      const im = document.createElement("img");
+      im.className = "project-stills__img";
+      im.src = staticAssetUrl(s.src);
+      im.alt = s.alt || "";
+      im.loading = "lazy";
+      im.decoding = "async";
+      item.appendChild(im);
+      elStillsGrid.appendChild(item);
+    });
+  }
+
   function mountProject(p) {
     currentProject = p;
     currentMedia = normalizeMedia(p);
@@ -281,12 +331,22 @@
     if (elTitle) elTitle.textContent = p.title || "Project";
 
     const d = p.detail;
-    if (d && d.body) {
+    if (elBody) {
+      elBody.classList.remove("project-detail__body--html");
+    }
+    if (d && d.bodyHTML) {
+      elBody.innerHTML = d.bodyHTML;
+      elBody.classList.add("project-detail__body--html");
+      elBody.hidden = false;
+    } else if (d && d.body) {
       elBody.textContent = d.body;
       elBody.hidden = false;
     } else {
-      elBody.textContent = "";
-      elBody.hidden = true;
+      if (elBody) {
+        elBody.textContent = "";
+        elBody.innerHTML = "";
+      }
+      if (elBody) elBody.hidden = true;
     }
 
     if (d && d.awards && d.awards.length) {
@@ -329,6 +389,7 @@
     const siteName = siteMatch ? siteMatch[1].trim() : baseTitle;
     document.title = (p.title || "Project") + " — " + siteName;
 
+    renderStills(p);
     syncGallery();
   }
 
@@ -336,6 +397,15 @@
     currentProject = null;
     currentMedia = [];
     document.title = baseTitle;
+    if (elBody) {
+      elBody.textContent = "";
+      elBody.innerHTML = "";
+      elBody.classList.remove("project-detail__body--html");
+    }
+    if (elStills) {
+      elStills.hidden = true;
+      if (elStillsGrid) elStillsGrid.innerHTML = "";
+    }
   }
 
   function showDetail(slug) {
@@ -415,7 +485,7 @@
     }
 
     if (cardImage) {
-      img.src = cardImage;
+      img.src = staticAssetUrl(cardImage);
       img.addEventListener(
         "load",
         function onCardLoad() {

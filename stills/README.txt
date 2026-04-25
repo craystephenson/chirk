@@ -1,6 +1,7 @@
 Case-study stills (not homepage thumbs).
 
-  stills/honda/     → Honda | Keep Dreaming  (reference in projects.js → detail.stills)
+  stills/honda/     → Honda | Keep Dreaming
+  stills/grammys/  → GRAMMYs (posters / key art — optional)
   (add more project folders the same way as you add projects)
 
 In projects.js, each still is listed with a path from the site root, e.g.:

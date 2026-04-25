@@ -2,6 +2,7 @@
  * Projects — homepage grid + case studies.
  * Homepage: /thumbs/ (see thumbs/dimensions.txt).
  * Case-study stills: /stills/<project>/ (see stills/README.txt).
+ * Use detail.body (plain) or detail.bodyHTML (for links; recognition, etc.)
  */
 const PORTFOLIO_PROJECTS = [
   {
@@ -38,7 +39,31 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/dream_generator.gif",
     cardTags: "ai, interactive",
     tags: ["ai", "tech"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/935982647",
+    detail: {
+      bodyHTML:
+        '<h3 class="project-block-h">Awards</h3>' +
+        '<p class="project-award"><strong>Shorty Awards × 2</strong><br>Gold — Animation<br>Silver — Automotive</p>' +
+        "<p class=\"project-award\"><strong>ADDYs</strong><br>Silver — Innovation in Interactive</p>" +
+        "<p class=\"project-award\"><strong>The One Show</strong><br>Finalist</p>" +
+        '<h3 class="project-block-h">Recognition</h3>' +
+        '<p class="project-detail__recognition">' +
+        '<a href="https://adage.com/article/marketing-news-strategy/honda-offers-ai-generated-create-your-own-adventure-videos-around-new-suv/2546561" target="_blank" rel="noopener noreferrer">Ad Age</a>, ' +
+        '<a href="https://finance.yahoo.com/news/honda-leverages-ai-dream-generator-090000510.html" target="_blank" rel="noopener noreferrer">Marketing Dive</a>, ' +
+        '<a href="https://shortyawards.com/17th/amazon-honda-dream-generator" target="_blank" rel="noopener noreferrer">Shorty Awards</a>, ' +
+        '<a href="https://www.lovethework.com/work-awards/campaigns/honda-dream-generator-1618272" target="_blank" rel="noopener noreferrer">Cannes Love The Work</a>, ' +
+        '<a href="https://www.designrush.com/news/honda-and-amazon-ads-team-up-to-create-dream-generator" target="_blank" rel="noopener noreferrer">Design Rush</a>, ' +
+        '<a href="https://thedrumawards.com/live/en/page/content-results" target="_blank" rel="noopener noreferrer">The Drum Awards</a>, ' +
+        '<a href="https://www.aaflosangeles.org/2025-winners-list" target="_blank" rel="noopener noreferrer">AAF LA</a>' +
+        "</p>" +
+        "<p>Honda and AI have something in common: they both bring dreams to life.</p>" +
+        "<p>To make the Honda Prologue feel more fun and approachable for families, we partnered with Amazon to create The Honda Dream Generator—an AI-powered experience that turned simple family inputs into custom animated adventure films.</p>" +
+        "<p>Families chose who they wanted to travel with and where they wanted to go. From there, AI generated a one-of-a-kind dream film, sending them through jungles, cloud forests, deep space, microscopic gardens, and more.</p>" +
+        "<p>Behind the scenes, we built a hybrid production pipeline that combined hand-drawn illustration, animation, motion design, AI engineering, and development. Every source image was artist-created and fully cleared, proving AI can amplify artists rather than replace them.</p>" +
+        "<p>Nearly 200 unique films could be generated, helping families see EVs—and the Prologue—as more imaginative, accessible, and adventure-ready.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/935982647" }],
+      stills: [],
+    },
   },
   {
     id: "3",
@@ -47,7 +72,54 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/dream_phone.webp",
     cardTags: "ai, hacking, pi, code",
     tags: ["ai", "tech"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/1171158209",
+    detail: {
+      bodyHTML:
+        "<p><i>A Raspberry Pi–powered rotary phone that uses real-time voice AI and modular persona prompts to let you call the past—delivering modern intelligence through a perfectly preserved analog illusion.</i></p>" +
+        "<p>The rotary phone.</p>" +
+        "<p>If you grew up with one, then it probably conjures up a certain feeling. When you pick up the handle, turn the dial and listen to the clicks, there is a warmth, a familiarity. But today, it is nothing more than a link to the past. And the voice on the other end has long since grown silent.</p>" +
+        "<p>So I set out to breathe new life into the rotary phone. And to bring back voices that no telephone wire could reach before ...</p>" +
+        "<p>The Dream Phone crosses the great divide to connect us with dreamers and innovators whose voices have also grown silent.</p>" +
+        "<p>Soichiro Honda.<br>Steve Jobs.<br>John Lennon.<br>Jesse Owens.</p>" +
+        "<p>The Dream Phone directory goes on and on.</p>" +
+        "<p>It works just like the rotary phone you maybe had as a child. Only instead of dialing seven digits, you dial four. The four numbers that make up the year that your dreamer left this earth.</p>" +
+        "<p>For instance, to reach Steve Jobs, dial #2011.</p>" +
+        "<p>Then hold on.</p>" +
+        "<p>Because if you knew—or know—Steve Jobs, he can be demanding.<br>And Lennon can be dry and witty.<br>And Soichiro Honda can be inspiring.<br>Same with Owens.</p>" +
+        "<p>Each dreamer you connect with has the same personality and voice you remember.</p>" +
+        "<p>And because it's coming through a rotary phone—analogue and true—you just might forget that it's all just a dream. And for a few seconds, that divide between the past and present vanishes.</p>" +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/1171158209?title=0&byline=0&portrait=0" title="The Dream Phone — demo" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<h3 class="project-block-h">THE TECH</h3>' +
+        "<p><i>Hardware</i></p>" +
+        "<p>Raspberry Pi Zero 2 W — the brain inside the phone<br>" +
+        "Rotary dial + hook switch — physical input system<br>" +
+        "Analog handset + speaker — authentic audio I/O<br>" +
+        "12V → 5V power (buck converter) — keeps everything stable<br>" +
+        "Ring hardware + transistor control for real bell actuation</p>" +
+        "<p>👉 Required much hardware research and manipulation. Replacing headset mic and speaker, splicing and soldering new cables from the handset cradle and rotary dial contact terminals, connecting via Dupont to Pi GPIO.</p>" +
+        "<p><i>Conversation Engine (The Voice Brain)</i></p>" +
+        "<p>Hume EVI — real-time conversational layer<br>" +
+        "WebSocket streaming for live dialogue<br>" +
+        "Emotion + prosody control (tuned down to prevent voice drift)<br>" +
+        "ChatGPT as the language brain</p>" +
+        "<p>👉 Took a lot of trial and error to settle on the best TTS service, but ultimately, Hume won out hands down. Expensive, but makes conversations emotional, interruptible, and believable.</p>" +
+        "<p><i>Persona System</i></p>" +
+        "<p>Text-based personality files (personality.txt) per caller<br>" +
+        "Modular inserts (micro-lines, triggered dynamically)<br>" +
+        "Knowledge constraints (e.g., stops at year of death)<br>" +
+        "Recognition logic (“Who’s calling?” → personalized response)</p>" +
+        "<p>👉 Vibe-coded admin page hosted on Cloudflare, enabling admin to add and adjust personas. Pushed and pulled from a GitHub repo.</p>" +
+        "<p><i>Experience Layer (The Magic)</i></p>" +
+        "<p>Rotary dialing = input (year of death)<br>" +
+        "Ring → pickup → voice appears<br>" +
+        "Real-time, unscripted conversation<br>" +
+        "Delivered through analog hardware</p>" +
+        "<p>👉 The trick: modern AI hidden inside a completely analog interaction</p>",
+      media: [{ type: "image", src: "thumbs/dream_phone.webp", alt: "The Dream Phone" }],
+      stills: [],
+    },
   },
   {
     id: "4",
@@ -56,7 +128,23 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/gamers_is.webp",
     cardTags: "technology, film, twitch",
     tags: ["tech", "general"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/670863804",
+    detail: {
+      bodyHTML:
+        '<h3 class="project-block-h">Recognition</h3>' +
+        "<p><strong>Press coverage</strong><br>" +
+        "Ad Age, Marketing Dive, SlashGear, Car and Driver, CNET, Hypebeast, Baller Status</p>" +
+        "<p><strong>Industry response</strong><br>" +
+        "Called “the model for marketers” by Twitch’s CEO</p>" +
+        "<p><strong>Lexus IS — Gamers’ IS</strong></p>" +
+        "<p>How do you get Twitch gamers to consider the Lexus IS?</p>" +
+        "<p>Definitely not with a commercial.</p>" +
+        "<p>Instead, we built the world’s first mobile gaming space: Gamers’ IS. Partnering with Twitch streamer Fuslie, we let her livestream audience vote on the gaming features they wanted most—then turned their dream build into a real, one-of-one Lexus.</p>" +
+        "<p>The finished car was revealed on a second livestream, packed with gamer-approved details, from RGB lighting to a fully integrated gaming setup.</p>" +
+        "<p>The results were huge. The initiative helped contribute to a 178% spike in IS sales and helped push the Lexus IS to become the #2 top-selling car in the U.S.—a serious win for a sport sedan in a category most people had written off.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/670863804" }],
+      stills: [],
+    },
   },
   {
     id: "5",
@@ -65,7 +153,38 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/grammys.webp",
     cardTags: "integrated",
     tags: ["general"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/20124183",
+    detail: {
+      bodyHTML:
+        '<p class="project-detail__recognition"><strong>Recognition:</strong> ' +
+        '<a href="http://www.graphis.com/entry/c2ad319e-4b31-11e2-a2c9-f23c91dffdec/" target="_blank" rel="noopener noreferrer">Graphis</a>, ' +
+        '<a href="http://thefwa.com/shortlist/music-is-life-is-music" target="_blank" rel="noopener noreferrer">The FWA</a>, ' +
+        '<a href="http://www.commarts.com/exhibit/musicislifeismusic.html" target="_blank" rel="noopener noreferrer">Communications Arts Exhibit</a>, D&amp;AD Pencil, Webby Awards</p>' +
+        "<p>How do you get music lovers excited about the GRAMMYs again? You create a groundbreaking social media platform " +
+        "that gives them the ability to share the soundtrack of their lives.</p>" +
+        "<p>Our platform allowed users to tag a song to a location. Then describe a memory that the song evokes. " +
+        "Giving music lovers the chance to author their own audio autobiographies.</p>" +
+        "<p>In addition to helping concept and write the campaign's website and iOS app, I helped concept and produce " +
+        "all the TV, posters, OOH and more. Which included everything from filming Katy Perry in the basement of " +
+        "Staples Center to recording Samuel Jackson at CBS.</p>" +
+        "<p><i>Broadcast</i></p>" +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20124364?title=0&byline=0&portrait=0" title="GRAMMYs broadcast" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        "<p><i>App Demo Film</i></p>" +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20124183?title=0&byline=0&portrait=0" title="App demo" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        "<p><i>Posters</i> — OOH, key art, and print across the campaign.</p>" +
+        "<p><i>Music Is Life Is Music</i> was a big idea with big talent that generated big results: The 53rd GRAMMYs were the " +
+        "<i>most watched in 10 years</i> with a record-breaking <i>26M viewers</i>.</p>" +
+        "<p><b>Case Study</b></p>" +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20124076?title=0&byline=0&portrait=0" title="Case study" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>',
+      media: [{ type: "vimeo", url: "https://vimeo.com/20124183" }],
+      stills: [],
+    },
   },
   {
     id: "6",
@@ -74,7 +193,27 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/driving_disrupted.webp",
     cardTags: "technology, film, stunt",
     tags: ["tech"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/716637087",
+    detail: {
+      bodyHTML:
+        '<h3 class="project-block-h">Recognition</h3>' +
+        '<p class="project-detail__recognition">' +
+        "MediaPost, Car and Driver, " +
+        '<a href="https://www.luxurydaily.com/lexus-driving-disrupted/" target="_blank" rel="noopener noreferrer">Luxury Daily</a>, ' +
+        '<a href="https://www.jalopnik.com/the-lexus-nx-4-6-is-like-beer-goggles-for-distracted-dr-1846661064/" target="_blank" rel="noopener noreferrer">Jalopnik</a>, ' +
+        '<a href="https://www.the360mag.com/tag/driving-safety/" target="_blank" rel="noopener noreferrer">360 Magazine</a>' +
+        "</p>" +
+        '<h3 class="project-block-h">Insight</h3>' +
+        "<p>4.6 seconds is the average amount of time a text takes our eyes off the road.</p>" +
+        '<h3 class="project-block-h">Objective</h3>' +
+        "<p>Boost awareness of how long texting and driving truly distracts drivers.</p>" +
+        '<h3 class="project-block-h">Idea</h3>' +
+        "<p>Use SmartTint technology in a novel way to remove a driver’s vision for 4.6 seconds—making the danger of distracted driving impossible to ignore.</p>" +
+        '<h3 class="project-block-h">Results</h3>' +
+        "<p>224.7 million earned media impressions, with coverage in marketing, automotive, and lifestyle media including MediaPost, Car and Driver, Luxury Daily, Jalopnik, and 360 Magazine.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/716637087" }],
+      stills: [],
+    },
   },
   {
     id: "7",
@@ -83,7 +222,24 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/lexus_is_wax.webp",
     cardTags: "technology, pitchfork, wired",
     tags: ["tech", "general"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/644584180",
+    detail: {
+      bodyHTML:
+        '<h3 class="project-block-h">Recognition</h3>' +
+        '<p class="project-award"><strong>Clio Awards</strong><br>Bronze — Public Relations</p>' +
+        "<p class=\"project-award\"><strong>The One Show</strong><br>Shortlist</p>" +
+        '<h3 class="project-block-h">Press Coverage</h3>' +
+        "<p class=\"project-detail__recognition\">" +
+        "Pitchfork, WIRED, Uncrate, Hypebeast, Car and Driver, Motor1, MotorTrend, Jalopnik" +
+        "</p>" +
+        "<p><strong>Lexus IS — Driven By Sound</strong></p>" +
+        "<p>To reach audiophiles, we partnered with Pitchfork, Madlib, and Kaytranada to create something that hadn’t been done in over 40 years: put a working turntable in a car.</p>" +
+        "<p>And somehow, it didn’t skip. Even over bumps.</p>" +
+        "<p>The Lexus IS Wax Edition turned the sport sedan into a moving vinyl experience—blending music culture, engineering, and craft in a way that made the IS feel unexpected, analog, and alive.</p>" +
+        "<p>The campaign helped push the Lexus IS to become the #2 top-selling car in the U.S.—a serious feat for a sport sedan in a category most people had written off.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/644584180" }],
+      stills: [],
+    },
   },
   {
     id: "8",
@@ -97,11 +253,29 @@ const PORTFOLIO_PROJECTS = [
   {
     id: "9",
     slug: "microsoft",
-    title: "Microsoft",
+    title: "Microsoft | Masks",
     thumb: "thumbs/microsoft.webp",
     cardTags: "film, digital",
     tags: ["general", "tech"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/1186435131",
+    detail: {
+      bodyHTML:
+        '<p class="project-detail__recognition"><strong>Recognition:</strong> ' +
+        '<a href="https://adage.com/creativity/work/zune-arts/2960" target="_blank" rel="noopener noreferrer">Ad Age</a>, ' +
+        '<a href="http://www.aicpshow.com/show/masks/" target="_blank" rel="noopener noreferrer">AICP</a>, ' +
+        '<a href="http://www.annecy.org/about/archives/2008/official-selection/film-index:f20080749" target="_blank" rel="noopener noreferrer">Annecy Finalist</a>, ' +
+        '<a href="http://www.commarts.com/fresh/72andsunny.html" target="_blank" rel="noopener noreferrer">Communication Arts</a>, ' +
+        '<a href="http://creativity-online.com/work/zune-laika/2551" target="_blank" rel="noopener noreferrer">Creativity</a>, MoMA, One Show</p>' +
+        "<p>Microsoft's Zune media player was a music device that allowed users to share music wirelessly. " +
+        "That may not sound too breakthrough today, but a few years back, it was pretty revolutionary.</p>" +
+        '<p>So to generate awareness about this feature, my creative partner, ' +
+        '<a href="https://www.linkedin.com/pub/jeff-beberman/3/828/b18" target="_blank" rel="noopener noreferrer">Beebs</a>, ' +
+        "and I developed and managed a robust artist program that commissioned emerging artists to create " +
+        "art that expressed the themes of sharing and friendship.</p>" +
+        "<p>This was one of the most intense, challenging and rewarding projects I've ever worked on – " +
+        "collaborating closely with extraordinary artists including Steve Niles and Friendswithyou.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/1186435131" }],
+    },
   },
 ];
 

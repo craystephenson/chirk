@@ -443,7 +443,7 @@ main {
   min-height: 50vh;
   border-top: 1px solid #eee;
   flex: 1;
-  align-items: stretch;
+  align-items: start;
 }
 
 .project-detail__left {
@@ -489,6 +489,62 @@ main {
   white-space: pre-line;
 }
 
+.project-detail__body--html {
+  white-space: normal;
+  letter-spacing: 0.02em;
+  font-size: 0.72rem;
+}
+
+.project-detail__body--html p {
+  margin: 0 0 1em;
+}
+
+.project-detail__body--html p:last-child {
+  margin-bottom: 0;
+}
+
+.project-detail__body--html a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.project-detail__body--html a:hover,
+.project-detail__body--html a:focus-visible {
+  opacity: 0.8;
+}
+
+.project-detail__body--html .project-detail__recognition {
+  font-size: 0.64rem;
+  line-height: 1.5;
+  color: #5a5a5a;
+  margin-bottom: 1.1em;
+}
+
+.project-detail__body--html .project-embed {
+  margin: 0.9em 0 1.1em;
+  width: 100%;
+  max-width: 100%;
+}
+
+.project-detail__body--html .project-embed__inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.project-detail__body--html .project-embed__inner iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .project-detail__awards {
   margin: 0;
   padding: 0;
@@ -530,16 +586,17 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 0 0;
+  padding: 0;
   min-width: 0;
   background: #fafafa;
+  width: 100%;
 }
 
 .project-stage-wrap {
   position: relative;
   width: 100%;
-  margin: 0 1.25rem 0.75rem 0;
-  padding-right: 0;
+  margin: 0;
+  padding: 1.25rem 1.25rem 0 0;
   flex: 0 0 auto;
 }
 
@@ -634,6 +691,73 @@ main {
 
 .project-thumbs[hidden] {
   display: none;
+}
+
+.project-stills {
+  width: 100%;
+  padding: 1.5rem 1.25rem 2rem 0;
+  margin-top: 0;
+  border-top: 1px solid #e8e8e8;
+  flex: 0 0 auto;
+}
+
+.project-stills[hidden] {
+  display: none;
+}
+
+.project-stills__label {
+  margin: 0 0 0.9rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.project-stills__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.project-stills__item {
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  background: #e8e8e8;
+  overflow: hidden;
+  border-radius: 2px;
+  line-height: 0;
+}
+
+.project-stills__img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  vertical-align: top;
+  object-fit: contain;
+  background: #111;
+}
+
+.project-stills__empty {
+  margin: 0;
+  font-size: 0.65rem;
+  line-height: 1.5;
+  color: #777;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.project-stills__empty code {
+  font-size: 0.6rem;
+  background: #eee;
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
 }
 
 .project-thumb {

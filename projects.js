@@ -307,6 +307,38 @@ const PORTFOLIO_PROJECTS = [
         "<p>To drive awareness, my partner and I led an artist program centered on sharing and friendship—collaborating and concepting with culture-shaping artists including Steve Niles and FriendsWithYou.</p>" +
         "<p>Intense, challenging, and one of the most rewarding projects I’ve worked on.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/1186435131" }],
+      stills: [],
+      railHTML:
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/19449868?title=0&byline=0&portrait=0" title="Laika" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/19539791?title=0&byline=0&portrait=0" title="Le Cadeau du Temps" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/19445552?title=0&byline=0&portrait=0" title="Piece of Me, Piece of You" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20121977?title=0&byline=0&portrait=0" title="The Lost Ones — graphic novel trailer" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20121995?title=0&byline=0&portrait=0" title="The Lost Ones — behind the scenes" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<p class="project-rail-h">Graphic novel</p>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20121977?title=0&byline=0&portrait=0" title="The Lost Ones — graphic novel trailer" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/1_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 1" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/2_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 2" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/3_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 3" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/4_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 4" /></div>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20121995?title=0&byline=0&portrait=0" title="The Lost Ones — behind the scenes" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<p class="project-rail-h">Promos</p>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/1_promo.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Zune Arts promo 1" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/2_promos.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Zune Arts promo 2" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/3_promos.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Zune Arts promo 3" /></div>',
     },
   },
 ];

@@ -326,7 +326,26 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/engineered_for_fun.webp",
     cardTags: "ai, film, facial expression analysis",
     tags: ["ai", "tech"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/1171127200",
+    detail: {
+      bodyHTML:
+        "<p>When the next-generation Honda Prelude launched, enthusiasts questioned whether it could live up to its legacy of fun.</p>" +
+        "<p>So we set out to prove it&mdash;scientifically.</p>" +
+        "<p>We built an AI facial-expression analysis system to capture real emotional reactions from drivers on a closed course.</p>" +
+        "<p>The science confirmed it: the Prelude was fun.</p>" +
+        "<p>The client loved it too. According to Ace Metrix, the ad ranked in the top 1% of all Tier 1 automotive ads that year&mdash;and in the 99th percentile of all automotive ads ever tested.</p>" +
+        '<p class="case-study-sect"><i>Production Note</i></p>' +
+        "<p>We pulled it off on an insanely limited budget, entirely in-house. My VP/CD Sarah May Bates directed the film, and I led the facial-expression analysis, using MorphCast and OpenAI to assess and quantify the emotion metrics.</p>" +
+        "<p>I can&rsquo;t share the exact number.</p>" +
+        "<p>But if I did, your facial-expression analysis would register 98% disbelief.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/1171127200" }],
+      stillsLabel: false,
+      stills: [
+        { section: "FACIAL EXPRESSION ANALYSIS" },
+        { src: "stills/engineered-for-fun/1_analysis.png", alt: "Engineered For Fun — analysis 1" },
+        { src: "stills/engineered-for-fun/2_analysis.png", alt: "Engineered For Fun — analysis 2" },
+      ],
+    },
   },
   {
     id: "9",

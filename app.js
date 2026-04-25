@@ -18,6 +18,8 @@
   const elBody = document.getElementById("project-detail-body");
   const elAwards = document.getElementById("project-detail-awards");
   const elBack = document.getElementById("project-back");
+  const elCasePrev = document.getElementById("project-case-prev");
+  const elCaseNext = document.getElementById("project-case-next");
   const elStage = document.getElementById("project-stage");
   const elThumbs = document.getElementById("project-thumbs");
   const btnPrev = document.getElementById("project-slide-prev");
@@ -414,6 +416,38 @@
     });
   }
 
+  function updateCaseStudyNav(p) {
+    const list = getFiltered();
+    const slug = projectSlug(p);
+    const idx = list.findIndex((x) => projectSlug(x) === slug);
+    if (elCasePrev) {
+      if (idx > 0) {
+        const prev = list[idx - 1];
+        const ps = projectSlug(prev);
+        elCasePrev.href = "#/project/" + encodeURIComponent(ps);
+        elCasePrev.hidden = false;
+        elCasePrev.setAttribute("aria-label", "Previous case study: " + (prev.title || ""));
+      } else {
+        elCasePrev.hidden = true;
+        elCasePrev.removeAttribute("href");
+        elCasePrev.removeAttribute("aria-label");
+      }
+    }
+    if (elCaseNext) {
+      if (idx >= 0 && idx < list.length - 1) {
+        const next = list[idx + 1];
+        const ns = projectSlug(next);
+        elCaseNext.href = "#/project/" + encodeURIComponent(ns);
+        elCaseNext.hidden = false;
+        elCaseNext.setAttribute("aria-label", "Next case study: " + (next.title || ""));
+      } else {
+        elCaseNext.hidden = true;
+        elCaseNext.removeAttribute("href");
+        elCaseNext.removeAttribute("aria-label");
+      }
+    }
+  }
+
   function mountProject(p) {
     currentProject = p;
     currentMedia = normalizeMedia(p);
@@ -477,6 +511,7 @@
         elRailExtra.hidden = true;
       }
     }
+    updateCaseStudyNav(p);
     syncGallery();
   }
 
@@ -504,6 +539,16 @@
     if (elStagePre) {
       elStagePre.textContent = "";
       elStagePre.hidden = true;
+    }
+    if (elCasePrev) {
+      elCasePrev.hidden = true;
+      elCasePrev.removeAttribute("href");
+      elCasePrev.removeAttribute("aria-label");
+    }
+    if (elCaseNext) {
+      elCaseNext.hidden = true;
+      elCaseNext.removeAttribute("href");
+      elCaseNext.removeAttribute("aria-label");
     }
   }
 
@@ -672,6 +717,16 @@
 
   document.addEventListener("keydown", (e) => {
     if (detailEl && !detailEl.hidden) {
+      if (e.key === "[" && elCasePrev && !elCasePrev.hidden) {
+        e.preventDefault();
+        elCasePrev.click();
+        return;
+      }
+      if (e.key === "]" && elCaseNext && !elCaseNext.hidden) {
+        e.preventDefault();
+        elCaseNext.click();
+        return;
+      }
       if (e.key === "ArrowLeft" && currentMedia.length) {
         e.preventDefault();
         currentSlide -= 1;

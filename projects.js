@@ -628,7 +628,7 @@ const PORTFOLIO_PROJECTS = [
       stills: [
         { src: "stills/sistacade/2.jpg", alt: "Sistacade 2" },
         { src: "stills/sistacade/3.jpg", alt: "Sistacade 3" },
-        { src: "stills/sistacade/4.jpg", alt: "Sistacade 4" },
+        { src: "stills/sistacade/4.png", alt: "Sistacade 4" },
         { src: "stills/sistacade/5.jpg", alt: "Sistacade 5" },
         { src: "stills/sistacade/6.jpg", alt: "Sistacade 6" },
         { src: "stills/sistacade/7.jpg", alt: "Sistacade 7" },

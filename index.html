@@ -42,7 +42,11 @@
       <section class="project-detail" id="project-detail" hidden>
         <div class="project-detail__inner">
           <div class="project-detail__left">
-            <a class="project-detail__back" id="project-back" href="#all">← Work</a>
+            <nav class="project-detail__navrow" aria-label="Work and nearby case studies">
+              <a class="project-detail__case-pager" id="project-case-prev" href="#" hidden>← Previous</a>
+              <a class="project-detail__back" id="project-back" href="#all">← Work</a>
+              <a class="project-detail__case-pager" id="project-case-next" href="#" hidden>Next →</a>
+            </nav>
             <h1 class="project-detail__title" id="project-detail-title">Project</h1>
             <div class="project-detail__body" id="project-detail-body" hidden></div>
             <ul class="project-detail__awards" id="project-detail-awards" hidden></ul>

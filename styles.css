@@ -589,27 +589,6 @@ main {
   margin-top: 0.25rem;
 }
 
-.project-detail__vimeo {
-  margin: 0.5rem 0 0;
-  font-size: 0.65rem;
-  text-transform: none;
-  letter-spacing: 0.04em;
-}
-
-.project-detail__vimeo a {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
-.project-detail__contact {
-  margin: auto 0 0;
-  padding-top: 1.5rem;
-  font-size: 0.6rem;
-  letter-spacing: 0.06em;
-  color: #6b6b6b;
-  text-transform: none;
-}
-
 .project-detail__right {
   position: relative;
   display: flex;
@@ -723,7 +702,7 @@ main {
 
 .project-stills {
   width: 100%;
-  padding: 1.5rem 1.25rem 2rem 0;
+  padding: 1.75rem 1.25rem 2rem 0;
   margin-top: 0;
   border-top: 1px solid #e8e8e8;
   flex: 0 0 auto;
@@ -734,7 +713,7 @@ main {
 }
 
 .project-stills__label {
-  margin: 0 0 0.9rem;
+  margin: 0.5rem 0 0.9rem;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -792,7 +771,7 @@ main {
 .project-rail-extra {
   width: 100%;
   box-sizing: border-box;
-  padding: 0 1.25rem 1.75rem 0;
+  padding: 0.65rem 1.25rem 1.75rem 0;
   margin: 0;
 }
 
@@ -824,7 +803,7 @@ main {
 }
 
 .project-rail-extra .project-rail-h {
-  margin: 1.1em 0 0.5rem;
+  margin: 1.15em 0 0.5rem;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -833,7 +812,7 @@ main {
 }
 
 .project-rail-extra .project-rail-h:first-child {
-  margin-top: 0.35em;
+  margin-top: 0;
 }
 
 .project-rail-extra .project-rail__figure {

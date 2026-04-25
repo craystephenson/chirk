@@ -143,6 +143,7 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line">Hypebeast</p>' +
         '<p class="case-study-line">Baller Status</p>' +
         '<p class="case-study-line">Called “the model for marketers” by Twitch’s CEO</p>' +
+        "<p>Gamers aren’t interested in car ads.</p>" +
         "<p>So we set out to build Gamers’ IS—the world’s first 150 mph mobile gaming space. With Twitch streamer Fuslie, we let fans vote on the features, then turned their dream build into a real, one-of-one Lexus IS.</p>" +
         "<p>The result: a livestream reveal, gamer-approved details, and a campaign that helped drive a 178% spike in IS sales—and helped push the Lexus IS to become the #2 top-selling car in the U.S.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/670863804" }],
@@ -247,7 +248,7 @@ const PORTFOLIO_PROJECTS = [
       bodyHTML:
         "<p class=\"case-study-line\">Clio Awards — Bronze, Public Relations</p>" +
         "<p class=\"case-study-line\">The One Show — Shortlist</p>" +
-        "<p>Audiophiles were a subculture we wanted to reach with the Lexus IS.</p>" +
+        "<p>Audiophiles are a subculture we wanted to reach with the Lexus IS.</p>" +
         "<p>So we teamed up with Pitchfork, Madlib, and Kaytranada to do something no one had done in 40 years:</p>" +
         "<p>Put a working turntable in a car.</p>" +
         "<p>Fun fact: it didn’t skip—even over bumps.</p>" +

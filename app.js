@@ -17,14 +17,11 @@
   const elTitle = document.getElementById("project-detail-title");
   const elBody = document.getElementById("project-detail-body");
   const elAwards = document.getElementById("project-detail-awards");
-  const elContact = document.getElementById("project-detail-contact");
   const elBack = document.getElementById("project-back");
   const elStage = document.getElementById("project-stage");
   const elThumbs = document.getElementById("project-thumbs");
   const btnPrev = document.getElementById("project-slide-prev");
   const btnNext = document.getElementById("project-slide-next");
-  const elVimeoCta = document.getElementById("project-vimeo-cta");
-  const elVimeoLink = document.getElementById("project-vimeo-link");
   const elStills = document.getElementById("project-stills");
   const elStillsGrid = document.getElementById("project-stills-grid");
   const elStillsEmpty = document.getElementById("project-stills-empty");
@@ -384,28 +381,6 @@
     } else {
       elAwards.innerHTML = "";
       elAwards.hidden = true;
-    }
-
-    const email = document.body.getAttribute("data-site-email") || "";
-    if (elContact) {
-      elContact.textContent = "";
-      if (email) {
-        elContact.hidden = false;
-        const a = document.createElement("a");
-        a.href = "mailto:" + email;
-        a.textContent = email;
-        elContact.append("Contact: ");
-        elContact.appendChild(a);
-      } else {
-        elContact.hidden = true;
-      }
-    }
-
-    if (p.vimeo && elVimeoCta && elVimeoLink) {
-      elVimeoCta.hidden = false;
-      elVimeoLink.href = p.vimeo;
-    } else if (elVimeoCta) {
-      elVimeoCta.hidden = true;
     }
 
     if (elBack) elBack.setAttribute("href", workHash());

@@ -379,7 +379,7 @@ const PORTFOLIO_PROJECTS = [
     title: "Microsoft | Zune Arts",
     thumb: "thumbs/microsoft.webp",
     cardTags: "film, digital",
-    tags: ["general", "tech"],
+    tags: ["general"],
     vimeo: "https://vimeo.com/1186435131",
     detail: {
       bodyHTML:
@@ -598,7 +598,7 @@ const PORTFOLIO_PROJECTS = [
     title: "Lexus | Dad'chelor Party",
     thumb: "thumbs/lexus_dadchelor_party.png",
     cardTags: "broadcast, comedy",
-    tags: ["general", "tech"],
+    tags: ["general"],
     vimeo: "https://vimeo.com/110311988",
     detail: {
       bodyHTML:

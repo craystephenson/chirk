@@ -83,10 +83,23 @@
     return null;
   }
 
+  function dedupeMediaList(list) {
+    const seen = new Set();
+    return list.filter(function (m) {
+      var key;
+      if (m.type === "vimeo" && m.url) key = "v:" + m.url;
+      else if (m.type === "image" && m.src) key = "i:" + m.src;
+      else return true;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
   function normalizeMedia(p) {
     const raw = p.detail && Array.isArray(p.detail.media) ? p.detail.media : [];
     const list = raw.map(normalizeMediaItem).filter(Boolean);
-    if (list.length) return list;
+    if (list.length) return dedupeMediaList(list);
     if (p.vimeo) return [{ type: "vimeo", url: p.vimeo, alt: "" }];
     return [];
   }

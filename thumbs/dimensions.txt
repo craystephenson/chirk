@@ -12,7 +12,7 @@ Current assets (paths in projects.js):
   four_corners_brewing.png → Four Corners Brewing
   sistacade.jpg         → Sistacade
   lexus_december_to_remember.jpg → Lexus | December to Remember
-  richards_group_holiday.jpg → The Richards Group
+  richards_group_holiday.jpg → Believe
   carol_o_matic.png → Carol-O-Matic Singing Machine
   lexus_immersive_sonic.webp → Lexus | Immersive Sonic Challenge
   lexus_dadchelor_party.png → Lexus | Dad'chelor Party

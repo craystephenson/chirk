@@ -159,22 +159,25 @@ const PORTFOLIO_PROJECTS = [
         "<p>The result: a livestream reveal, gamer-approved details, and a campaign that helped drive a 178% spike in IS sales—and helped push the Lexus IS to become the #2 top-selling car in the U.S.</p>" +
         '<p>See <a href="https://www.roadandtrack.com/news/a35924761/lexus-is-350-fastest-selling/" target="_blank" rel="noopener noreferrer">Road &amp; Track</a> for more on the IS in the market.</p>',
       media: [{ type: "vimeo", url: "https://vimeo.com/670863804" }],
+      stillsLabel: false,
       stills: [
+        { section: "BUILD" },
+        {
+          vimeo: "https://vimeo.com/526328758",
+          vimeoTitle: "Gamers' IS — build",
+        },
+        { src: "stills/lexus-gamers-is/1_build.jpg", alt: "Gamers' IS — build 1" },
+        { section: "SOCIAL" },
         { src: "stills/lexus-gamers-is/1.png", alt: "Gamers' IS 1" },
         { src: "stills/lexus-gamers-is/2.png", alt: "Gamers' IS 2" },
         { src: "stills/lexus-gamers-is/3.png", alt: "Gamers' IS 3" },
         { src: "stills/lexus-gamers-is/4.png", alt: "Gamers' IS 4" },
         { src: "stills/lexus-gamers-is/5.gif", alt: "Gamers' IS 5" },
       ],
-      stillsLabel: "SOCIAL",
       railHTML:
         '<p class="project-rail-h">LIVESTREAM</p>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/526343448?title=0&byline=0&portrait=0" title="Gamers’ IS — livestream recap" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
-        '<p class="project-rail-h">BUILD</p>' +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/526328758?title=0&byline=0&portrait=0" title="Gamers’ IS — build" ' +
+        'src="https://player.vimeo.com/video/526343448?title=0&byline=0&portrait=0" title="Gamers\' IS — livestream recap" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>',
     },
   },
@@ -263,7 +266,7 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/driving_disrupted.webp",
     cardTags: "technology, film, stunt",
     tags: ["tech"],
-    vimeo: "https://vimeo.com/716637087",
+    vimeo: "",
     detail: {
       bodyHTML:
         '<p class="case-study-line">MediaPost</p>' +
@@ -473,14 +476,14 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/four_corners_brewing.png",
     cardTags: "arcade, interactive, beer",
     tags: ["general", "tech"],
-    vimeo: "https://vimeo.com/296117526",
+    vimeo: "",
     detail: {
       bodyHTML:
         "<p>When Four Corners Brewing came to Team One, we built a beer pong-inspired arcade game to generate awareness around their unique 360&deg;-opening cans.</p>" +
         "<p>Players had one minute to sink balls into open Four Corners cans. Each hit triggered a custom animation inspired by the art and personality of that can.</p>" +
         "<p>Guests loved it. Four Corners loved it. Constellation loved it enough to ask for a portable version.</p>" +
-        "<p>Hard as hell to build in-house.</p>" +
-        "<p>But it hit all my favorite things:</p>" +
+        "<p>Hard as hell</p>" +
+        "<p>But it hit a lot of my favorite things:</p>" +
         "<p>Technology. Gaming. Music. Beer.</p>" +
         '<p class="case-study-sect"><i>The Tech</i></p>' +
         "<p>Laser sensors detected when balls passed through the cans<br>" +
@@ -496,34 +499,6 @@ const PORTFOLIO_PROJECTS = [
         { src: "stills/four-corners-brewing/3.gif", alt: "¡Chingón Pong! 3" },
         { src: "stills/four-corners-brewing/4.png", alt: "¡Chingón Pong! 4" },
         { src: "stills/four-corners-brewing/four-corners-brewing.jpg", alt: "¡Chingón Pong!" },
-      ],
-    },
-  },
-  {
-    id: "16",
-    slug: "sistacade",
-    title: "Sistacade",
-    thumb: "thumbs/sistacade.jpg",
-    cardTags: "arcade, personal",
-    tags: ["general"],
-    vimeo: "",
-    detail: {
-      bodyHTML:
-        "<p>I made my daughters an arcade game.</p>" +
-        "<p>OK, I made it for me too.</p>" +
-        "<p>The concept is Sistacade&mdash;each sister reimagined through the art of her favorite game.</p>" +
-        "<p>#8bitSiblingRivalry #GameOn #ᗧ•••ᗣ•••</p>",
-      media: [{ type: "image", src: "thumbs/sistacade.jpg", alt: "Sistacade" }],
-      stillsLabel: false,
-      stills: [
-        { src: "stills/sistacade/2.jpg", alt: "Sistacade 2" },
-        { src: "stills/sistacade/3.jpg", alt: "Sistacade 3" },
-        { src: "stills/sistacade/4.jpg", alt: "Sistacade 4" },
-        { src: "stills/sistacade/5.jpg", alt: "Sistacade 5" },
-        { src: "stills/sistacade/6.jpg", alt: "Sistacade 6" },
-        { src: "stills/sistacade/7.jpg", alt: "Sistacade 7" },
-        { src: "stills/sistacade/8.jpg", alt: "Sistacade 8" },
-        { src: "stills/sistacade/9.jpg", alt: "Sistacade 9" },
       ],
     },
   },
@@ -557,7 +532,7 @@ const PORTFOLIO_PROJECTS = [
   {
     id: "12",
     slug: "richards-group-holiday-card",
-    title: "The Richards Group",
+    title: "Believe",
     thumb: "thumbs/richards_group_holiday.jpg",
     cardTags: "holiday card",
     tags: ["general"],
@@ -632,6 +607,34 @@ const PORTFOLIO_PROJECTS = [
         "<p>The result: <i>The Dad&rsquo;chelor Party</i>.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/110311988", alt: "Lexus — The Dad'chelor Party" }],
       stills: [],
+    },
+  },
+  {
+    id: "16",
+    slug: "sistacade",
+    title: "Sistacade",
+    thumb: "thumbs/sistacade.jpg",
+    cardTags: "arcade, personal",
+    tags: ["general"],
+    vimeo: "",
+    detail: {
+      bodyHTML:
+        "<p>I made my daughters an arcade game.</p>" +
+        "<p>OK, I made it for me too.</p>" +
+        "<p>The concept is Sistacade&mdash;each sister reimagined through the art of her favorite game.</p>" +
+        "<p>#8bitSiblingRivalry #GameOn #ᗧ•••ᗣ•••</p>",
+      media: [{ type: "image", src: "thumbs/sistacade.jpg", alt: "Sistacade" }],
+      stillsLabel: false,
+      stills: [
+        { src: "stills/sistacade/2.jpg", alt: "Sistacade 2" },
+        { src: "stills/sistacade/3.jpg", alt: "Sistacade 3" },
+        { src: "stills/sistacade/4.jpg", alt: "Sistacade 4" },
+        { src: "stills/sistacade/5.jpg", alt: "Sistacade 5" },
+        { src: "stills/sistacade/6.jpg", alt: "Sistacade 6" },
+        { src: "stills/sistacade/7.jpg", alt: "Sistacade 7" },
+        { src: "stills/sistacade/8.jpg", alt: "Sistacade 8" },
+        { src: "stills/sistacade/9.jpg", alt: "Sistacade 9" },
+      ],
     },
   },
 ];

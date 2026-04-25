@@ -1,8 +1,14 @@
 Case-study stills (not homepage thumbs).
 
-  stills/honda/     → Honda | Keep Dreaming
-  stills/grammys/  → GRAMMYs (posters / key art — optional)
-  (add more project folders the same way as you add projects)
+  stills/honda/                        → Honda | Keep Dreaming
+  stills/grammys/                      → GRAMMYs
+  stills/four-corners-brewing/         → Four Corners Brewing
+  stills/lexus-december-to-remember/   → Lexus | December to Remember
+  stills/richards-group-holiday-card/  → The Richards Group
+  stills/carol-o-matic/                → Carol-O-Matic Singing Machine
+  stills/lexus-immersive-sonic-challenge/ → Lexus | Immersive Sonic Challenge
+  stills/lexus-dadchelor-party/       → Lexus | Dad'chelor Party
+  (add more project folders the same way as you add projects; folder name = project slug)
 
 In projects.js, each still is listed with a path from the site root, e.g.:
   { src: "stills/honda/01.jpg", alt: "Caption" }

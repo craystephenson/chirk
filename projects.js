@@ -553,10 +553,13 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/lexus_dadchelor_party.png",
     cardTags: "broadcast, comedy",
     tags: ["general", "tech"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/110311988",
     detail: {
-      bodyHTML: "<p>Case study in progress.</p>",
-      media: [{ type: "image", src: "thumbs/lexus_dadchelor_party.png", alt: "Lexus Dad'chelor Party" }],
+      bodyHTML:
+        "<p>For many, EVs aren&rsquo;t quite ready for prime time.</p>" +
+        "<p>So to get EV shoppers to consider a Lexus hybrid, we partnered with Funny or Die on a short film showing how painfully bad it would be to road trip from LA to Vegas in an EV.</p>" +
+        "<p>The result: <i>The Dad&rsquo;chelor Party</i>.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/110311988", alt: "Lexus — The Dad'chelor Party" }],
       stills: [],
     },
   },

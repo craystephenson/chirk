@@ -3,8 +3,8 @@
  * Homepage: /thumbs/ (see thumbs/dimensions.txt).
  * Case-study stills: /stills/<project>/ (see stills/README.txt).
  * Use detail.body (plain) or detail.bodyHTML (for links; recognition, etc.)
- * HTML pattern: p.case-study-title (project name, UPPERcase via CSS, not bold), then
- * p.case-study-line for each award/recognition/press line (one block per line), then
+ * Project title: use the top H1 only (all caps via CSS, not bold). In bodyHTML: p.case-study-line
+ * for each award/recognition/press line (one block per line), then
  * p.case-study-sect: <i>Insight</i> / <i>Idea</i> / <i>Objective</i> (italic section labels, not h1–h3).
  * Optional: detail.railHTML — HTML in the right column below stills (e.g. extra Vimeo embeds).
  */
@@ -19,7 +19,6 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/884917302",
     detail: {
       bodyHTML:
-        '<p class="case-study-title">Honda | Keep Dreaming</p>' +
         "<p>When Honda announced they would be carbon neutral by 2050, you might think, yeah, right, keep dreaming—just another car company jumping on the sustainability bandwagon. But the reality is, Honda has been setting the bar for lowering emissions since day one.</p>" +
         "<p>So to prove their commitment, we worked with the directorial duo powerhouse Smith and Foulkes to create a spiraling sixty-second first-person journey through nearly a dozen past, present and future Honda breakthroughs in the pursuit of carbon neutrality. Employing an ambitious VFX strategy that included CG, miniatures, animation, illustration, green screen, CAD, and AI.</p>" +
         "<p>Proving that to achieve something as ambitious as carbon neutrality, you have to keep dreaming.</p>",
@@ -47,7 +46,6 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/935982647",
     detail: {
       bodyHTML:
-        '<p class="case-study-title">Honda dream generator</p>' +
         '<p class="case-study-line">Shorty Awards × 2</p>' +
         '<p class="case-study-line">Gold — Animation</p>' +
         '<p class="case-study-line">Silver — Automotive</p>' +
@@ -79,7 +77,6 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/1171158209",
     detail: {
       bodyHTML:
-        '<p class="case-study-title">The Dream Phone</p>' +
         "<p><i>A Raspberry Pi–powered rotary phone that uses real-time voice AI and modular persona prompts to let you call the past—delivering modern intelligence through a perfectly preserved analog illusion.</i></p>" +
         "<p>The rotary phone.</p>" +
         "<p>If you grew up with one, then it probably conjures up a certain feeling. When you pick up the handle, turn the dial and listen to the clicks, there is a warmth, a familiarity. But today, it is nothing more than a link to the past. And the voice on the other end has long since grown silent.</p>" +
@@ -136,7 +133,6 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/670863804",
     detail: {
       bodyHTML:
-        '<p class="case-study-title">Lexus | Gamers’ IS</p>' +
         '<p class="case-study-line">Ad Age</p>' +
         '<p class="case-study-line">Marketing Dive</p>' +
         '<p class="case-study-line">SlashGear</p>' +
@@ -177,7 +173,6 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/20124076",
     detail: {
       bodyHTML:
-        '<p class="case-study-title">GRAMMYs</p>' +
         '<p class="case-study-line"><a href="http://www.graphis.com/entry/c2ad319e-4b31-11e2-a2c9-f23c91dffdec/" target="_blank" rel="noopener noreferrer">Graphis</a></p>' +
         '<p class="case-study-line"><a href="http://thefwa.com/shortlist/music-is-life-is-music" target="_blank" rel="noopener noreferrer">The FWA</a></p>' +
         '<p class="case-study-line"><a href="http://www.commarts.com/exhibit/musicislifeismusic.html" target="_blank" rel="noopener noreferrer">Communications Arts Exhibit</a></p>' +
@@ -204,7 +199,6 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/716637087",
     detail: {
       bodyHTML:
-        '<p class="case-study-title">Lexus | Driving Disrupted</p>' +
         '<p class="case-study-line">MediaPost</p>' +
         "<p class=\"case-study-line\">Car and Driver</p>" +
         '<p class="case-study-line"><a href="https://www.luxurydaily.com/lexus-driving-disrupted/" target="_blank" rel="noopener noreferrer">Luxury Daily</a></p>' +
@@ -232,7 +226,6 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/644584180",
     detail: {
       bodyHTML:
-        '<p class="case-study-title">Lexus | IS Wax</p>' +
         "<p class=\"case-study-line\">Clio Awards — Bronze, Public Relations</p>" +
         "<p class=\"case-study-line\">The One Show — Shortlist</p>" +
         "<p class=\"case-study-line\">Pitchfork</p>" +
@@ -263,14 +256,13 @@ const PORTFOLIO_PROJECTS = [
   {
     id: "9",
     slug: "microsoft",
-    title: "Microsoft | Masks",
+    title: "Microsoft | Zune Arts",
     thumb: "thumbs/microsoft.webp",
     cardTags: "film, digital",
     tags: ["general", "tech"],
     vimeo: "https://vimeo.com/1186435131",
     detail: {
       bodyHTML:
-        '<p class="case-study-title">Microsoft | Masks</p>' +
         '<p class="case-study-line"><a href="https://adage.com/creativity/work/zune-arts/2960" target="_blank" rel="noopener noreferrer">Ad Age</a></p>' +
         '<p class="case-study-line"><a href="http://www.aicpshow.com/show/masks/" target="_blank" rel="noopener noreferrer">AICP</a></p>' +
         '<p class="case-study-line"><a href="http://www.annecy.org/about/archives/2008/official-selection/film-index:f20080749" target="_blank" rel="noopener noreferrer">Annecy Finalist</a></p>' +

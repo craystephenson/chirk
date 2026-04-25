@@ -471,11 +471,13 @@ main {
 
 .project-detail__title {
   margin: 0;
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 400;
   letter-spacing: 0.1em;
-  line-height: 1.35;
+  line-height: 1.5;
   max-width: 20em;
+  text-transform: uppercase;
+  color: #111;
 }
 
 .project-detail__body {
@@ -503,30 +505,33 @@ main {
   margin-bottom: 0;
 }
 
-/* Case study lede: project title, all-caps, not bold; meta lines; italic section headers */
-.project-detail__body--html .case-study-title {
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #111;
-  margin: 0 0 0.9em;
-}
-
+/* Case study: meta lines (awards, press) match body type; italic section headers */
 .project-detail__body--html .case-study-line {
-  font-size: 0.64rem;
-  line-height: 1.45;
-  margin: 0 0 0.45em;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  margin: 0 0 0.4em;
   color: #333;
   letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+/* Extra space after recognition / meta block, before first narrative or section */
+.project-detail__body--html p.case-study-line + p:not(.case-study-line) {
+  margin-top: 1.35em;
 }
 
 .project-detail__body--html p.case-study-sect,
 .project-detail__body--html p.case-study-sect--meta {
   margin: 0.95em 0 0.4em;
-  font-size: 0.64rem;
+  font-size: 0.72rem;
   color: #111;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+}
+
+/* After a run of .case-study-line, ensure space before the first *Insight* / *Idea* block */
+.project-detail__body--html p.case-study-line + p.case-study-sect,
+.project-detail__body--html p.case-study-line + p.case-study-sect--meta {
+  margin-top: 1.35em;
 }
 
 .project-detail__body--html p.case-study-sect i,

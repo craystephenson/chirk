@@ -8,6 +8,6 @@ Current assets (paths in projects.js):
   driving_disrupted.webp → Lexus | Driving Disrupted
   lexus_is_wax.webp     → Lexus | IS Wax (add this file if missing)
   engineered_for_fun.webp → Engineered For Fun
-  microsoft.webp        → Microsoft
+  microsoft.webp        → Microsoft | Zune Arts
 
 Size: ~1200×896 or 4:3; object-fit: cover. WebP, PNG, GIF, or JPG.

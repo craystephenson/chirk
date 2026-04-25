@@ -479,7 +479,6 @@ const PORTFOLIO_PROJECTS = [
       media: [{ type: "image", src: "thumbs/sistacade.jpg", alt: "Sistacade" }],
       stillsLabel: false,
       stills: [
-        { src: "stills/sistacade/1.jpg", alt: "Sistacade 1" },
         { src: "stills/sistacade/2.jpg", alt: "Sistacade 2" },
         { src: "stills/sistacade/3.jpg", alt: "Sistacade 3" },
         { src: "stills/sistacade/4.jpg", alt: "Sistacade 4" },

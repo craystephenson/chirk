@@ -11,12 +11,77 @@
   const gridEl = document.getElementById("work-grid");
   const filterRoot = document.getElementById("work-filters");
   const emptyEl = document.getElementById("work-empty");
+  const workIndexEl = document.getElementById("work-index");
+  const detailEl = document.getElementById("project-detail");
+  const navWork = document.getElementById("nav-work");
+  const elTitle = document.getElementById("project-detail-title");
+  const elBody = document.getElementById("project-detail-body");
+  const elAwards = document.getElementById("project-detail-awards");
+  const elContact = document.getElementById("project-detail-contact");
+  const elBack = document.getElementById("project-back");
+  const elStage = document.getElementById("project-stage");
+  const elThumbs = document.getElementById("project-thumbs");
+  const btnPrev = document.getElementById("project-slide-prev");
+  const btnNext = document.getElementById("project-slide-next");
+  const elVimeoCta = document.getElementById("project-vimeo-cta");
+  const elVimeoLink = document.getElementById("project-vimeo-link");
 
   if (!gridEl || !filterRoot) return;
 
+  const baseTitle = document.title;
   const thumbCache = new Map();
   const IMG_PLACEHOLDER =
     "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+  let currentSlide = 0;
+  let currentProject = null;
+  let currentMedia = [];
+
+  function vimeoIdFromUrl(url) {
+    const m = String(url).match(/vimeo\.com\/(?:.*\/)?(\d+)/);
+    return m ? m[1] : null;
+  }
+
+  function projectSlug(p) {
+    if (p.slug) return p.slug;
+    return "project-" + p.id;
+  }
+
+  function getProjectBySlug(slug) {
+    return projects.find((p) => projectSlug(p) === slug) || null;
+  }
+
+  function parseRoute() {
+    const h = location.hash || "";
+    const m = /^#\/project\/([^/]+)\/?$/.exec(h);
+    if (m) return { kind: "project", slug: decodeURIComponent(m[1]) };
+    const v = h.replace(/^#/, "").toLowerCase();
+    if (VIEWS.some((x) => x.id === v)) return { kind: "grid", view: v };
+    return { kind: "grid", view: "general" };
+  }
+
+  function lastView() {
+    return sessionStorage.getItem("portfolioLastView") || "general";
+  }
+
+  function workHash() {
+    return "#" + lastView();
+  }
+
+  function normalizeMediaItem(m) {
+    if (!m || !m.type) return null;
+    if (m.type === "vimeo" && m.url) return { type: "vimeo", url: m.url, alt: m.alt || "" };
+    if (m.type === "image" && m.src) return { type: "image", src: m.src, alt: m.alt || "" };
+    return null;
+  }
+
+  function normalizeMedia(p) {
+    const raw = p.detail && Array.isArray(p.detail.media) ? p.detail.media : [];
+    const list = raw.map(normalizeMediaItem).filter(Boolean);
+    if (list.length) return list;
+    if (p.vimeo) return [{ type: "vimeo", url: p.vimeo, alt: "" }];
+    return [];
+  }
 
   function normalizeTag(t) {
     return String(t || "")
@@ -25,19 +90,18 @@
   }
 
   function projectMatchesView(project, viewId) {
-    const tags = (project.tags || []).map(normalizeTag);
-    return tags.includes(viewId);
+    return (project.tags || []).map(normalizeTag).includes(viewId);
+  }
+
+  function getCurrentView() {
+    const r = parseRoute();
+    if (r.kind === "grid") return r.view;
+    return lastView();
   }
 
   function getFiltered() {
     const v = getCurrentView();
     return projects.filter((p) => projectMatchesView(p, v));
-  }
-
-  function getCurrentView() {
-    const h = (location.hash || "#general").replace(/^#/, "").toLowerCase();
-    if (VIEWS.some((x) => x.id === h)) return h;
-    return "general";
   }
 
   function setCurrentView(id) {
@@ -68,7 +132,7 @@
         const t1 = await tryVimeoOembed();
         if (t1) return t1;
       } catch {
-        /* try fallback */
+        /* */
       }
       try {
         return await tryNoembed();
@@ -92,74 +156,310 @@
       b.setAttribute("aria-pressed", v.id === current ? "true" : "false");
       b.setAttribute("data-view", v.id);
       b.textContent = v.label;
-      b.addEventListener("click", () => setCurrentView(v.id));
+      b.addEventListener("click", () => {
+        setCurrentView(v.id);
+        sessionStorage.setItem("portfolioLastView", v.id);
+      });
       filterRoot.appendChild(b);
     });
   }
 
+  function updateNavWorkLink() {
+    if (!navWork) return;
+    const r = parseRoute();
+    if (r.kind === "grid") {
+      navWork.setAttribute("href", "#" + r.view);
+      navWork.setAttribute("aria-current", "page");
+    } else {
+      navWork.setAttribute("href", workHash());
+      navWork.removeAttribute("aria-current");
+    }
+  }
+
+  function renderStage() {
+    elStage.innerHTML = "";
+    if (!currentMedia.length) {
+      const d = document.createElement("div");
+      d.className = "project-stage__empty";
+      d.textContent = "Add `detail.media` or a `vimeo` link in projects.js";
+      elStage.appendChild(d);
+      return;
+    }
+    const i = currentSlide % currentMedia.length;
+    const m = currentMedia[i];
+    if (m.type === "vimeo") {
+      const id = vimeoIdFromUrl(m.url);
+      if (id) {
+        const frame = document.createElement("div");
+        frame.className = "project-frame";
+        const iframe = document.createElement("iframe");
+        iframe.className = "project-frame__iframe";
+        iframe.src =
+          "https://player.vimeo.com/video/" + id + "?title=0&byline=0&portrait=0&dnt=1";
+        iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.title = (currentProject && currentProject.title) || "Vimeo";
+        frame.appendChild(iframe);
+        elStage.appendChild(frame);
+      } else {
+        const d = document.createElement("div");
+        d.className = "project-stage__empty";
+        d.textContent = "Invalid Vimeo URL";
+        elStage.appendChild(d);
+      }
+    } else {
+      const fig = document.createElement("div");
+      fig.className = "project-figure";
+      const img = document.createElement("img");
+      img.className = "project-figure__img";
+      img.src = m.src;
+      img.alt = m.alt || "";
+      img.width = 1600;
+      img.height = 900;
+      fig.appendChild(img);
+      elStage.appendChild(fig);
+    }
+  }
+
+  function renderThumbs() {
+    elThumbs.innerHTML = "";
+    if (currentMedia.length < 2) {
+      elThumbs.hidden = true;
+      return;
+    }
+    elThumbs.hidden = false;
+    currentMedia.forEach((m, i) => {
+      const t = document.createElement("button");
+      t.type = "button";
+      t.className = "project-thumb" + (i === currentSlide % currentMedia.length ? " project-thumb--active" : "");
+      t.setAttribute("role", "tab");
+      t.setAttribute("aria-selected", i === (currentSlide % currentMedia.length) ? "true" : "false");
+      t.setAttribute("aria-label", "Slide " + (i + 1));
+      if (m.type === "vimeo") {
+        const ph = document.createElement("div");
+        ph.className = "project-thumb__ph";
+        ph.textContent = "▶";
+        t.appendChild(ph);
+        fetchVimeoThumb(m.url).then((u) => {
+          if (u && ph.parentNode) {
+            const im = document.createElement("img");
+            im.className = "project-thumb__img";
+            im.src = u;
+            im.alt = "";
+            ph.replaceWith(im);
+          }
+        });
+      } else {
+        const im = document.createElement("img");
+        im.className = "project-thumb__img";
+        im.src = m.src;
+        im.alt = m.alt || "";
+        t.appendChild(im);
+      }
+      t.addEventListener("click", () => {
+        currentSlide = i;
+        syncGallery();
+      });
+      elThumbs.appendChild(t);
+    });
+  }
+
+  function syncGallery() {
+    const n = currentMedia.length;
+    if (n) {
+      while (currentSlide < 0) currentSlide += n;
+      currentSlide = currentSlide % n;
+    }
+    renderThumbs();
+    renderStage();
+  }
+
+  function mountProject(p) {
+    currentProject = p;
+    currentMedia = normalizeMedia(p);
+    currentSlide = 0;
+    if (elTitle) elTitle.textContent = p.title || "Project";
+
+    const d = p.detail;
+    if (d && d.body) {
+      elBody.textContent = d.body;
+      elBody.hidden = false;
+    } else {
+      elBody.textContent = "";
+      elBody.hidden = true;
+    }
+
+    if (d && d.awards && d.awards.length) {
+      elAwards.innerHTML = "";
+      d.awards.forEach((line) => {
+        const li = document.createElement("li");
+        li.textContent = line;
+        elAwards.appendChild(li);
+      });
+      elAwards.hidden = false;
+    } else {
+      elAwards.innerHTML = "";
+      elAwards.hidden = true;
+    }
+
+    const email = document.body.getAttribute("data-site-email") || "";
+    if (elContact) {
+      elContact.textContent = "";
+      if (email) {
+        elContact.hidden = false;
+        const a = document.createElement("a");
+        a.href = "mailto:" + email;
+        a.textContent = email;
+        elContact.append("Contact: ");
+        elContact.appendChild(a);
+      } else {
+        elContact.hidden = true;
+      }
+    }
+
+    if (p.vimeo && elVimeoCta && elVimeoLink) {
+      elVimeoCta.hidden = false;
+      elVimeoLink.href = p.vimeo;
+    } else if (elVimeoCta) {
+      elVimeoCta.hidden = true;
+    }
+
+    if (elBack) elBack.setAttribute("href", workHash());
+    const siteMatch = baseTitle.match(/—\s*(.+)$/);
+    const siteName = siteMatch ? siteMatch[1].trim() : baseTitle;
+    document.title = (p.title || "Project") + " — " + siteName;
+
+    syncGallery();
+  }
+
+  function unmountProject() {
+    currentProject = null;
+    currentMedia = [];
+    document.title = baseTitle;
+  }
+
+  function showDetail(slug) {
+    const p = getProjectBySlug(slug);
+    if (!p) {
+      location.hash = "#" + lastView();
+      return;
+    }
+    if (workIndexEl) workIndexEl.hidden = true;
+    if (detailEl) {
+      detailEl.hidden = false;
+    }
+    mountProject(p);
+    if (navWork) {
+      navWork.classList.add("nav__link--active");
+    }
+  }
+
+  function showGrid() {
+    if (detailEl) detailEl.hidden = true;
+    if (workIndexEl) workIndexEl.hidden = false;
+    unmountProject();
+    if (navWork) {
+      const r = parseRoute();
+      if (r.kind === "grid") {
+        navWork.classList.add("nav__link--active");
+      }
+    }
+  }
+
   function makeTile(project) {
-    const vimeo = project.vimeo;
-    const href = vimeo || "#";
+    const slug = projectSlug(project);
     const li = document.createElement("li");
     li.className = "work-grid__item";
     li.dataset.projectId = project.id;
 
     const a = document.createElement("a");
-    a.className = "work-tile work-tile--loading";
-    a.href = href;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    a.setAttribute("aria-label", (project.title || "Project") + " (opens Vimeo)");
+    a.className = "work-card work-card--loading";
+    a.href = "#/project/" + encodeURIComponent(slug);
+    a.setAttribute("aria-label", (project.title || "Project") + " — open case study");
+    a.addEventListener("click", function () {
+      const r = parseRoute();
+      if (r.kind === "grid") sessionStorage.setItem("portfolioLastView", r.view);
+    });
+
+    const vimeo = project.vimeo;
+    const cardImage = project.thumb || project.poster;
+
+    const media = document.createElement("div");
+    media.className = "work-card__media";
 
     const img = document.createElement("img");
-    img.className = "work-tile__img";
-    img.alt = project.title || "Video project";
-    img.width = 1600;
-    img.height = 1200;
-    const poster = project.poster;
-    if (poster) {
-      img.src = poster;
-      img.removeAttribute("loading");
-      a.classList.remove("work-tile--loading");
+    img.className = "work-card__img";
+    img.alt = project.title || "Project";
+    img.width = 1200;
+    img.height = 896;
+    img.decoding = "async";
+    img.loading = "lazy";
+
+    function loadVimeoThumbOrEmpty() {
+      img.src = IMG_PLACEHOLDER;
+      if (vimeo) {
+        fetchVimeoThumb(vimeo).then((url) => {
+          if (url) {
+            img.src = url;
+            a.classList.remove("work-card--loading");
+            a.classList.remove("work-card--no-thumb");
+          } else {
+            a.classList.remove("work-card--loading");
+            a.classList.add("work-card--no-thumb");
+          }
+        });
+      } else {
+        a.classList.remove("work-card--loading");
+        a.classList.add("work-card--no-thumb");
+      }
+    }
+
+    if (cardImage) {
+      img.src = cardImage;
+      img.addEventListener(
+        "load",
+        function onCardLoad() {
+          img.removeEventListener("load", onCardLoad);
+          a.classList.remove("work-card--loading");
+        },
+        { once: true }
+      );
+      img.addEventListener(
+        "error",
+        function onCardError() {
+          img.removeEventListener("error", onCardError);
+          loadVimeoThumbOrEmpty();
+        },
+        { once: true }
+      );
     } else {
       img.src = IMG_PLACEHOLDER;
-      img.decoding = "async";
+      loadVimeoThumbOrEmpty();
     }
 
-    const overlay = document.createElement("span");
-    overlay.className = "work-tile__overlay";
-    const title = document.createElement("span");
-    title.className = "work-tile__title";
+    const meta = document.createElement("div");
+    meta.className = "work-card__meta";
+    const title = document.createElement("p");
+    title.className = "work-card__title";
     title.textContent = project.title || "Untitled";
-    const hint = document.createElement("span");
-    hint.className = "work-tile__hint";
-    hint.textContent = "— view on vimeo —";
-    overlay.appendChild(title);
-    overlay.appendChild(hint);
-
-    a.appendChild(img);
-    a.appendChild(overlay);
-    li.appendChild(a);
-
-    if (!poster && vimeo) {
-      fetchVimeoThumb(vimeo).then((url) => {
-        if (url) {
-          img.src = url;
-          a.classList.remove("work-tile--loading");
-        } else {
-          a.classList.remove("work-tile--loading");
-          a.classList.add("work-tile--no-thumb");
-        }
-      });
-    } else if (!poster && !vimeo) {
-      a.classList.remove("work-tile--loading");
-      a.classList.add("work-tile--no-thumb");
+    meta.appendChild(title);
+    const tagLine = project.cardTags || project.cardLabel || "";
+    if (tagLine) {
+      const tags = document.createElement("p");
+      tags.className = "work-card__tags";
+      tags.textContent = tagLine;
+      meta.appendChild(tags);
     }
+
+    media.appendChild(img);
+    a.appendChild(media);
+    a.appendChild(meta);
+    li.appendChild(a);
 
     return li;
   }
 
-  function render() {
+  function renderGrid() {
     buildFilterButtons();
     const list = getFiltered();
     gridEl.innerHTML = "";
@@ -173,10 +473,53 @@
     gridEl.appendChild(frag);
   }
 
-  function onHash() {
-    render();
+  function onRoute() {
+    updateNavWorkLink();
+    const r = parseRoute();
+    if (r.kind === "project") {
+      showDetail(r.slug);
+    } else {
+      if (r.kind === "grid") {
+        sessionStorage.setItem("portfolioLastView", r.view);
+      }
+      showGrid();
+      renderGrid();
+    }
   }
 
-  window.addEventListener("hashchange", onHash);
-  onHash();
+  if (btnPrev) {
+    btnPrev.addEventListener("click", () => {
+      if (!currentMedia.length) return;
+      currentSlide -= 1;
+      syncGallery();
+    });
+  }
+  if (btnNext) {
+    btnNext.addEventListener("click", () => {
+      if (!currentMedia.length) return;
+      currentSlide += 1;
+      syncGallery();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (detailEl && !detailEl.hidden) {
+      if (e.key === "ArrowLeft" && currentMedia.length) {
+        e.preventDefault();
+        currentSlide -= 1;
+        syncGallery();
+      }
+      if (e.key === "ArrowRight" && currentMedia.length) {
+        e.preventDefault();
+        currentSlide += 1;
+        syncGallery();
+      }
+      if (e.key === "Escape") {
+        location.hash = workHash();
+      }
+    }
+  });
+
+  window.addEventListener("hashchange", onRoute);
+  onRoute();
 })();

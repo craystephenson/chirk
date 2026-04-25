@@ -1,0 +1,13 @@
+Current assets (paths in projects.js):
+
+  keep_dreaming.webp     → Honda
+  dream_generator.gif   → Honda Dream Generator
+  dream_phone.webp      → The Dream Phone
+  gamers_is.webp        → Lexus | Gamers' IS
+  grammys.webp          → GRAMMYs
+  driving_disrupted.webp → Lexus | Driving Disrupted
+  lexus_is_wax.webp     → Lexus | IS Wax (add this file if missing)
+  engineered_for_fun.webp → Engineered For Fun
+  microsoft.webp        → Microsoft
+
+Size: ~1200×896 or 4:3; object-fit: cover. WebP, PNG, GIF, or JPG.

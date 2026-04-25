@@ -98,6 +98,8 @@ const PORTFOLIO_PROJECTS = [
         { src: "stills/honda-dream-generator/10_controlnet+loras.gif", alt: "Honda Dream Generator — ControlNet + LoRAs 10" },
         { src: "stills/honda-dream-generator/11_controlnet+loras.png", alt: "Honda Dream Generator — ControlNet + LoRAs 11" },
         { src: "stills/honda-dream-generator/12_controlnet+loras.gif", alt: "Honda Dream Generator — ControlNet + LoRAs 12" },
+        { section: "Case study board" },
+        { src: "stills/honda-dream-generator/1_case_study_board.webp", alt: "Honda Dream Generator — case study board" },
       ],
     },
   },
@@ -111,23 +113,24 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/1171158209",
     detail: {
       bodyHTML:
-        "<p><i>A Raspberry Pi–powered rotary phone that uses real-time voice AI and modular persona prompts to let you call the past—delivering modern intelligence through a perfectly preserved analog illusion.</i></p>" +
-        "<p>The rotary phone.</p>" +
-        "<p>If you grew up with one, then it probably conjures up a certain feeling. When you pick up the handle, turn the dial and listen to the clicks, there is a warmth, a familiarity. But today, it is nothing more than a link to the past. And the voice on the other end has long since grown silent.</p>" +
-        "<p>So I set out to breathe new life into the rotary phone. And to bring back voices that no telephone wire could reach before ...</p>" +
-        "<p>The Dream Phone crosses the great divide to connect us with dreamers and innovators whose voices have also grown silent.</p>" +
-        "<p>Soichiro Honda.<br>Steve Jobs.<br>John Lennon.<br>Jesse Owens.</p>" +
-        "<p>The Dream Phone directory goes on and on.</p>" +
-        "<p>It works just like the rotary phone you maybe had as a child. Only instead of dialing seven digits, you dial four. The four numbers that make up the year that your dreamer left this earth.</p>" +
-        "<p>For instance, to reach Steve Jobs, dial #2011.</p>" +
-        "<p>Then hold on.</p>" +
-        "<p>Because if you knew—or know—Steve Jobs, he can be demanding.<br>And Lennon can be dry and witty.<br>And Soichiro Honda can be inspiring.<br>Same with Owens.</p>" +
-        "<p>Each dreamer you connect with has the same personality and voice you remember.</p>" +
-        "<p>And because it's coming through a rotary phone—analogue and true—you just might forget that it's all just a dream. And for a few seconds, that divide between the past and present vanishes.</p>" +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/1171158209?title=0&byline=0&portrait=0" title="The Dream Phone — demo" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
-        '<p class="case-study-sect"><i>The tech</i></p>' +
+        "<p>Visionaries like Steve Jobs, Soichiro Honda, and John Lennon once inspired the world.</p>" +
+        "<p>What if their voices could return—so convincingly, they inspire you all over again?</p>" +
+        "<p>The Dream Phone closes the gap between illusion and reality by connecting you with the unmistakable voices and personalities of history&rsquo;s greatest dreamers through an actual Western Electric rotary phone. A device so warm and familiar, the voice on the other end has to be real.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/1171158209" }],
+      stills: [
+        { section: "Build" },
+        { src: "stills/the-dream-phone/1_build.jpeg", alt: "The Dream Phone — build 1" },
+        { src: "stills/the-dream-phone/2_build.jpeg", alt: "The Dream Phone — build 2" },
+        { src: "stills/the-dream-phone/3_build.jpeg", alt: "The Dream Phone — build 3" },
+        { src: "stills/the-dream-phone/4_build.jpg", alt: "The Dream Phone — build 4" },
+        { src: "stills/the-dream-phone/5_build.jpeg", alt: "The Dream Phone — build 5" },
+        { section: "Admin" },
+        { src: "stills/the-dream-phone/1_admin.png", alt: "The Dream Phone — admin" },
+      ],
+      stillsLabel: "Build & admin",
+      railHTML:
+        '<div class="project-detail__body project-detail__body--html">' +
+        '<p class="case-study-sect"><i>THE TECH</i></p>' +
         "<p><i>Hardware</i></p>" +
         "<p>Raspberry Pi Zero 2 W — the brain inside the phone<br>" +
         "Rotary dial + hook switch — physical input system<br>" +
@@ -145,16 +148,15 @@ const PORTFOLIO_PROJECTS = [
         "<p>Text-based personality files (personality.txt) per caller<br>" +
         "Modular inserts (micro-lines, triggered dynamically)<br>" +
         "Knowledge constraints (e.g., stops at year of death)<br>" +
-        "Recognition logic (“Who’s calling?” → personalized response)</p>" +
+        "Recognition logic (&ldquo;Who&rsquo;s calling?&rdquo; &rarr; personalized response)</p>" +
         "<p>👉 Vibe-coded admin page hosted on Cloudflare, enabling admin to add and adjust personas. Pushed and pulled from a GitHub repo.</p>" +
         "<p><i>Experience Layer (The Magic)</i></p>" +
         "<p>Rotary dialing = input (year of death)<br>" +
-        "Ring → pickup → voice appears<br>" +
+        "Ring &rarr; pickup &rarr; voice appears<br>" +
         "Real-time, unscripted conversation<br>" +
         "Delivered through analog hardware</p>" +
-        "<p>👉 The trick: modern AI hidden inside a completely analog interaction</p>",
-      media: [{ type: "image", src: "thumbs/dream_phone.webp", alt: "The Dream Phone" }],
-      stills: [],
+        "<p>👉 The trick: modern AI hidden inside a completely analog interaction</p>" +
+        "</div>",
     },
   },
   {
@@ -340,8 +342,13 @@ const PORTFOLIO_PROJECTS = [
         "<p>To drive awareness, my partner and I led an artist program centered on sharing and friendship—collaborating and concepting with culture-shaping artists including Steve Niles and FriendsWithYou.</p>" +
         "<p>Intense, challenging, and one of the most rewarding projects I’ve worked on.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/1186435131" }],
-      stills: [],
+      stills: [
+        { section: "PLATFORM" },
+        { src: "stills/microsoft/1_site.png", alt: "Zune Arts — site" },
+      ],
+      stillsLabel: false,
       railHTML:
+        '<p class="project-rail-h">FILMS</p>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/19449868?title=0&byline=0&portrait=0" title="Laika" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
@@ -358,16 +365,10 @@ const PORTFOLIO_PROJECTS = [
         'src="https://player.vimeo.com/video/20121995?title=0&byline=0&portrait=0" title="The Lost Ones — behind the scenes" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
         '<p class="project-rail-h">Graphic novel</p>' +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/20121977?title=0&byline=0&portrait=0" title="The Lost Ones — graphic novel trailer" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/1_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 1" /></div>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/2_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 2" /></div>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/3_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 3" /></div>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/4_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 4" /></div>' +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/20121995?title=0&byline=0&portrait=0" title="The Lost Ones — behind the scenes" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
         '<p class="project-rail-h">Promos</p>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/1_promo.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Zune Arts promo 1" /></div>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/2_promos.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Zune Arts promo 2" /></div>' +

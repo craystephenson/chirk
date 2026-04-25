@@ -514,7 +514,7 @@ main {
 
 .project-detail__body--html p.case-study-sect,
 .project-detail__body--html p.case-study-sect--meta {
-  margin: 0.95em 0 0.4em;
+  margin: 1.9em 0 0.4em;
   font-size: 0.72rem;
   color: #111;
   letter-spacing: 0.02em;
@@ -523,7 +523,7 @@ main {
 /* After a run of .case-study-line, ensure space before the first *Insight* / *Idea* block */
 .project-detail__body--html p.case-study-line + p.case-study-sect,
 .project-detail__body--html p.case-study-line + p.case-study-sect--meta {
-  margin-top: 1.35em;
+  margin-top: 2.2em;
 }
 
 .project-detail__body--html p.case-study-sect i,
@@ -722,12 +722,12 @@ main {
 }
 
 .project-stills__section {
-  margin: 1.25rem 0 0.35rem;
+  margin: 0 0 0.35rem;
   width: 100%;
 }
 
-.project-stills__section:first-child {
-  margin-top: 0;
+.project-stills__section:not(:first-child) {
+  margin-top: 2.5rem;
 }
 
 .project-stills__section-title {
@@ -741,7 +741,7 @@ main {
 }
 
 .project-stills__subsection {
-  margin: 0.85rem 0 0.25rem;
+  margin: 1.7rem 0 0.25rem;
   width: 100%;
 }
 
@@ -837,7 +837,7 @@ main {
 }
 
 .project-rail-extra .project-rail-h {
-  margin: 1.15em 0 0.5rem;
+  margin: 2.2em 0 0.5rem;
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -846,7 +846,7 @@ main {
 }
 
 .project-rail-extra .project-rail-h:first-child {
-  margin-top: 0;
+  margin-top: 1.75rem;
 }
 
 .project-rail-extra .project-rail__figure {

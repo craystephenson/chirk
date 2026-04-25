@@ -279,7 +279,25 @@ const PORTFOLIO_PROJECTS = [
         "<p class=\"case-study-sect\"><i>Results</i></p>" +
         "<p>224.7 million earned media impressions, with coverage in marketing, automotive, and lifestyle media including MediaPost, Car and Driver, Luxury Daily, Jalopnik, and 360 Magazine.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/716637087" }],
-      stills: [],
+      stillsLabel: false,
+      stills: [
+        { src: "stills/lexus-driving-disrupted/1a.png", alt: "Lexus | Driving Disrupted — 1" },
+        { src: "stills/lexus-driving-disrupted/1b.png", alt: "Lexus | Driving Disrupted — 2" },
+        { src: "stills/lexus-driving-disrupted/1c.png", alt: "Lexus | Driving Disrupted — 3" },
+        { src: "stills/lexus-driving-disrupted/2b.png", alt: "Lexus | Driving Disrupted — 4" },
+        { src: "stills/lexus-driving-disrupted/3.png", alt: "Lexus | Driving Disrupted — 5" },
+        { src: "stills/lexus-driving-disrupted/4.png", alt: "Lexus | Driving Disrupted — 6" },
+        { src: "stills/lexus-driving-disrupted/5.png", alt: "Lexus | Driving Disrupted — 7" },
+        { src: "stills/lexus-driving-disrupted/5b.png", alt: "Lexus | Driving Disrupted — 8" },
+        { src: "stills/lexus-driving-disrupted/6a.png", alt: "Lexus | Driving Disrupted — 9" },
+        { src: "stills/lexus-driving-disrupted/6b.png", alt: "Lexus | Driving Disrupted — 10" },
+        { src: "stills/lexus-driving-disrupted/7a.png", alt: "Lexus | Driving Disrupted — 11" },
+        { src: "stills/lexus-driving-disrupted/7b.png", alt: "Lexus | Driving Disrupted — 12" },
+        { src: "stills/lexus-driving-disrupted/8.png", alt: "Lexus | Driving Disrupted — 13" },
+        { src: "stills/lexus-driving-disrupted/9.png", alt: "Lexus | Driving Disrupted — 14" },
+        { src: "stills/lexus-driving-disrupted/10.png", alt: "Lexus | Driving Disrupted — 15" },
+        { src: "stills/lexus-driving-disrupted/11.png", alt: "Lexus | Driving Disrupted — 16" },
+      ],
     },
   },
   {
@@ -451,7 +469,7 @@ const PORTFOLIO_PROJECTS = [
   {
     id: "10",
     slug: "chingon-pong",
-    title: "Chingon Pong",
+    title: "¡Chingón Pong!",
     thumb: "thumbs/four_corners_brewing.png",
     cardTags: "arcade, interactive, beer",
     tags: ["general", "tech"],
@@ -469,11 +487,11 @@ const PORTFOLIO_PROJECTS = [
         "Arduino handled inputs, scoring, and timing<br>" +
         "Raspberry Pi drove visuals, animations, and sound</p>",
       media: [
-        { type: "vimeo", url: "https://vimeo.com/296117526", alt: "Chingon Pong — case study" },
+        { type: "vimeo", url: "https://vimeo.com/296117526", alt: "¡Chingón Pong! — case study" },
       ],
       stillsLabel: false,
       stills: [
-        { src: "stills/four-corners-brewing/four-corners-brewing.jpg", alt: "Chingon Pong" },
+        { src: "stills/four-corners-brewing/four-corners-brewing.jpg", alt: "¡Chingón Pong!" },
       ],
     },
   },

@@ -191,9 +191,12 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="https://www.adforum.com/creative-work/ad/player/34686990/keep-dreaming/honda" target="_blank" rel="noopener noreferrer">AdForum — Honda &ldquo;Keep Dreaming&rdquo;</a></p>' +
         "<p class=\"case-study-line\">Ads of the World</p>" +
         "<p class=\"case-study-line\">LA Addy Awards: Gold</p>" +
-        "<p>When Honda announced they would be carbon neutral by 2050, you might think, yeah, right, keep dreaming—just another car company jumping on the sustainability bandwagon. But the reality is, Honda has been setting the bar for lowering emissions since day one.</p>" +
-        "<p>So to prove their commitment, we worked with the directorial duo powerhouse Smith and Foulkes to create a spiraling sixty-second first-person journey through nearly a dozen past, present and future Honda breakthroughs in the pursuit of carbon neutrality. Employing an ambitious VFX strategy that included CG, miniatures, animation, illustration, green screen, CAD, and AI.</p>" +
-        "<p>Proving that to achieve something as ambitious as carbon neutrality, you have to keep dreaming.</p>",
+        "<p>When Honda announced its goal to be carbon neutral by 2050, skeptics could have said, &ldquo;Keep dreaming.&rdquo;</p>" +
+        "<p>So we leaned into that.</p>" +
+        "<p>Working with Smith &amp; Foulkes, we created a spiraling first-person journey through Honda&rsquo;s past, present, and future breakthroughs in lower-emissions innovation.</p>" +
+        "<p>CG. Miniatures. Animation. Illustration. Green screen. CAD. AI.</p>" +
+        "<p>All to prove one thing:</p>" +
+        "<p>To achieve something as ambitious as carbon neutrality, you have to keep dreaming.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/884917302" }],
       stills: [
         { src: "stills/honda/PROLOGUE_SCREENGRAB_0000_Layer+Comp+1.webp", alt: "Honda Keep Dreaming prologue 1" },

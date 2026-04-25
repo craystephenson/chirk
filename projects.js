@@ -390,23 +390,18 @@ const PORTFOLIO_PROJECTS = [
         "<p>The Zune music player let people share music wirelessly—pretty radical at the time.</p>" +
         "<p>To drive awareness, my partner and I led an artist program centered on sharing and friendship—collaborating and concepting with culture-shaping artists including Steve Niles and FriendsWithYou.</p>" +
         "<p>Intense, challenging, and one of the most rewarding projects I’ve worked on.</p>",
-      media: [{ type: "vimeo", url: "https://vimeo.com/1186435131" }],
+      media: [
+        { type: "vimeo", url: "https://vimeo.com/1186435131", alt: "Zune Arts — case study" },
+        { type: "vimeo", url: "https://vimeo.com/19449868", alt: "Zune Arts — Laika" },
+        { type: "vimeo", url: "https://vimeo.com/19539791", alt: "Zune Arts — Le Cadeau du Temps" },
+        { type: "vimeo", url: "https://vimeo.com/19445552", alt: "Zune Arts — Piece of Me, Piece of You" },
+      ],
       stills: [
         { section: "PLATFORM" },
         { src: "stills/microsoft/1_site.png", alt: "Zune Arts — site" },
       ],
       stillsLabel: false,
       railHTML:
-        '<p class="project-rail-h">FILMS</p>' +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/19449868?title=0&byline=0&portrait=0" title="Laika" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/19539791?title=0&byline=0&portrait=0" title="Le Cadeau du Temps" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/19445552?title=0&byline=0&portrait=0" title="Piece of Me, Piece of You" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
         '<p class="project-rail-h">Graphic novel</p>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/1_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 1" /></div>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/2_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 2" /></div>' +
@@ -428,12 +423,13 @@ const PORTFOLIO_PROJECTS = [
     id: "14",
     slug: "lexus-immersive-sonic-challenge",
     title: "Lexus | Immersive Sonic Challenge",
-    thumb: "thumbs/lexus_immersive_sonic.jpg",
+    thumb: "thumbs/lexus_immersive_sonic.webp",
     cardTags: "experiential",
     tags: ["general", "tech"],
     vimeo: "https://vimeo.com/190389606",
     detail: {
       bodyHTML:
+        '<p class="case-study-line"><a href="https://www.adsoftheworld.com/campaigns/immersive-sonic-challenge" target="_blank" rel="noopener noreferrer">Ads of the World</a></p>' +
         "<p><i>Fun fact:</i> When people think Lexus, they don&rsquo;t always think high-performance. So we set out to change that with a groundbreaking, hyper-real 9.1 sonic experience.</p>" +
         "<p>We invited auto enthusiasts into a high-decibel mobile surround-sound booth and challenged them to identify a mystery performance car by sound alone.</p>" +
         "<p>Some guessed Lamborghini.<br>Others guessed Ferrari, Maserati, or Porsche.</p>" +
@@ -446,7 +442,7 @@ const PORTFOLIO_PROJECTS = [
       ],
       stillsLabel: false,
       stills: [
-        { section: "Dolby Atmos®" },
+        { section: "Dolby Atmos® Cinema Ad" },
         {
           vimeo: "https://vimeo.com/222100963",
           vimeoTitle: "Lexus — Atmos cinema ad",
@@ -495,6 +491,10 @@ const PORTFOLIO_PROJECTS = [
       ],
       stillsLabel: false,
       stills: [
+        { src: "stills/four-corners-brewing/1.png", alt: "¡Chingón Pong! 1" },
+        { src: "stills/four-corners-brewing/2.jpg", alt: "¡Chingón Pong! 2" },
+        { src: "stills/four-corners-brewing/3.gif", alt: "¡Chingón Pong! 3" },
+        { src: "stills/four-corners-brewing/4.png", alt: "¡Chingón Pong! 4" },
         { src: "stills/four-corners-brewing/four-corners-brewing.jpg", alt: "¡Chingón Pong!" },
       ],
     },

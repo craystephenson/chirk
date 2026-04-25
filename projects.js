@@ -458,15 +458,36 @@ const PORTFOLIO_PROJECTS = [
       media: [{ type: "image", src: "thumbs/four_corners_brewing.png", alt: "Four Corners Brewing" }],
       stillsLabel: false,
       stills: [
-        { src: "stills/sistacade/1.jpg", alt: "Four Corners Brewing — Sistacade 1" },
-        { src: "stills/sistacade/2.jpg", alt: "Four Corners Brewing — Sistacade 2" },
-        { src: "stills/sistacade/3.jpg", alt: "Four Corners Brewing — Sistacade 3" },
-        { src: "stills/sistacade/4.jpg", alt: "Four Corners Brewing — Sistacade 4" },
-        { src: "stills/sistacade/5.jpg", alt: "Four Corners Brewing — Sistacade 5" },
-        { src: "stills/sistacade/6.jpg", alt: "Four Corners Brewing — Sistacade 6" },
-        { src: "stills/sistacade/7.jpg", alt: "Four Corners Brewing — Sistacade 7" },
-        { src: "stills/sistacade/8.jpg", alt: "Four Corners Brewing — Sistacade 8" },
-        { src: "stills/sistacade/9.jpg", alt: "Four Corners Brewing — Sistacade 9" },
+        { src: "stills/four-corners-brewing/four-corners-brewing.jpg", alt: "Four Corners Brewing" },
+      ],
+    },
+  },
+  {
+    id: "16",
+    slug: "sistacade",
+    title: "Sistacade",
+    thumb: "thumbs/sistacade.jpg",
+    cardTags: "arcade, personal",
+    tags: ["general"],
+    vimeo: "",
+    detail: {
+      bodyHTML:
+        "<p>I made my daughters an arcade game.</p>" +
+        "<p>OK, I made it for me too.</p>" +
+        "<p>The concept is Sistacade&mdash;each sister reimagined through the art of her favorite game.</p>" +
+        "<p>#8bitSiblingRivalry #GameOn #ᗧ•••ᗣ•••</p>",
+      media: [{ type: "image", src: "thumbs/sistacade.jpg", alt: "Sistacade" }],
+      stillsLabel: false,
+      stills: [
+        { src: "stills/sistacade/1.jpg", alt: "Sistacade 1" },
+        { src: "stills/sistacade/2.jpg", alt: "Sistacade 2" },
+        { src: "stills/sistacade/3.jpg", alt: "Sistacade 3" },
+        { src: "stills/sistacade/4.jpg", alt: "Sistacade 4" },
+        { src: "stills/sistacade/5.jpg", alt: "Sistacade 5" },
+        { src: "stills/sistacade/6.jpg", alt: "Sistacade 6" },
+        { src: "stills/sistacade/7.jpg", alt: "Sistacade 7" },
+        { src: "stills/sistacade/8.jpg", alt: "Sistacade 8" },
+        { src: "stills/sistacade/9.jpg", alt: "Sistacade 9" },
       ],
     },
   },

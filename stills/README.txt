@@ -2,7 +2,8 @@ Case-study stills (not homepage thumbs).
 
   stills/honda/                        → Honda | Keep Dreaming
   stills/grammys/                      → GRAMMYs
-  stills/four-corners-brewing/         → Four Corners Brewing
+  stills/four-corners-brewing/         → Four Corners Brewing (other assets)
+  stills/sistacade/                    → Four Corners Brewing — Sistacade (case-study stills 1–9)
   stills/lexus-december-to-remember/   → Lexus | December to Remember
   stills/richards-group-holiday-card/  → The Richards Group
   stills/carol-o-matic/                → Carol-O-Matic Singing Machine

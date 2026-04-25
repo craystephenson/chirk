@@ -456,7 +456,18 @@ const PORTFOLIO_PROJECTS = [
     detail: {
       bodyHTML: "<p>Case study in progress.</p>",
       media: [{ type: "image", src: "thumbs/four_corners_brewing.png", alt: "Four Corners Brewing" }],
-      stills: [],
+      stillsLabel: false,
+      stills: [
+        { src: "stills/sistacade/1.jpg", alt: "Four Corners Brewing — Sistacade 1" },
+        { src: "stills/sistacade/2.jpg", alt: "Four Corners Brewing — Sistacade 2" },
+        { src: "stills/sistacade/3.jpg", alt: "Four Corners Brewing — Sistacade 3" },
+        { src: "stills/sistacade/4.jpg", alt: "Four Corners Brewing — Sistacade 4" },
+        { src: "stills/sistacade/5.jpg", alt: "Four Corners Brewing — Sistacade 5" },
+        { src: "stills/sistacade/6.jpg", alt: "Four Corners Brewing — Sistacade 6" },
+        { src: "stills/sistacade/7.jpg", alt: "Four Corners Brewing — Sistacade 7" },
+        { src: "stills/sistacade/8.jpg", alt: "Four Corners Brewing — Sistacade 8" },
+        { src: "stills/sistacade/9.jpg", alt: "Four Corners Brewing — Sistacade 9" },
+      ],
     },
   },
   {

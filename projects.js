@@ -9,6 +9,7 @@
  * Optional: detail.stageHeading — short label above the hero player (e.g. Dolby Atmos®).
  * Optional: detail.railHTML — HTML in the right column below stills (e.g. extra Vimeo embeds).
  * Optional: detail.stillsLabel — set to false to hide the “Stills” heading, or a string to replace it.
+ * Optional: detail.mediaImageObjectFit — e.g. "contain" for image-only stage slideshows (full image visible in 16:9 frame).
  * Optional stills row: { section: "SITE" } or { subSection: "References" } (headings, no image).
  * Or { vimeo: "https://vimeo.com/…", vimeoTitle?: "…" } for an embed in the stills column.
  */
@@ -386,7 +387,7 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="http://creativity-online.com/work/zune-laika/2551" target="_blank" rel="noopener noreferrer">Creativity</a></p>' +
         "<p class=\"case-study-line\">MoMA</p>" +
         "<p class=\"case-study-line\">One Show</p>" +
-        "<p>Zune let people share music wirelessly—pretty radical at the time.</p>" +
+        "<p>The Zune music player let people share music wirelessly—pretty radical at the time.</p>" +
         "<p>To drive awareness, my partner and I led an artist program centered on sharing and friendship—collaborating and concepting with culture-shaping artists including Steve Niles and FriendsWithYou.</p>" +
         "<p>Intense, challenging, and one of the most rewarding projects I’ve worked on.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/1186435131" }],
@@ -432,7 +433,6 @@ const PORTFOLIO_PROJECTS = [
     tags: ["general", "tech"],
     vimeo: "https://vimeo.com/190389606",
     detail: {
-      stageHeading: "Dolby Atmos®",
       bodyHTML:
         "<p><i>Fun fact:</i> When people think Lexus, they don&rsquo;t always think high-performance. So we set out to change that with a groundbreaking, hyper-real 9.1 sonic experience.</p>" +
         "<p>We invited auto enthusiasts into a high-decibel mobile surround-sound booth and challenged them to identify a mystery performance car by sound alone.</p>" +
@@ -443,10 +443,14 @@ const PORTFOLIO_PROJECTS = [
         "<p>The result: a wave of enthusiast press that helped make performance fans rethink what Lexus could sound like.</p>",
       media: [
         { type: "vimeo", url: "https://vimeo.com/190389606", alt: "Lexus — Immersive Sonic Challenge, case study" },
-        { type: "vimeo", url: "https://vimeo.com/222100963", alt: "Lexus — Atmos cinema ad" },
       ],
       stillsLabel: false,
       stills: [
+        { section: "Dolby Atmos®" },
+        {
+          vimeo: "https://vimeo.com/222100963",
+          vimeoTitle: "Lexus — Atmos cinema ad",
+        },
         { section: "Experience" },
         { src: "stills/lexus-immersive-sonic-challenge/1.png", alt: "Immersive Sonic Challenge 1" },
         { src: "stills/lexus-immersive-sonic-challenge/2.gif", alt: "Immersive Sonic Challenge 2" },
@@ -559,23 +563,58 @@ const PORTFOLIO_PROJECTS = [
     tags: ["general"],
     vimeo: "",
     detail: {
-      bodyHTML: "<p>Case study in progress.</p>",
-      media: [{ type: "image", src: "thumbs/richards_group_holiday.jpg", alt: "The Richards Group holiday card" }],
+      bodyHTML:
+        '<p class="case-study-line">One Show Merit</p>' +
+        "<p>Belief in Santa was on the decline.</p>" +
+        "<p>So my partner Kevin and I created a holiday card disguised as an ad campaign&mdash;to get people to believe again.</p>",
+      mediaImageObjectFit: "contain",
+      media: [
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_01.jpg", alt: "The Richards Group holiday card — page 1" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_02.jpg", alt: "The Richards Group holiday card — page 2" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_03.jpg", alt: "The Richards Group holiday card — page 3" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_04.jpg", alt: "The Richards Group holiday card — page 4" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_05.jpg", alt: "The Richards Group holiday card — page 5" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_06.jpg", alt: "The Richards Group holiday card — page 6" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_07.jpg", alt: "The Richards Group holiday card — page 7" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_08.jpg", alt: "The Richards Group holiday card — page 8" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_09.jpg", alt: "The Richards Group holiday card — page 9" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_10.jpg", alt: "The Richards Group holiday card — page 10" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_11.jpg", alt: "The Richards Group holiday card — page 11" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_12.jpg", alt: "The Richards Group holiday card — page 12" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_13.jpg", alt: "The Richards Group holiday card — page 13" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_14.jpg", alt: "The Richards Group holiday card — page 14" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_15.jpg", alt: "The Richards Group holiday card — page 15" },
+        { type: "image", src: "stills/richards-group-holiday-card/trg_card_Page_16.jpg", alt: "The Richards Group holiday card — page 16" },
+      ],
+      stillsLabel: false,
       stills: [],
     },
   },
   {
     id: "13",
     slug: "carol-o-matic",
-    title: "Carol-O-Matic Singing Machine",
+    title: "Carol-O-Matic",
     thumb: "thumbs/carol_o_matic.png",
-    cardTags: "mobile web app",
+    cardTags: "holiday, web app",
     tags: ["general", "tech"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/115999951",
     detail: {
-      bodyHTML: "<p>Case study in progress.</p>",
-      media: [{ type: "image", src: "thumbs/carol_o_matic.png", alt: "Carol-O-Matic Singing Machine" }],
+      bodyHTML:
+        "<p>Each year, Team One uses technology to make the holidays a little more fun.</p>" +
+        "<p>For this Happy Technolidays experience, we eliminated the pain of holiday pitchiness with Carol-O-Matic&mdash;a web app that let friends sing in perfect four-part harmony.</p>" +
+        "<p>No rehearsal required.</p>" +
+        "<p>AgencySpy named it one of the best agency holiday cards.</p>" +
+        "<p>More importantly, my kids liked it.</p>",
+      media: [
+        { type: "vimeo", url: "https://vimeo.com/115999951", alt: "Carol-O-Matic — video" },
+      ],
+      stillsLabel: false,
       stills: [],
+      railHTML:
+        '<p class="project-rail-h">Kids&rsquo; Version</p>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://www.youtube.com/embed/TT5C_0SsrTA" title="Carol-O-Matic — Kids&rsquo; Version" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>',
     },
   },
   {

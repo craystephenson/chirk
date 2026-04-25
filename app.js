@@ -225,6 +225,14 @@
       img.alt = m.alt || "";
       img.width = 1600;
       img.height = 900;
+      const d = currentProject && currentProject.detail;
+      const fit =
+        d &&
+        typeof d.mediaImageObjectFit === "string" &&
+        d.mediaImageObjectFit.trim();
+      if (fit) {
+        img.style.objectFit = fit.trim();
+      }
       fig.appendChild(img);
       elStage.appendChild(fig);
     }

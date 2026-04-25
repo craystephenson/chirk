@@ -755,6 +755,20 @@ main {
   line-height: 1.35;
 }
 
+/* Dream Phone TECH block in rail — same band as stills section titles (Build, etc.) */
+.project-rail-extra .project-stills__section--in-rail {
+  margin: 1.5rem 0 0.35rem;
+  width: 100%;
+}
+
+.project-rail-extra .project-stills__section--in-rail + p.phone-tech-h {
+  margin-top: 0.4rem;
+}
+
+.project-rail-extra .project-detail__body--html p + p.phone-tech-h {
+  margin-top: 2.4em;
+}
+
 .project-stills__grid {
   display: flex;
   flex-direction: column;

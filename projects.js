@@ -12,38 +12,6 @@
  */
 const PORTFOLIO_PROJECTS = [
   {
-    id: "1",
-    slug: "honda",
-    title: "Honda | Keep Dreaming",
-    thumb: "thumbs/keep_dreaming.webp",
-    cardTags: "broadcast",
-    tags: ["general"],
-    vimeo: "https://vimeo.com/884917302",
-    detail: {
-      bodyHTML:
-        '<p class="case-study-line"><a href="https://adage.com/creativity/work/keep-dreaming/2533811/" target="_blank" rel="noopener noreferrer">Ad Age</a></p>' +
-        '<p class="case-study-line"><a href="https://www.adforum.com/creative-work/ad/player/34686990/keep-dreaming/honda" target="_blank" rel="noopener noreferrer">AdForum — Honda &ldquo;Keep Dreaming&rdquo;</a></p>' +
-        "<p class=\"case-study-line\">Ads of the World</p>" +
-        "<p class=\"case-study-line\">LA Addy Awards: Gold</p>" +
-        "<p>When Honda announced they would be carbon neutral by 2050, you might think, yeah, right, keep dreaming—just another car company jumping on the sustainability bandwagon. But the reality is, Honda has been setting the bar for lowering emissions since day one.</p>" +
-        "<p>So to prove their commitment, we worked with the directorial duo powerhouse Smith and Foulkes to create a spiraling sixty-second first-person journey through nearly a dozen past, present and future Honda breakthroughs in the pursuit of carbon neutrality. Employing an ambitious VFX strategy that included CG, miniatures, animation, illustration, green screen, CAD, and AI.</p>" +
-        "<p>Proving that to achieve something as ambitious as carbon neutrality, you have to keep dreaming.</p>",
-      media: [{ type: "vimeo", url: "https://vimeo.com/884917302" }],
-      stills: [
-        { src: "stills/honda/PROLOGUE_SCREENGRAB_0000_Layer+Comp+1.webp", alt: "Honda Keep Dreaming prologue 1" },
-        { src: "stills/honda/PROLOGUE_SCREENGRAB_0001_Layer+Comp+2.webp", alt: "Honda Keep Dreaming prologue 2" },
-        { src: "stills/honda/PROLOGUE_SCREENGRAB_0002_Layer+Comp+3.webp", alt: "Honda Keep Dreaming prologue 3" },
-        { src: "stills/honda/PROLOGUE_SCREENGRAB_0003_Layer+Comp+4.webp", alt: "Honda Keep Dreaming prologue 4" },
-        { src: "stills/honda/PROLOGUE_SCREENGRAB_0004_Layer+Comp+5.webp", alt: "Honda Keep Dreaming prologue 5" },
-        { src: "stills/honda/PROLOGUE_SCREENGRAB_0005_Layer+Comp+6.webp", alt: "Honda Keep Dreaming prologue 6" },
-        { src: "stills/honda/PROLOGUE_SCREENGRAB_0006_Layer+Comp+7.webp", alt: "Honda Keep Dreaming prologue 7" },
-        { src: "stills/honda/PROLOGUE_SCREENGRAB_0007_Layer+Comp+8.webp", alt: "Honda Keep Dreaming prologue 8" },
-        { src: "stills/honda/PROLOGUE_SCREENGRAB_0008_Layer+Comp+9.webp", alt: "Honda Keep Dreaming prologue 9" },
-      ],
-      stillsLabel: false,
-    },
-  },
-  {
     id: "2",
     slug: "honda-dream-generator",
     title: "Honda Dream Generator",
@@ -115,7 +83,7 @@ const PORTFOLIO_PROJECTS = [
       bodyHTML:
         "<p>Visionaries like Steve Jobs, Soichiro Honda, and John Lennon once inspired the world.</p>" +
         "<p>What if their voices could return—so convincingly, they inspire you all over again?</p>" +
-        "<p>The Dream Phone closes the gap between illusion and reality by connecting you with the unmistakable voices and personalities of history&rsquo;s greatest dreamers through an actual Western Electric rotary phone. A device so warm and familiar, the voice on the other end has to be real.</p>",
+        "<p>The Dream Phone closes the gap between illusion and reality by connecting you with the unmistakable voices and personalities of history&rsquo;s greatest dreamers through an actual Western Electric rotary phone. A device so warm and familiar, the voice on the other end simply has to be real.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/1171158209" }],
       stills: [
         { section: "Build" },
@@ -127,30 +95,30 @@ const PORTFOLIO_PROJECTS = [
         { section: "Admin" },
         { src: "stills/the-dream-phone/1_admin.png", alt: "The Dream Phone — admin" },
       ],
-      stillsLabel: "Build & admin",
+      stillsLabel: false,
       railHTML:
         '<div class="project-detail__body project-detail__body--html">' +
-        '<p class="case-study-sect"><i>THE TECH</i></p>' +
-        "<p><i>Hardware</i></p>" +
+        '<div class="project-stills__section project-stills__section--in-rail" role="presentation"><h3 class="project-stills__section-title">TECH</h3></div>' +
+        '<p class="phone-tech-h"><i>Hardware</i></p>' +
         "<p>Raspberry Pi Zero 2 W — the brain inside the phone<br>" +
         "Rotary dial + hook switch — physical input system<br>" +
         "Analog handset + speaker — authentic audio I/O<br>" +
         "12V → 5V power (buck converter) — keeps everything stable<br>" +
         "Ring hardware + transistor control for real bell actuation</p>" +
         "<p>👉 Required much hardware research and manipulation. Replacing headset mic and speaker, splicing and soldering new cables from the handset cradle and rotary dial contact terminals, connecting via Dupont to Pi GPIO.</p>" +
-        "<p><i>Conversation Engine (The Voice Brain)</i></p>" +
+        '<p class="phone-tech-h"><i>Conversation Engine (The Voice Brain)</i></p>' +
         "<p>Hume EVI — real-time conversational layer<br>" +
         "WebSocket streaming for live dialogue<br>" +
         "Emotion + prosody control (tuned down to prevent voice drift)<br>" +
         "ChatGPT as the language brain</p>" +
         "<p>👉 Took a lot of trial and error to settle on the best TTS service, but ultimately, Hume won out hands down. Expensive, but makes conversations emotional, interruptible, and believable.</p>" +
-        "<p><i>Persona System</i></p>" +
+        '<p class="phone-tech-h"><i>Persona System</i></p>' +
         "<p>Text-based personality files (personality.txt) per caller<br>" +
         "Modular inserts (micro-lines, triggered dynamically)<br>" +
         "Knowledge constraints (e.g., stops at year of death)<br>" +
         "Recognition logic (&ldquo;Who&rsquo;s calling?&rdquo; &rarr; personalized response)</p>" +
         "<p>👉 Vibe-coded admin page hosted on Cloudflare, enabling admin to add and adjust personas. Pushed and pulled from a GitHub repo.</p>" +
-        "<p><i>Experience Layer (The Magic)</i></p>" +
+        '<p class="phone-tech-h"><i>Experience Layer (The Magic)</i></p>' +
         "<p>Rotary dialing = input (year of death)<br>" +
         "Ring &rarr; pickup &rarr; voice appears<br>" +
         "Real-time, unscripted conversation<br>" +
@@ -199,6 +167,38 @@ const PORTFOLIO_PROJECTS = [
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/526328758?title=0&byline=0&portrait=0" title="Gamers’ IS — build" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>',
+    },
+  },
+  {
+    id: "1",
+    slug: "honda",
+    title: "Honda | Keep Dreaming",
+    thumb: "thumbs/keep_dreaming.webp",
+    cardTags: "broadcast",
+    tags: ["general"],
+    vimeo: "https://vimeo.com/884917302",
+    detail: {
+      bodyHTML:
+        '<p class="case-study-line"><a href="https://adage.com/creativity/work/keep-dreaming/2533811/" target="_blank" rel="noopener noreferrer">Ad Age</a></p>' +
+        '<p class="case-study-line"><a href="https://www.adforum.com/creative-work/ad/player/34686990/keep-dreaming/honda" target="_blank" rel="noopener noreferrer">AdForum — Honda &ldquo;Keep Dreaming&rdquo;</a></p>' +
+        "<p class=\"case-study-line\">Ads of the World</p>" +
+        "<p class=\"case-study-line\">LA Addy Awards: Gold</p>" +
+        "<p>When Honda announced they would be carbon neutral by 2050, you might think, yeah, right, keep dreaming—just another car company jumping on the sustainability bandwagon. But the reality is, Honda has been setting the bar for lowering emissions since day one.</p>" +
+        "<p>So to prove their commitment, we worked with the directorial duo powerhouse Smith and Foulkes to create a spiraling sixty-second first-person journey through nearly a dozen past, present and future Honda breakthroughs in the pursuit of carbon neutrality. Employing an ambitious VFX strategy that included CG, miniatures, animation, illustration, green screen, CAD, and AI.</p>" +
+        "<p>Proving that to achieve something as ambitious as carbon neutrality, you have to keep dreaming.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/884917302" }],
+      stills: [
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0000_Layer+Comp+1.webp", alt: "Honda Keep Dreaming prologue 1" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0001_Layer+Comp+2.webp", alt: "Honda Keep Dreaming prologue 2" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0002_Layer+Comp+3.webp", alt: "Honda Keep Dreaming prologue 3" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0003_Layer+Comp+4.webp", alt: "Honda Keep Dreaming prologue 4" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0004_Layer+Comp+5.webp", alt: "Honda Keep Dreaming prologue 5" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0005_Layer+Comp+6.webp", alt: "Honda Keep Dreaming prologue 6" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0006_Layer+Comp+7.webp", alt: "Honda Keep Dreaming prologue 7" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0007_Layer+Comp+8.webp", alt: "Honda Keep Dreaming prologue 8" },
+        { src: "stills/honda/PROLOGUE_SCREENGRAB_0008_Layer+Comp+9.webp", alt: "Honda Keep Dreaming prologue 9" },
+      ],
+      stillsLabel: false,
     },
   },
   {
@@ -358,17 +358,17 @@ const PORTFOLIO_PROJECTS = [
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/19445552?title=0&byline=0&portrait=0" title="Piece of Me, Piece of You" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<p class="project-rail-h">Graphic novel</p>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/1_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 1" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/2_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 2" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/3_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 3" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/microsoft/4_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 4" /></div>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/20121977?title=0&byline=0&portrait=0" title="The Lost Ones — graphic novel trailer" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/20121995?title=0&byline=0&portrait=0" title="The Lost Ones — behind the scenes" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
-        '<p class="project-rail-h">Graphic novel</p>' +
-        '<div class="project-rail__figure"><img src="stills/microsoft/1_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 1" /></div>' +
-        '<div class="project-rail__figure"><img src="stills/microsoft/2_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 2" /></div>' +
-        '<div class="project-rail__figure"><img src="stills/microsoft/3_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 3" /></div>' +
-        '<div class="project-rail__figure"><img src="stills/microsoft/4_graphic_novel.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The Lost Ones graphic novel 4" /></div>' +
         '<p class="project-rail-h">Promos</p>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/1_promo.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Zune Arts promo 1" /></div>' +
         '<div class="project-rail__figure"><img src="stills/microsoft/2_promos.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Zune Arts promo 2" /></div>' +

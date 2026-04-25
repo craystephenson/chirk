@@ -373,7 +373,7 @@
     li.dataset.projectId = project.id;
 
     const a = document.createElement("a");
-    a.className = "work-card work-card--loading";
+    a.className = "work-tile work-tile--loading";
     a.href = "#/project/" + encodeURIComponent(slug);
     a.setAttribute("aria-label", (project.title || "Project") + " — open case study");
     a.addEventListener("click", function () {
@@ -385,10 +385,10 @@
     const cardImage = project.thumb || project.poster;
 
     const media = document.createElement("div");
-    media.className = "work-card__media";
+    media.className = "work-tile__media";
 
     const img = document.createElement("img");
-    img.className = "work-card__img";
+    img.className = "work-tile__img";
     img.alt = project.title || "Project";
     img.width = 1200;
     img.height = 896;
@@ -401,16 +401,16 @@
         fetchVimeoThumb(vimeo).then((url) => {
           if (url) {
             img.src = url;
-            a.classList.remove("work-card--loading");
-            a.classList.remove("work-card--no-thumb");
+            a.classList.remove("work-tile--loading");
+            a.classList.remove("work-tile--no-thumb");
           } else {
-            a.classList.remove("work-card--loading");
-            a.classList.add("work-card--no-thumb");
+            a.classList.remove("work-tile--loading");
+            a.classList.add("work-tile--no-thumb");
           }
         });
       } else {
-        a.classList.remove("work-card--loading");
-        a.classList.add("work-card--no-thumb");
+        a.classList.remove("work-tile--loading");
+        a.classList.add("work-tile--no-thumb");
       }
     }
 
@@ -420,7 +420,7 @@
         "load",
         function onCardLoad() {
           img.removeEventListener("load", onCardLoad);
-          a.classList.remove("work-card--loading");
+          a.classList.remove("work-tile--loading");
         },
         { once: true }
       );
@@ -437,23 +437,27 @@
       loadVimeoThumbOrEmpty();
     }
 
-    const meta = document.createElement("div");
-    meta.className = "work-card__meta";
-    const title = document.createElement("p");
-    title.className = "work-card__title";
+    const overlay = document.createElement("span");
+    overlay.className = "work-tile__overlay";
+    const title = document.createElement("span");
+    title.className = "work-tile__kicker";
     title.textContent = project.title || "Untitled";
-    meta.appendChild(title);
+    overlay.appendChild(title);
     const tagLine = project.cardTags || project.cardLabel || "";
     if (tagLine) {
-      const tags = document.createElement("p");
-      tags.className = "work-card__tags";
+      const tags = document.createElement("span");
+      tags.className = "work-tile__tags";
       tags.textContent = tagLine;
-      meta.appendChild(tags);
+      overlay.appendChild(tags);
     }
+    const hint = document.createElement("span");
+    hint.className = "work-tile__hint";
+    hint.textContent = "— open —";
+    overlay.appendChild(hint);
 
     media.appendChild(img);
     a.appendChild(media);
-    a.appendChild(meta);
+    a.appendChild(overlay);
     li.appendChild(a);
 
     return li;

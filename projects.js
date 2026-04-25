@@ -402,6 +402,31 @@ const PORTFOLIO_PROJECTS = [
     },
   },
   {
+    id: "14",
+    slug: "lexus-immersive-sonic-challenge",
+    title: "Lexus | Immersive Sonic Challenge",
+    thumb: "thumbs/lexus_immersive_sonic.jpg",
+    cardTags: "experiential",
+    tags: ["general", "tech"],
+    vimeo: "https://vimeo.com/190389606",
+    detail: {
+      bodyHTML:
+        "<p><i>Fun fact:</i> When people think Lexus, they don&rsquo;t always think high-performance. So we set out to change that with a groundbreaking, hyper-real 9.1 sonic experience.</p>" +
+        "<p>We invited auto enthusiasts into a high-decibel mobile surround-sound booth and challenged them to identify a mystery performance car by sound alone.</p>" +
+        "<p>Some guessed Lamborghini.<br>Others guessed Ferrari, Maserati, or Porsche.</p>" +
+        "<p>Then we revealed the engine they heard was the Lexus LC 500.</p>" +
+        "<p>Minds&mdash;and ears&mdash;were blown.</p>" +
+        "<p>We then took the experience to theaters, creating the first-ever North American in-cinema ad mixed for Atmos.</p>" +
+        "<p>The result: a wave of enthusiast press that helped make performance fans rethink what Lexus could sound like.</p>" +
+        '<p class="case-study-sect"><i>Video links</i></p>',
+      media: [
+        { type: "vimeo", url: "https://vimeo.com/190389606", alt: "Lexus — Immersive Sonic Challenge, case study" },
+        { type: "vimeo", url: "https://vimeo.com/222100963", alt: "Lexus — Atmos cinema ad" },
+      ],
+      stills: [],
+    },
+  },
+  {
     id: "10",
     slug: "four-corners-brewing",
     title: "Four Corners Brewing",
@@ -422,11 +447,24 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/lexus_december_to_remember.jpg",
     cardTags: "broadcast",
     tags: ["general"],
-    vimeo: "",
+    vimeo: "https://vimeo.com/375775553",
     detail: {
-      bodyHTML: "<p>Case study in progress.</p>",
-      media: [{ type: "image", src: "thumbs/lexus_december_to_remember.jpg", alt: "Lexus December to Remember" }],
-      stills: [],
+      bodyHTML:
+        "<p>For the 20th anniversary of the December to Remember Sales Event, we asked a simple question:</p>" +
+        "<p>Before the big driveway reveal, where do you hide a bow that big?</p>" +
+        "<p>That became <i>The Bow Caper</i>&mdash;a holiday story about the elaborate family mission to keep one very oversized Lexus surprise under wraps.</p>",
+      media: [
+        { type: "vimeo", url: "https://vimeo.com/375775553", alt: "Lexus — December to Remember" },
+        { type: "vimeo", url: "https://vimeo.com/375779234", alt: "Lexus — December to Remember" },
+        { type: "vimeo", url: "https://vimeo.com/375778911", alt: "Lexus — December to Remember" },
+      ],
+      stillsLabel: false,
+      stills: [
+        { src: "stills/lexus-december-to-remember/1.png", alt: "December to Remember 1" },
+        { src: "stills/lexus-december-to-remember/2.png", alt: "December to Remember 2" },
+        { src: "stills/lexus-december-to-remember/3.png", alt: "December to Remember 3" },
+        { src: "stills/lexus-december-to-remember/4.png", alt: "December to Remember 4" },
+      ],
     },
   },
   {
@@ -454,20 +492,6 @@ const PORTFOLIO_PROJECTS = [
     detail: {
       bodyHTML: "<p>Case study in progress.</p>",
       media: [{ type: "image", src: "thumbs/carol_o_matic.png", alt: "Carol-O-Matic Singing Machine" }],
-      stills: [],
-    },
-  },
-  {
-    id: "14",
-    slug: "lexus-immersive-sonic-challenge",
-    title: "Lexus | Immersive Sonic Challenge",
-    thumb: "thumbs/lexus_immersive_sonic.jpg",
-    cardTags: "experiential",
-    tags: ["general", "tech"],
-    vimeo: "",
-    detail: {
-      bodyHTML: "<p>Case study in progress.</p>",
-      media: [{ type: "image", src: "thumbs/lexus_immersive_sonic.jpg", alt: "Lexus Immersive Sonic Challenge" }],
       stills: [],
     },
   },

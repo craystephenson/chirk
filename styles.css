@@ -831,6 +831,34 @@ main {
   border: 0;
 }
 
+.project-rail-extra .project-rail-h {
+  margin: 1.1em 0 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.project-rail-extra .project-rail-h:first-child {
+  margin-top: 0.35em;
+}
+
+.project-rail-extra .project-rail__figure {
+  margin: 0 0 0.6rem;
+  line-height: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #e8e8e8;
+}
+
+.project-rail-extra .project-rail__figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
+}
+
 .project-thumb {
   position: relative;
   display: block;

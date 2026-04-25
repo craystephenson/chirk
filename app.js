@@ -28,6 +28,7 @@
   const elStills = document.getElementById("project-stills");
   const elStillsGrid = document.getElementById("project-stills-grid");
   const elStillsEmpty = document.getElementById("project-stills-empty");
+  const elStillsLabel = document.getElementById("project-stills-label");
   const elStageNav = document.getElementById("project-stage-nav");
   const elRailExtra = document.getElementById("project-rail-extra");
 
@@ -291,6 +292,19 @@
       .join("/");
   }
 
+  function setStillsLabel(d) {
+    if (!elStillsLabel) return;
+    if (d && d.stillsLabel === false) {
+      elStillsLabel.hidden = true;
+    } else if (d && typeof d.stillsLabel === "string" && d.stillsLabel.trim()) {
+      elStillsLabel.hidden = false;
+      elStillsLabel.textContent = d.stillsLabel.trim();
+    } else {
+      elStillsLabel.hidden = false;
+      elStillsLabel.textContent = "Stills";
+    }
+  }
+
   function renderStills(p) {
     if (!elStills || !elStillsGrid) return;
     const d = p && p.detail;
@@ -298,6 +312,10 @@
       elStills.hidden = true;
       elStillsGrid.innerHTML = "";
       if (elStillsEmpty) elStillsEmpty.hidden = true;
+      if (elStillsLabel) {
+        elStillsLabel.hidden = false;
+        elStillsLabel.textContent = "Stills";
+      }
       return;
     }
     const stills = Array.isArray(d.stills) ? d.stills : [];
@@ -305,10 +323,15 @@
     if (stills.length === 0) {
       elStills.hidden = true;
       if (elStillsEmpty) elStillsEmpty.hidden = true;
+      if (elStillsLabel) {
+        elStillsLabel.hidden = false;
+        elStillsLabel.textContent = "Stills";
+      }
       return;
     }
     elStills.hidden = false;
     if (elStillsEmpty) elStillsEmpty.hidden = true;
+    setStillsLabel(d);
     stills.forEach(function (s) {
       if (!s || !s.src) return;
       const item = document.createElement("div");
@@ -419,6 +442,10 @@
     if (elRailExtra) {
       elRailExtra.innerHTML = "";
       elRailExtra.hidden = true;
+    }
+    if (elStillsLabel) {
+      elStillsLabel.hidden = false;
+      elStillsLabel.textContent = "Stills";
     }
   }
 

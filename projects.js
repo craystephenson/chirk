@@ -7,6 +7,7 @@
  * for each award/recognition/press line (one block per line), then
  * p.case-study-sect: <i>Insight</i> / <i>Idea</i> / <i>Objective</i> (italic section labels, not h1–h3).
  * Optional: detail.railHTML — HTML in the right column below stills (e.g. extra Vimeo embeds).
+ * Optional: detail.stillsLabel — set to false to hide the “Stills” heading, or a string to replace it.
  */
 const PORTFOLIO_PROJECTS = [
   {
@@ -34,6 +35,7 @@ const PORTFOLIO_PROJECTS = [
         { src: "stills/honda/PROLOGUE_SCREENGRAB_0007_Layer+Comp+8.webp", alt: "Honda Keep Dreaming prologue 8" },
         { src: "stills/honda/PROLOGUE_SCREENGRAB_0008_Layer+Comp+9.webp", alt: "Honda Keep Dreaming prologue 9" },
       ],
+      stillsLabel: false,
     },
   },
   {
@@ -152,11 +154,13 @@ const PORTFOLIO_PROJECTS = [
         { src: "stills/lexus-gamers-is/5.gif", alt: "Gamers' IS 5" },
       ],
       railHTML:
+        '<p class="project-rail-h">LIVESTREAM</p>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/526343448?title=0&byline=0&portrait=0" title="Gamers’ IS — livestream recap" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<p class="project-rail-h">BUILD</p>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/526328758?title=0&byline=0&portrait=0" title="Gamers’ IS" ' +
+        'src="https://player.vimeo.com/video/526328758?title=0&byline=0&portrait=0" title="Gamers’ IS — build" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>',
     },
   },
@@ -181,6 +185,26 @@ const PORTFOLIO_PROJECTS = [
         "<p>I helped concept and write the site, app, TV, and more—from recording Katy Perry in the basement of Staples Center to recording Samuel L. Jackson at CBS.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/20124076" }],
       stills: [],
+      railHTML:
+        '<p class="project-rail-h">Platform</p>' +
+        '<div class="project-rail__figure"><img src="stills/grammys/1.png" width="1600" height="900" loading="lazy" decoding="async" alt="GRAMMYs platform 1" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/grammys/2.gif" width="1600" height="900" loading="lazy" decoding="async" alt="GRAMMYs platform 2" /></div>' +
+        '<p class="project-rail-h">Broadcast</p>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20124364?title=0&byline=0&portrait=0" title="Music Is Life Is Music — broadcast promo" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<p class="project-rail-h">Katy Perry app demo</p>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20124183?title=0&byline=0&portrait=0" title="App demo" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20124575?title=0&byline=0&portrait=0" title="App demo — Cee Lo" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<p class="project-rail-h">Posters</p>' +
+        '<div class="project-rail__figure"><img src="stills/grammys/3.webp" width="1600" height="900" loading="lazy" decoding="async" alt="GRAMMYs poster 1" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/grammys/4.webp" width="1600" height="900" loading="lazy" decoding="async" alt="GRAMMYs poster 2" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/grammys/5.webp" width="1600" height="900" loading="lazy" decoding="async" alt="GRAMMYs poster 3" /></div>' +
+        '<div class="project-rail__figure"><img src="stills/grammys/6.webp" width="1600" height="900" loading="lazy" decoding="async" alt="GRAMMYs poster 4" /></div>',
     },
   },
   {

@@ -2,21 +2,21 @@
 
 Static site: edit `projects.js` for your Vimeo links and tags.
 
-**Repository:** [github.com/craystephenson/creative-portfolio](https://github.com/craystephenson/creative-portfolio)
+**Repository:** [github.com/craystephenson/portfolio](https://github.com/craystephenson/portfolio)
 
 ## Deploy with GitHub and Cloudflare Pages
 
 1. **Push to GitHub** (if you clone on another machine, add the remote and push):
 
    ```bash
-   git remote add origin https://github.com/craystephenson/creative-portfolio.git
+   git remote add origin https://github.com/craystephenson/portfolio.git
    git branch -M main
    git push -u origin main
    ```
 
 2. **Cloudflare Pages**
    - In the [Cloudflare dashboard](https://dash.cloudflare.com/), open **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
-   - Authorize GitHub and select **`craystephenson/creative-portfolio`**, then **Begin setup**.
+   - Authorize GitHub and select **`craystephenson/portfolio`**, then **Begin setup**.
    - **Build settings** (this repo has no build step; files are at the repo root):
      - **Framework preset:** `None`
      - **Build command:** leave **empty**

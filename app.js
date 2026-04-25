@@ -357,6 +357,26 @@
         elStillsGrid.appendChild(wrap);
         return;
       }
+      if (s && s.vimeo) {
+        const vid = vimeoIdFromUrl(s.vimeo);
+        if (vid) {
+          const item = document.createElement("div");
+          item.className = "project-stills__item project-stills__item--embed";
+          item.setAttribute("role", "listitem");
+          const inner = document.createElement("div");
+          inner.className = "project-stills__embed";
+          const ifr = document.createElement("iframe");
+          ifr.src =
+            "https://player.vimeo.com/video/" + vid + "?title=0&byline=0&portrait=0";
+          ifr.title = s.vimeoTitle || "Vimeo";
+          ifr.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+          ifr.setAttribute("allowfullscreen", "true");
+          inner.appendChild(ifr);
+          item.appendChild(inner);
+          elStillsGrid.appendChild(item);
+        }
+        return;
+      }
       if (!s || !s.src) return;
       const item = document.createElement("div");
       item.className = "project-stills__item";

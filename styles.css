@@ -304,14 +304,6 @@ main {
   max-width: 28em;
 }
 
-.work-tile__hint {
-  font-size: 0.6rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  margin-top: 0.2rem;
-  opacity: 0.95;
-}
-
 @media (hover: none) and (pointer: coarse) {
   .work-tile__overlay {
     opacity: 1;

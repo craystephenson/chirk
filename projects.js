@@ -153,6 +153,7 @@ const PORTFOLIO_PROJECTS = [
         { src: "stills/lexus-gamers-is/4.png", alt: "Gamers' IS 4" },
         { src: "stills/lexus-gamers-is/5.gif", alt: "Gamers' IS 5" },
       ],
+      stillsLabel: "SOCIAL",
       railHTML:
         '<p class="project-rail-h">LIVESTREAM</p>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
@@ -167,7 +168,7 @@ const PORTFOLIO_PROJECTS = [
   {
     id: "5",
     slug: "grammys",
-    title: "GRAMMYs Platform",
+    title: "GRAMMYs | Music is life is music",
     thumb: "thumbs/grammys.webp",
     cardTags: "integrated",
     tags: ["general"],
@@ -191,14 +192,14 @@ const PORTFOLIO_PROJECTS = [
         '<div class="project-rail__figure"><img src="stills/grammys/2.gif" width="1600" height="900" loading="lazy" decoding="async" alt="GRAMMYs platform 2" /></div>' +
         '<p class="project-rail-h">Broadcast</p>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/20124364?title=0&byline=0&portrait=0" title="Music Is Life Is Music — broadcast promo" ' +
+        'src="https://player.vimeo.com/video/20124364?title=0&byline=0&portrait=0" title="Music Is Life Is Music — Eminem promo" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/20124575?title=0&byline=0&portrait=0" title="Music Is Life Is Music — Cee Lo Green" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
         '<p class="project-rail-h">Katy Perry app demo</p>' +
         '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
         'src="https://player.vimeo.com/video/20124183?title=0&byline=0&portrait=0" title="App demo" ' +
-        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
-        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
-        'src="https://player.vimeo.com/video/20124575?title=0&byline=0&portrait=0" title="App demo — Cee Lo" ' +
         'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>' +
         '<p class="project-rail-h">Posters</p>' +
         '<div class="project-rail__figure"><img src="stills/grammys/3.webp" width="1600" height="900" loading="lazy" decoding="async" alt="GRAMMYs poster 1" /></div>' +

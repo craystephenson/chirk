@@ -486,7 +486,7 @@
     const a = document.createElement("a");
     a.className = "work-tile work-tile--loading";
     a.href = "#/project/" + encodeURIComponent(slug);
-    a.setAttribute("aria-label", (project.title || "Project") + " — open case study");
+    a.setAttribute("aria-label", project.title || "Project");
     a.addEventListener("click", function () {
       const r = parseRoute();
       if (r.kind === "grid") sessionStorage.setItem("portfolioLastView", r.view);
@@ -561,11 +561,6 @@
       tags.textContent = tagLine;
       overlay.appendChild(tags);
     }
-    const hint = document.createElement("span");
-    hint.className = "work-tile__hint";
-    hint.textContent = "— open —";
-    overlay.appendChild(hint);
-
     media.appendChild(img);
     a.appendChild(media);
     a.appendChild(overlay);

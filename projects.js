@@ -6,6 +6,7 @@
  * Project title: use the top H1 only (all caps via CSS, not bold). In bodyHTML: p.case-study-line
  * for each award/recognition/press line (one block per line), then
  * p.case-study-sect: <i>Insight</i> / <i>Idea</i> / <i>Objective</i> (italic section labels, not h1–h3).
+ * Optional: detail.stageHeading — short label above the hero player (e.g. Dolby Atmos®).
  * Optional: detail.railHTML — HTML in the right column below stills (e.g. extra Vimeo embeds).
  * Optional: detail.stillsLabel — set to false to hide the “Stills” heading, or a string to replace it.
  * Optional stills row: { section: "SITE" } or { subSection: "References" } (headings, no image).
@@ -410,6 +411,7 @@ const PORTFOLIO_PROJECTS = [
     tags: ["general", "tech"],
     vimeo: "https://vimeo.com/190389606",
     detail: {
+      stageHeading: "Dolby Atmos®",
       bodyHTML:
         "<p><i>Fun fact:</i> When people think Lexus, they don&rsquo;t always think high-performance. So we set out to change that with a groundbreaking, hyper-real 9.1 sonic experience.</p>" +
         "<p>We invited auto enthusiasts into a high-decibel mobile surround-sound booth and challenged them to identify a mystery performance car by sound alone.</p>" +
@@ -417,13 +419,30 @@ const PORTFOLIO_PROJECTS = [
         "<p>Then we revealed the engine they heard was the Lexus LC 500.</p>" +
         "<p>Minds&mdash;and ears&mdash;were blown.</p>" +
         "<p>We then took the experience to theaters, creating the first-ever North American in-cinema ad mixed for Atmos.</p>" +
-        "<p>The result: a wave of enthusiast press that helped make performance fans rethink what Lexus could sound like.</p>" +
-        '<p class="case-study-sect"><i>Video links</i></p>',
+        "<p>The result: a wave of enthusiast press that helped make performance fans rethink what Lexus could sound like.</p>",
       media: [
         { type: "vimeo", url: "https://vimeo.com/190389606", alt: "Lexus — Immersive Sonic Challenge, case study" },
         { type: "vimeo", url: "https://vimeo.com/222100963", alt: "Lexus — Atmos cinema ad" },
       ],
-      stills: [],
+      stillsLabel: false,
+      stills: [
+        { section: "Experience" },
+        { src: "stills/lexus-immersive-sonic-challenge/1.png", alt: "Immersive Sonic Challenge 1" },
+        { src: "stills/lexus-immersive-sonic-challenge/2.gif", alt: "Immersive Sonic Challenge 2" },
+        { src: "stills/lexus-immersive-sonic-challenge/3.gif", alt: "Immersive Sonic Challenge 3" },
+        { src: "stills/lexus-immersive-sonic-challenge/4.jpg", alt: "Immersive Sonic Challenge 4" },
+        { src: "stills/lexus-immersive-sonic-challenge/5.png", alt: "Immersive Sonic Challenge 5" },
+        { section: "Press" },
+        { src: "stills/lexus-immersive-sonic-challenge/1_press.png", alt: "Immersive Sonic — press 1" },
+        { src: "stills/lexus-immersive-sonic-challenge/2_press.png", alt: "Immersive Sonic — press 2" },
+        { src: "stills/lexus-immersive-sonic-challenge/3_press.png", alt: "Immersive Sonic — press 3" },
+        { src: "stills/lexus-immersive-sonic-challenge/4_press.png", alt: "Immersive Sonic — press 4" },
+        { src: "stills/lexus-immersive-sonic-challenge/5_press.png", alt: "Immersive Sonic — press 5" },
+        { src: "stills/lexus-immersive-sonic-challenge/6_press.png", alt: "Immersive Sonic — press 6" },
+        { src: "stills/lexus-immersive-sonic-challenge/7_press.png", alt: "Immersive Sonic — press 7" },
+        { src: "stills/lexus-immersive-sonic-challenge/8_press.png", alt: "Immersive Sonic — press 8" },
+        { src: "stills/lexus-immersive-sonic-challenge/9_press.png", alt: "Immersive Sonic — press 9" },
+      ],
     },
   },
   {

@@ -607,6 +607,21 @@ main {
   flex: 0 0 auto;
 }
 
+.project-stage__pre {
+  margin: 0 0 0.55rem;
+  padding: 0;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #111;
+  line-height: 1.35;
+}
+
+.project-stage__pre[hidden] {
+  display: none;
+}
+
 .project-stage-nav {
   position: absolute;
   top: 0.5rem;

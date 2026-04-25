@@ -27,6 +27,7 @@
   const elStillsEmpty = document.getElementById("project-stills-empty");
   const elStillsLabel = document.getElementById("project-stills-label");
   const elStageNav = document.getElementById("project-stage-nav");
+  const elStagePre = document.getElementById("project-stage-pre");
   const elRailExtra = document.getElementById("project-rail-extra");
 
   if (!gridEl || !filterRoot) return;
@@ -435,6 +436,16 @@
     const siteName = siteMatch ? siteMatch[1].trim() : baseTitle;
     document.title = (p.title || "Project") + " — " + siteName;
 
+    if (elStagePre) {
+      if (d && typeof d.stageHeading === "string" && d.stageHeading.trim()) {
+        elStagePre.textContent = d.stageHeading.trim();
+        elStagePre.hidden = false;
+      } else {
+        elStagePre.textContent = "";
+        elStagePre.hidden = true;
+      }
+    }
+
     renderStills(p);
     if (elRailExtra) {
       if (d && d.railHTML) {
@@ -468,6 +479,10 @@
     if (elStillsLabel) {
       elStillsLabel.hidden = false;
       elStillsLabel.textContent = "Stills";
+    }
+    if (elStagePre) {
+      elStagePre.textContent = "";
+      elStagePre.hidden = true;
     }
   }
 

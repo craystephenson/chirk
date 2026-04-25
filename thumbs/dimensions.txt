@@ -10,10 +10,10 @@ Current assets (paths in projects.js):
   engineered_for_fun.webp → Engineered For Fun
   microsoft.webp        → Microsoft | Zune Arts
   four_corners_brewing.png → Four Corners Brewing
-  lexus_december_to_remember.png → Lexus | December to Remember
-  richards_group_holiday.png → The Richards Group
+  lexus_december_to_remember.jpg → Lexus | December to Remember
+  richards_group_holiday.jpg → The Richards Group
   carol_o_matic.png → Carol-O-Matic Singing Machine
-  lexus_immersive_sonic.png → Lexus | Immersive Sonic Challenge
+  lexus_immersive_sonic.jpg → Lexus | Immersive Sonic Challenge
   lexus_dadchelor_party.png → Lexus | Dad'chelor Party
 
 Size: ~1200×896 or 4:3; object-fit: cover. WebP, PNG, GIF, or JPG.

@@ -8,6 +8,7 @@
  * p.case-study-sect: <i>Insight</i> / <i>Idea</i> / <i>Objective</i> (italic section labels, not h1–h3).
  * Optional: detail.railHTML — HTML in the right column below stills (e.g. extra Vimeo embeds).
  * Optional: detail.stillsLabel — set to false to hide the “Stills” heading, or a string to replace it.
+ * Optional stills row: { section: "SITE" } or { subSection: "References" } (headings, no image).
  */
 const PORTFOLIO_PROJECTS = [
   {
@@ -70,7 +71,34 @@ const PORTFOLIO_PROJECTS = [
         "<p>Behind the scenes, we built a hybrid production pipeline that combined hand-drawn illustration, animation, motion design, AI engineering, and development. Every source image was artist-created and fully cleared, proving AI can amplify artists rather than replace them.</p>" +
         "<p>Nearly 200 unique films could be generated, helping families see EVs—and the Prologue—as more imaginative, accessible, and adventure-ready.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/935982647" }],
-      stills: [],
+      stillsLabel: "Production",
+      stills: [
+        { section: "Site" },
+        { src: "stills/honda-dream-generator/1_site.png", alt: "Honda Dream Generator — site 1" },
+        { src: "stills/honda-dream-generator/2_site.jpeg", alt: "Honda Dream Generator — site 2" },
+        { src: "stills/honda-dream-generator/3_site.png", alt: "Honda Dream Generator — site 3" },
+        { section: "Training" },
+        { src: "stills/honda-dream-generator/1_training.jpeg", alt: "Honda Dream Generator — training 1" },
+        { src: "stills/honda-dream-generator/2_training.jpg", alt: "Honda Dream Generator — training 2" },
+        { section: "ControlNet + references" },
+        { subSection: "References" },
+        { src: "stills/honda-dream-generator/1_controlnet+references.gif", alt: "Honda Dream Generator — ControlNet references 1" },
+        { src: "stills/honda-dream-generator/2_controlnet+references.gif", alt: "Honda Dream Generator — ControlNet references 2" },
+        { src: "stills/honda-dream-generator/3_controlnet+references.gif", alt: "Honda Dream Generator — ControlNet references 3" },
+        { subSection: "ControlNet + LoRAs" },
+        { src: "stills/honda-dream-generator/1_controlnet+loras.gif", alt: "Honda Dream Generator — ControlNet + LoRAs 1" },
+        { src: "stills/honda-dream-generator/2_controlnet+loras.gif", alt: "Honda Dream Generator — ControlNet + LoRAs 2" },
+        { src: "stills/honda-dream-generator/3_controlnet+loras.jpeg", alt: "Honda Dream Generator — ControlNet + LoRAs 3" },
+        { src: "stills/honda-dream-generator/4_controlnet+loras.gif", alt: "Honda Dream Generator — ControlNet + LoRAs 4" },
+        { src: "stills/honda-dream-generator/5_controlnet+loras.png", alt: "Honda Dream Generator — ControlNet + LoRAs 5" },
+        { src: "stills/honda-dream-generator/6_controlnet+loras.gif", alt: "Honda Dream Generator — ControlNet + LoRAs 6" },
+        { src: "stills/honda-dream-generator/7_controlnet+loras.png", alt: "Honda Dream Generator — ControlNet + LoRAs 7" },
+        { src: "stills/honda-dream-generator/8_controlnet+loras.gif", alt: "Honda Dream Generator — ControlNet + LoRAs 8" },
+        { src: "stills/honda-dream-generator/9_controlnet+loras.jpeg", alt: "Honda Dream Generator — ControlNet + LoRAs 9" },
+        { src: "stills/honda-dream-generator/10_controlnet+loras.gif", alt: "Honda Dream Generator — ControlNet + LoRAs 10" },
+        { src: "stills/honda-dream-generator/11_controlnet+loras.png", alt: "Honda Dream Generator — ControlNet + LoRAs 11" },
+        { src: "stills/honda-dream-generator/12_controlnet+loras.gif", alt: "Honda Dream Generator — ControlNet + LoRAs 12" },
+      ],
     },
   },
   {
@@ -139,17 +167,18 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/670863804",
     detail: {
       bodyHTML:
-        '<p class="case-study-line">Ad Age</p>' +
-        '<p class="case-study-line">Marketing Dive</p>' +
-        '<p class="case-study-line">SlashGear</p>' +
-        '<p class="case-study-line">Car and Driver</p>' +
-        '<p class="case-study-line">CNET</p>' +
-        '<p class="case-study-line">Hypebeast</p>' +
-        '<p class="case-study-line">Baller Status</p>' +
+        '<p class="case-study-line"><a href="https://adage.com/article/cmo-strategy/lexus-made-car-just-gamers/2315656" target="_blank" rel="noopener noreferrer">Ad Age</a></p>' +
+        '<p class="case-study-line"><a href="https://www.marketingdive.com/news/lexus-crowdsources-gamer-ready-car-design-on-twitch/593363/" target="_blank" rel="noopener noreferrer">Marketing Dive</a></p>' +
+        '<p class="case-study-line"><a href="https://www.theweek.co.uk/952049/lexus-gamers-is-the-ultimate-gaming-space" target="_blank" rel="noopener noreferrer">The Week</a></p>' +
+        '<p class="case-study-line"><a href="https://www.caranddriver.com/news/a35562123/2021-lexus-is350-f-sport-twitch-gaming-pc/" target="_blank" rel="noopener noreferrer">Car and Driver</a></p>' +
+        '<p class="case-study-line"><a href="https://www.cnet.com/roadshow/news/twitch-gamers-mod-lexus-rgb-lights/" target="_blank" rel="noopener noreferrer">CNET</a></p>' +
+        '<p class="case-study-line"><a href="https://hypebeast.com/2021/2/lexus-twitch-gamers-is-2021-lexus-is-all-in-campaign-announcement" target="_blank" rel="noopener noreferrer">Hypebeast</a></p>' +
+        '<p class="case-study-line"><a href="https://www.ballerstatus.com/2021/02/18/lexus-partners-with-twitch-to-create-ultimate-gamers-is-350/" target="_blank" rel="noopener noreferrer">BallerStatus</a></p>' +
         '<p class="case-study-line">Called “the model for marketers” by Twitch’s CEO</p>' +
         "<p>Gamers aren’t interested in car ads.</p>" +
         "<p>So we set out to build Gamers’ IS—the world’s first 150 mph mobile gaming space. With Twitch streamer Fuslie, we let fans vote on the features, then turned their dream build into a real, one-of-one Lexus IS.</p>" +
-        "<p>The result: a livestream reveal, gamer-approved details, and a campaign that helped drive a 178% spike in IS sales—and helped push the Lexus IS to become the #2 top-selling car in the U.S.</p>",
+        "<p>The result: a livestream reveal, gamer-approved details, and a campaign that helped drive a 178% spike in IS sales—and helped push the Lexus IS to become the #2 top-selling car in the U.S.</p>" +
+        '<p>See <a href="https://www.roadandtrack.com/news/a35924761/lexus-is-350-fastest-selling/" target="_blank" rel="noopener noreferrer">Road &amp; Track</a> for more on the IS in the market.</p>',
       media: [{ type: "vimeo", url: "https://vimeo.com/670863804" }],
       stills: [
         { src: "stills/lexus-gamers-is/1.png", alt: "Gamers' IS 1" },

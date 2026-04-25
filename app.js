@@ -2,7 +2,7 @@
   "use strict";
 
   const VIEWS = [
-    { id: "general", label: "General" },
+    { id: "all", label: "All" },
     { id: "ai", label: "AI" },
     { id: "tech", label: "Tech" },
   ];
@@ -58,13 +58,17 @@
     const h = location.hash || "";
     const m = /^#\/project\/([^/]+)\/?$/.exec(h);
     if (m) return { kind: "project", slug: decodeURIComponent(m[1]) };
-    const v = h.replace(/^#/, "").toLowerCase();
+    const raw = h.replace(/^#/, "").toLowerCase();
+    const v = raw === "general" || raw === "" ? "all" : raw;
     if (VIEWS.some((x) => x.id === v)) return { kind: "grid", view: v };
-    return { kind: "grid", view: "general" };
+    return { kind: "grid", view: "all" };
   }
 
   function lastView() {
-    return sessionStorage.getItem("portfolioLastView") || "general";
+    const s = sessionStorage.getItem("portfolioLastView");
+    if (s === "general" || !s) return "all";
+    if (VIEWS.some((x) => x.id === s)) return s;
+    return "all";
   }
 
   function workHash() {
@@ -93,6 +97,7 @@
   }
 
   function projectMatchesView(project, viewId) {
+    if (viewId === "all") return true;
     return (project.tags || []).map(normalizeTag).includes(viewId);
   }
 
@@ -330,6 +335,28 @@
     if (elStillsEmpty) elStillsEmpty.hidden = true;
     setStillsLabel(d);
     stills.forEach(function (s) {
+      if (s && typeof s.section === "string" && s.section.trim()) {
+        const wrap = document.createElement("div");
+        wrap.className = "project-stills__section";
+        wrap.setAttribute("role", "presentation");
+        const h = document.createElement("h3");
+        h.className = "project-stills__section-title";
+        h.textContent = s.section.trim();
+        wrap.appendChild(h);
+        elStillsGrid.appendChild(wrap);
+        return;
+      }
+      if (s && typeof s.subSection === "string" && s.subSection.trim()) {
+        const wrap = document.createElement("div");
+        wrap.className = "project-stills__subsection";
+        wrap.setAttribute("role", "presentation");
+        const h = document.createElement("h4");
+        h.className = "project-stills__subsection-title";
+        h.textContent = s.subSection.trim();
+        wrap.appendChild(h);
+        elStillsGrid.appendChild(wrap);
+        return;
+      }
       if (!s || !s.src) return;
       const item = document.createElement("div");
       item.className = "project-stills__item";

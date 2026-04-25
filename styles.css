@@ -721,6 +721,40 @@ main {
   color: #111;
 }
 
+.project-stills__section {
+  margin: 1.25rem 0 0.35rem;
+  width: 100%;
+}
+
+.project-stills__section:first-child {
+  margin-top: 0;
+}
+
+.project-stills__section-title {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #111;
+  line-height: 1.35;
+}
+
+.project-stills__subsection {
+  margin: 0.85rem 0 0.25rem;
+  width: 100%;
+}
+
+.project-stills__subsection-title {
+  margin: 0;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #444;
+  line-height: 1.35;
+}
+
 .project-stills__grid {
   display: flex;
   flex-direction: column;

@@ -141,11 +141,8 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line">Hypebeast</p>' +
         '<p class="case-study-line">Baller Status</p>' +
         '<p class="case-study-line">Called “the model for marketers” by Twitch’s CEO</p>' +
-        "<p>How do you get Twitch gamers to consider the Lexus IS?</p>" +
-        "<p>Definitely not with a commercial.</p>" +
-        "<p>Instead, we built the world’s first mobile gaming space: Gamers’ IS. Partnering with Twitch streamer Fuslie, we let her livestream audience vote on the gaming features they wanted most—then turned their dream build into a real, one-of-one Lexus.</p>" +
-        "<p>The finished car was revealed on a second livestream, packed with gamer-approved details, from RGB lighting to a fully integrated gaming setup.</p>" +
-        "<p>The results were huge. The initiative helped contribute to a 178% spike in IS sales and helped push the Lexus IS to become the #2 top-selling car in the U.S.—a serious win for a sport sedan in a category most people had written off.</p>",
+        "<p>So we set out to build Gamers’ IS—the world’s first 150 mph mobile gaming space. With Twitch streamer Fuslie, we let fans vote on the features, then turned their dream build into a real, one-of-one Lexus IS.</p>" +
+        "<p>The result: a livestream reveal, gamer-approved details, and a campaign that helped drive a 178% spike in IS sales—and helped push the Lexus IS to become the #2 top-selling car in the U.S.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/670863804" }],
       stills: [
         { src: "stills/lexus-gamers-is/1.png", alt: "Gamers' IS 1" },
@@ -166,7 +163,7 @@ const PORTFOLIO_PROJECTS = [
   {
     id: "5",
     slug: "grammys",
-    title: "GRAMMYs",
+    title: "GRAMMYs Platform",
     thumb: "thumbs/grammys.webp",
     cardTags: "integrated",
     tags: ["general"],
@@ -178,13 +175,10 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="http://www.commarts.com/exhibit/musicislifeismusic.html" target="_blank" rel="noopener noreferrer">Communications Arts Exhibit</a></p>' +
         "<p class=\"case-study-line\">D&amp;AD Pencil</p>" +
         "<p class=\"case-study-line\">Webby Awards</p>" +
-        "<p>How do you get music lovers excited about the GRAMMYs again? You create a groundbreaking social media platform " +
-        "that gives them the ability to share the soundtrack of their lives.</p>" +
-        "<p>Our platform allowed users to tag a song to a location. Then describe a memory that the song evokes. " +
-        "Giving music lovers the chance to author their own audio autobiographies.</p>" +
-        "<p>In addition to helping concept and write the campaign's website and iOS app, I helped concept and produce " +
-        "all the TV, posters, OOH and more. Which included everything from filming Katy Perry in the basement of " +
-        "Staples Center to recording Samuel Jackson at CBS.</p>",
+        "<p>How do you get music lovers excited about the GRAMMYs again?</p>" +
+        "<p>Let them share the soundtrack of their lives.</p>" +
+        "<p>We built a platform where users tagged songs to places and memories—allowing them to create their own audiobiographies.</p>" +
+        "<p>I helped concept and write the site, app, TV, and more—from recording Katy Perry in the basement of Staples Center to recording Samuel L. Jackson at CBS.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/20124076" }],
       stills: [],
     },
@@ -228,18 +222,12 @@ const PORTFOLIO_PROJECTS = [
       bodyHTML:
         "<p class=\"case-study-line\">Clio Awards — Bronze, Public Relations</p>" +
         "<p class=\"case-study-line\">The One Show — Shortlist</p>" +
-        "<p class=\"case-study-line\">Pitchfork</p>" +
-        "<p class=\"case-study-line\">WIRED</p>" +
-        "<p class=\"case-study-line\">Uncrate</p>" +
-        "<p class=\"case-study-line\">Hypebeast</p>" +
-        "<p class=\"case-study-line\">Car and Driver</p>" +
-        "<p class=\"case-study-line\">Motor1</p>" +
-        "<p class=\"case-study-line\">MotorTrend</p>" +
-        "<p class=\"case-study-line\">Jalopnik</p>" +
-        "<p>To reach audiophiles, we partnered with Pitchfork, Madlib, and Kaytranada to create something that hadn’t been done in over 40 years: put a working turntable in a car.</p>" +
-        "<p>And somehow, it didn’t skip. Even over bumps.</p>" +
-        "<p>The Lexus IS Wax Edition turned the sport sedan into a moving vinyl experience—blending music culture, engineering, and craft in a way that made the IS feel unexpected, analog, and alive.</p>" +
-        "<p>The campaign helped push the Lexus IS to become the #2 top-selling car in the U.S.—a serious feat for a sport sedan in a category most people had written off.</p>",
+        "<p>Audiophiles were a subculture we wanted to reach with the Lexus IS.</p>" +
+        "<p>So we teamed up with Pitchfork, Madlib, and Kaytranada to do something no one had done in 40 years:</p>" +
+        "<p>Put a working turntable in a car.</p>" +
+        "<p>Fun fact: it didn’t skip—even over bumps.</p>" +
+        "<p>The result: a sport sedan that felt unexpected, analog, and alive—and helped push the IS to become the #2 top-selling car in the U.S.</p>" +
+        "<p>Featured in Pitchfork, Wired, Uncrate, Hypebeast, Car and Driver, Motor1, MotorTrend, and Jalopnik.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/644584180" }],
       stills: [],
     },
@@ -270,14 +258,9 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="http://creativity-online.com/work/zune-laika/2551" target="_blank" rel="noopener noreferrer">Creativity</a></p>' +
         "<p class=\"case-study-line\">MoMA</p>" +
         "<p class=\"case-study-line\">One Show</p>" +
-        "<p>Microsoft's Zune media player was a music device that allowed users to share music wirelessly. " +
-        "That may not sound too breakthrough today, but a few years back, it was pretty revolutionary.</p>" +
-        '<p>So to generate awareness about this feature, my creative partner, ' +
-        '<a href="https://www.linkedin.com/pub/jeff-beberman/3/828/b18" target="_blank" rel="noopener noreferrer">Beebs</a>, ' +
-        "and I developed and managed a robust artist program that commissioned emerging artists to create " +
-        "art that expressed the themes of sharing and friendship.</p>" +
-        "<p>This was one of the most intense, challenging and rewarding projects I've ever worked on – " +
-        "collaborating closely with extraordinary artists including Steve Niles and Friendswithyou.</p>",
+        "<p>Zune let people share music wirelessly—pretty radical at the time.</p>" +
+        "<p>To drive awareness, my partner and I led an artist program centered on sharing and friendship—collaborating and concepting with culture-shaping artists including Steve Niles and FriendsWithYou.</p>" +
+        "<p>Intense, challenging, and one of the most rewarding projects I’ve worked on.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/1186435131" }],
     },
   },

@@ -505,11 +505,11 @@ main {
   margin-bottom: 0;
 }
 
-/* Case study: meta lines (awards, press) match body type; italic section headers */
+/* Case study: meta lines (awards, press) — tight single line spacing, same size as body */
 .project-detail__body--html .case-study-line {
   font-size: 0.72rem;
-  line-height: 1.6;
-  margin: 0 0 0.4em;
+  line-height: 1.15;
+  margin: 0 0 0.08em;
   color: #333;
   letter-spacing: 0.02em;
   font-weight: 400;
@@ -865,6 +865,10 @@ main {
 
 /* Single column on small screens */
 @media (max-width: 700px) {
+  body {
+    font-size: calc(0.75rem + 1.33px);
+  }
+
   .work-grid {
     grid-template-columns: 1fr;
   }
@@ -890,5 +894,22 @@ main {
   .project-detail__left {
     border-right: none;
     border-bottom: 1px solid #eee;
+  }
+
+  /* ~1pt larger body copy on small screens (rem is from root) */
+  .project-detail__title {
+    font-size: calc(0.72rem + 1.33px);
+  }
+
+  .project-detail__body--html,
+  .project-detail__body--html .case-study-line,
+  .project-detail__body--html p.case-study-sect,
+  .project-detail__body--html p.case-study-sect--meta {
+    font-size: calc(0.72rem + 1.33px);
+  }
+
+  .project-detail__body--html p {
+    /* paragraphs inherit; explicit for clarity with calc */
+    font-size: inherit;
   }
 }

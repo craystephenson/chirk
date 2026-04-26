@@ -1,7 +1,7 @@
 Current assets (paths in projects.js):
 
   keep_dreaming.webp     → Honda
-  dream_generator.gif   → Honda Dream Generator
+  stills/honda-dream-generator/1_site.png → Honda Dream Generator (work tile; no /thumbs asset)
   dream_phone.webp      → The Dream Phone
   gamers_is.webp        → Lexus | Gamers' IS
   grammys.webp          → GRAMMYs | Music is life is music

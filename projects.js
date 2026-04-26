@@ -18,7 +18,7 @@ const PORTFOLIO_PROJECTS = [
     id: "2",
     slug: "honda-dream-generator",
     title: "Honda Dream Generator",
-    thumb: "thumbs/dream_generator.gif",
+    thumb: "stills/honda-dream-generator/1_site.png",
     cardTags: "ai, interactive",
     tags: ["ai", "tech"],
     vimeo: "https://vimeo.com/935982647",
@@ -36,11 +36,21 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="https://www.designrush.com/news/honda-and-amazon-ads-team-up-to-create-dream-generator" target="_blank" rel="noopener noreferrer">Design Rush</a></p>' +
         '<p class="case-study-line"><a href="https://thedrumawards.com/live/en/page/content-results" target="_blank" rel="noopener noreferrer">The Drum Awards</a></p>' +
         '<p class="case-study-line"><a href="https://www.aaflosangeles.org/2025-winners-list" target="_blank" rel="noopener noreferrer">AAF LA</a></p>' +
-        "<p>Honda and AI have something in common: they both bring dreams to life.</p>" +
-        "<p>To make the Honda Prologue feel more fun and approachable for families, we partnered with Amazon to create The Honda Dream Generator—an AI-powered experience that turned simple family inputs into custom animated adventure films.</p>" +
-        "<p>Families chose who they wanted to travel with and where they wanted to go. From there, AI generated a one-of-a-kind dream film, sending them through jungles, cloud forests, deep space, microscopic gardens, and more.</p>" +
-        "<p>Behind the scenes, we built a hybrid production pipeline that combined hand-drawn illustration, animation, motion design, AI engineering, and development. Every source image was artist-created and fully cleared, proving AI can amplify artists rather than replace them.</p>" +
-        "<p>Nearly 200 unique films could be generated, helping families see EVs—and the Prologue—as more imaginative, accessible, and adventure-ready.</p>",
+        "<p>For many families, EVs feel complicated and unapproachable. So we created Dream Generator&mdash;an AI-powered Fire TV and web experience that showed how the Honda Prologue is perfect for any family adventure they can dream up.</p>" +
+        "<p>Families chose where they wanted to go, who they wanted to bring, and what they wanted to pack. Then a hybrid AI-and-human artist workflow turned their inputs into a custom two-minute animated dream film&mdash;sending them on a fantastic voyage made possible by the Prologue&rsquo;s cargo space, smart tech, and instant torque.</p>" +
+        "<p>And because every family is different, every Dream Generator adventure was too.</p>" +
+        "<p>With nearly 200 unique films possible, the experience demonstrated the full versatility of the Prologue.</p>" +
+        '<p class="case-study-sect"><i>Results</i></p>' +
+        "<p>247MM impressions in the first 18 days</p>" +
+        "<p>$72.5MM in earned media</p>" +
+        "<p>+70% engagement rates</p>" +
+        "<p>20,000+ personalized films created</p>" +
+        "<p>7.4x increase in Honda EV ad awareness</p>" +
+        "<p>+39% perception of Honda as family-friendly</p>" +
+        '<p class="case-study-sect"><i>The Tech</i></p>' +
+        "<p>A hybrid production pipeline combined hand-drawn illustration, animation, motion design, AI engineering, and development. Every source image was artist-created and fully cleared&mdash;proving AI can amplify artists rather than replace them.</p>" +
+        '<p class="case-study-sect"><i>Dream Generator</i></p>' +
+        '<p class="case-study-line"><a href="https://www.amazon.com/stores/page/B09BCB6F-45BF-44F8-92BE-7405CBE00568" target="_blank" rel="noopener noreferrer">Experience</a></p>',
       media: [{ type: "vimeo", url: "https://vimeo.com/935982647" }],
       stillsLabel: false,
       stills: [
@@ -154,10 +164,10 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="https://hypebeast.com/2021/2/lexus-twitch-gamers-is-2021-lexus-is-all-in-campaign-announcement" target="_blank" rel="noopener noreferrer">Hypebeast</a></p>' +
         '<p class="case-study-line"><a href="https://www.ballerstatus.com/2021/02/18/lexus-partners-with-twitch-to-create-ultimate-gamers-is-350/" target="_blank" rel="noopener noreferrer">BallerStatus</a></p>' +
         '<p class="case-study-line">Called “the model for marketers” by Twitch’s CEO</p>' +
-        "<p>Gamers aren’t interested in car ads.</p>" +
-        "<p>So we set out to build Gamers’ IS—the world’s first 150 mph mobile gaming space. With Twitch streamer Fuslie, we let fans vote on the features, then turned their dream build into a real, one-of-one Lexus IS.</p>" +
-        "<p>The result: a livestream reveal, gamer-approved details, and a campaign that helped drive a 178% spike in IS sales—and helped push the Lexus IS to become the #2 top-selling car in the U.S.</p>" +
-        '<p>See <a href="https://www.roadandtrack.com/news/a35924761/lexus-is-350-fastest-selling/" target="_blank" rel="noopener noreferrer">Road &amp; Track</a> for more on the IS in the market.</p>',
+        "<p>How do you get gamers to consider the Lexus IS? Definitely not by making a commercial.</p>" +
+        "<p>Instead, we stoked their obsession by inviting them to help build the world&rsquo;s first 150 MPH mobile gaming space: Gamers&rsquo; IS.</p>" +
+        "<p>With gaming influencer Fuslie, this two-part Twitch livestream event let fans vote on how to create the ultimate gaming cabin&mdash;then turned their dream build into a real, road-ready Lexus IS.</p>" +
+        "<p>The result: the initiative contributed to a 178% spike in IS sales&mdash;and helped push the Lexus IS to become the #2 top-selling car in the U.S.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/670863804" }],
       stillsLabel: false,
       stills: [
@@ -167,6 +177,10 @@ const PORTFOLIO_PROJECTS = [
           vimeoTitle: "Gamers' IS — build",
         },
         { src: "stills/lexus-gamers-is/1_build.jpg", alt: "Gamers' IS — build 1" },
+        { src: "stills/lexus-gamers-is/2_build.jpg", alt: "Gamers' IS — build 2" },
+        { src: "stills/lexus-gamers-is/3_build.jpg", alt: "Gamers' IS — build 3" },
+        { src: "stills/lexus-gamers-is/4_build.png", alt: "Gamers' IS — build 4" },
+        { src: "stills/lexus-gamers-is/5_build.png", alt: "Gamers' IS — build 5" },
         { section: "SOCIAL" },
         { src: "stills/lexus-gamers-is/1.png", alt: "Gamers' IS 1" },
         { src: "stills/lexus-gamers-is/2.png", alt: "Gamers' IS 2" },

@@ -921,6 +921,12 @@ main {
   overflow: hidden;
 }
 
+.project-rail-extra .project-embed--soundcloud .project-embed__inner {
+  aspect-ratio: auto;
+  height: 300px;
+  min-height: 300px;
+}
+
 .project-rail-extra .project-embed__inner iframe {
   position: absolute;
   inset: 0;

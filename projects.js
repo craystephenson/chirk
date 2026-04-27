@@ -666,6 +666,13 @@ const PORTFOLIO_PROJECTS = [
       ],
       stillsLabel: false,
       stills: [],
+      railHTML:
+        '<p class="project-rail-h">Audio</p>' +
+        '<div class="project-embed project-embed--soundcloud"><div class="project-embed__inner"><iframe ' +
+        'width="100%" height="300" scrolling="no" allow="autoplay" title="SoundCloud &mdash; Radio Spots" ' +
+        'src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2228618627&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">' +
+        "</iframe></div></div>" +
+        '<div class="project-rail-soundcloud-credit" style="font-size: 10px; color: #ccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/craystephenson" title="craystephenson" target="_blank" rel="noopener noreferrer" style="color: #ccc; text-decoration: none;">craystephenson</a> &middot; <a href="https://soundcloud.com/craystephenson/sets/radio-spots" title="Radio Spots" target="_blank" rel="noopener noreferrer" style="color: #ccc; text-decoration: none;">Radio Spots</a></div>',
     },
   },
 ];

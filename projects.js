@@ -37,9 +37,8 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="https://thedrumawards.com/live/en/page/content-results" target="_blank" rel="noopener noreferrer">The Drum Awards</a></p>' +
         '<p class="case-study-line"><a href="https://www.aaflosangeles.org/2025-winners-list" target="_blank" rel="noopener noreferrer">AAF LA</a></p>' +
         "<p>For many families, EVs feel complicated and unapproachable. So we created Dream Generator&mdash;an AI-powered Fire TV and web experience that showed how the Honda Prologue is perfect for any family adventure they can dream up.</p>" +
-        "<p>Families chose where they wanted to go, who they wanted to bring, and what they wanted to pack. Then a hybrid AI-and-human artist workflow turned their inputs into a custom two-minute animated dream film&mdash;sending them on a fantastic voyage made possible by the Prologue&rsquo;s cargo space, smart tech, and instant torque.</p>" +
-        "<p>And because every family is different, every Dream Generator adventure was too.</p>" +
-        "<p>With nearly 200 unique films possible, the experience demonstrated the full versatility of the Prologue.</p>" +
+        "<p>Families choose where they want to go, who they want to bring, and what they want to pack. Then a hybrid AI-and-human artist workflow turns their inputs into a custom two-minute animated dream film&mdash;sending them on a fantastic voyage made possible by the Prologue&rsquo;s cargo space, smart tech, and instant torque.</p>" +
+        "<p>And because every family is different, so is every Dream Generator adventure&mdash;with nearly 200 unique films demonstrating the full versatility of the Prologue.</p>" +
         '<p class="case-study-sect"><i>Results</i></p>' +
         "<p>247MM impressions in the first 18 days</p>" +
         "<p>$72.5MM in earned media</p>" +
@@ -163,11 +162,10 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="https://www.cnet.com/roadshow/news/twitch-gamers-mod-lexus-rgb-lights/" target="_blank" rel="noopener noreferrer">CNET</a></p>' +
         '<p class="case-study-line"><a href="https://hypebeast.com/2021/2/lexus-twitch-gamers-is-2021-lexus-is-all-in-campaign-announcement" target="_blank" rel="noopener noreferrer">Hypebeast</a></p>' +
         '<p class="case-study-line"><a href="https://www.ballerstatus.com/2021/02/18/lexus-partners-with-twitch-to-create-ultimate-gamers-is-350/" target="_blank" rel="noopener noreferrer">BallerStatus</a></p>' +
-        '<p class="case-study-line">Called “the model for marketers” by Twitch’s CEO</p>' +
         "<p>How do you get gamers to consider the Lexus IS? Definitely not by making a commercial.</p>" +
         "<p>Instead, we stoked their obsession by inviting them to help build the world&rsquo;s first 150 MPH mobile gaming space: Gamers&rsquo; IS.</p>" +
         "<p>With gaming influencer Fuslie, this two-part Twitch livestream event let fans vote on how to create the ultimate gaming cabin&mdash;then turned their dream build into a real, road-ready Lexus IS.</p>" +
-        "<p>The result: the initiative contributed to a 178% spike in IS sales&mdash;and helped push the Lexus IS to become the #2 top-selling car in the U.S.</p>",
+        "<p>The result: a livestream reveal, gamer-approved details, and a campaign that helped drive a 178% spike in IS sales&mdash;and helped push the Lexus IS to become the #2 top-selling car in the U.S. And Twitch&rsquo;s CEO called our initiative &ldquo;the model for marketers.&rdquo;</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/670863804" }],
       stillsLabel: false,
       stills: [
@@ -211,8 +209,7 @@ const PORTFOLIO_PROJECTS = [
         "<p class=\"case-study-line\">LA Addy Awards: Gold</p>" +
         "<p>When Honda announced its goal to be carbon neutral by 2050, skeptics could have said, &ldquo;Keep dreaming.&rdquo;</p>" +
         "<p>So we leaned into that.</p>" +
-        "<p>Working with Smith &amp; Foulkes, we created a spiraling first-person journey through Honda&rsquo;s past, present, and future breakthroughs in lower-emissions innovation.</p>" +
-        "<p>CG. Miniatures. Animation. Illustration. Green screen. CAD. AI.</p>" +
+        "<p>Working with Smith &amp; Foulkes, we created a spiraling first-person journey through Honda&rsquo;s past, present, and future breakthroughs in lower-emissions innovation. Blending CG, miniatures, animation, illustration, green screen, CAD and AI.</p>" +
         "<p>All to prove one thing:</p>" +
         "<p>To achieve something as ambitious as carbon neutrality, you have to keep dreaming.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/884917302" }],
@@ -290,12 +287,11 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="https://www.the360mag.com/tag/driving-safety/" target="_blank" rel="noopener noreferrer">360 Magazine</a></p>' +
         "<p class=\"case-study-sect\"><i>Insight</i></p>" +
         "<p>4.6 seconds is the average amount of time a text takes our eyes off the road.</p>" +
-        "<p class=\"case-study-sect\"><i>Objective</i></p>" +
-        "<p>Boost awareness of how long texting and driving truly distracts drivers.</p>" +
-        "<p class=\"case-study-sect\"><i>Idea</i></p>" +
-        "<p>Use SmartTint technology in a novel way to remove a driver’s vision for 4.6 seconds—making the danger of distracted driving impossible to ignore.</p>" +
-        "<p class=\"case-study-sect\"><i>Results</i></p>" +
-        "<p>224.7 million earned media impressions, with coverage in marketing, automotive, and lifestyle media including MediaPost, Car and Driver, Luxury Daily, Jalopnik, and 360 Magazine.</p>",
+        "<p>To show how just distracting texting while driving can be, we used SmartTint technology to blackout the windshield of a Lexus NX for 4.6 seconds&mdash;the average time a driver&rsquo;s eyes leave the road to read a text.</p>" +
+        "<p>Then we set drivers loose on a closed course filled with moving foam obstacles&mdash;unaware their vision would suddenly disappear.</p>" +
+        "<p>The results were destructive.</p>" +
+        "<p>Especially to perceptions of texting while driving.</p>" +
+        "<p>The film also shattered expectations, earning 224.7MM media impressions with coverage across marketing, automotive, and lifestyle outlets including MediaPost, Car and Driver, Luxury Daily, Jalopnik, and 360 Magazine.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/716637087" }],
       stillsLabel: false,
       stills: [

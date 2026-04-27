@@ -285,9 +285,8 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="https://www.luxurydaily.com/lexus-driving-disrupted/" target="_blank" rel="noopener noreferrer">Luxury Daily</a></p>' +
         '<p class="case-study-line"><a href="https://www.jalopnik.com/the-lexus-nx-4-6-is-like-beer-goggles-for-distracted-dr-1846661064/" target="_blank" rel="noopener noreferrer">Jalopnik</a></p>' +
         '<p class="case-study-line"><a href="https://www.the360mag.com/tag/driving-safety/" target="_blank" rel="noopener noreferrer">360 Magazine</a></p>' +
-        "<p class=\"case-study-sect\"><i>Insight</i></p>" +
         "<p>4.6 seconds is the average amount of time a text takes our eyes off the road.</p>" +
-        "<p>To show how just distracting texting while driving can be, we used SmartTint technology to blackout the windshield of a Lexus NX for 4.6 seconds&mdash;the average time a driver&rsquo;s eyes leave the road to read a text.</p>" +
+        "<p>So to show how just distracting texting while driving can be, we used SmartTint technology to blackout the windshield of a Lexus NX for 4.6 seconds.</p>" +
         "<p>Then we set drivers loose on a closed course filled with moving foam obstacles&mdash;unaware their vision would suddenly disappear.</p>" +
         "<p>The results were destructive.</p>" +
         "<p>Especially to perceptions of texting while driving.</p>" +
@@ -372,8 +371,7 @@ const PORTFOLIO_PROJECTS = [
         "<p>The client loved it too. According to Ace Metrix, the ad ranked in the top 1% of all Tier 1 automotive ads that year&mdash;and in the 99th percentile of all automotive ads ever tested.</p>" +
         '<p class="case-study-sect"><i>Production Note</i></p>' +
         "<p>We pulled it off on an insanely limited budget, entirely in-house. My VP/CD Sarah May Bates directed the film, and I led the facial-expression analysis, using MorphCast and OpenAI to assess and quantify the emotion metrics.</p>" +
-        "<p>I can&rsquo;t share the exact number.</p>" +
-        "<p>But if I did, your facial-expression analysis would register 98% disbelief.</p>",
+        "<p>I can&rsquo;t share the exact budget number. But if I did, your facial-expression analysis would register 98% disbelief.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/1171127200" }],
       stillsLabel: false,
       stills: [
@@ -439,19 +437,20 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/lexus_immersive_sonic.webp",
     cardTags: "experiential",
     tags: ["general", "tech"],
-    vimeo: "https://vimeo.com/190389606",
+    vimeo: "https://vimeo.com/1186849107",
     detail: {
       bodyHTML:
         '<p class="case-study-line"><a href="https://www.adsoftheworld.com/campaigns/immersive-sonic-challenge" target="_blank" rel="noopener noreferrer">Ads of the World</a></p>' +
-        "<p><i>Fun fact:</i> When people think Lexus, they don&rsquo;t always think high-performance. So we set out to change that with a groundbreaking, hyper-real 9.1 sonic experience.</p>" +
-        "<p>We invited auto enthusiasts into a high-decibel mobile surround-sound booth and challenged them to identify a mystery performance car by sound alone.</p>" +
+        "<p>The Lexus LC 500 is a naturally aspirated 5.0-liter V8-powered beast.</p>" +
+        "<p>However, when people think Lexus, they don&rsquo;t always think high-performance. So we set out to change their perception with a groundbreaking, hyper-real 9.1 sonic experience.</p>" +
+        "<p>We went to SEMA and challenged &ldquo;car people&rdquo; to identify a car based only on the sound of its exhaust note.</p>" +
         "<p>Some guessed Lamborghini.<br>Others guessed Ferrari, Maserati, or Porsche.</p>" +
-        "<p>Then we revealed the engine they heard was the Lexus LC 500.</p>" +
+        "<p>Then we revealed the beastly growl they just heard came from the Lexus LC 500.</p>" +
         "<p>Minds&mdash;and ears&mdash;were blown.</p>" +
         "<p>We then took the experience to theaters, creating the first-ever North American in-cinema ad mixed for Atmos.</p>" +
-        "<p>The result: a wave of enthusiast press that helped make performance fans rethink what Lexus could sound like.</p>",
+        "<p>The result: a wave of enthusiast press that helped shift perceptions on Lexus performance.</p>",
       media: [
-        { type: "vimeo", url: "https://vimeo.com/190389606", alt: "Lexus — Immersive Sonic Challenge, case study" },
+        { type: "vimeo", url: "https://vimeo.com/1186849107", alt: "Lexus — Immersive Sonic Challenge, case study" },
       ],
       stillsLabel: false,
       stills: [

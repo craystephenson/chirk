@@ -16,5 +16,6 @@ Current assets (paths in projects.js):
   carol_o_matic.png → Carol-O-Matic
   lexus_immersive_sonic.webp → Lexus | Immersive Sonic Challenge
   lexus_dadchelor_party.png → Lexus | Dad'chelor Party
+  broadcast.png → Assorted Broadcast
 
 Size: ~1200×896 or 4:3; object-fit: cover. WebP, PNG, GIF, or JPG.

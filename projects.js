@@ -646,6 +646,28 @@ const PORTFOLIO_PROJECTS = [
       ],
     },
   },
+  {
+    id: "17",
+    slug: "assorted-broadcast",
+    title: "Assorted Broadcast",
+    thumb: "thumbs/broadcast.png",
+    cardTags: "broadcast",
+    tags: ["general"],
+    vimeo: "https://vimeo.com/72761123",
+    detail: {
+      bodyHTML:
+        "<p>I&rsquo;ve done a lot of broadcast over the years. Here are a few of my favorites.</p>",
+      media: [
+        { type: "vimeo", url: "https://vimeo.com/72761123", alt: "Assorted Broadcast 1" },
+        { type: "vimeo", url: "https://vimeo.com/19445010", alt: "Assorted Broadcast 2" },
+        { type: "vimeo", url: "https://vimeo.com/116275909", alt: "Assorted Broadcast 3" },
+        { type: "vimeo", url: "https://vimeo.com/20381741", alt: "Assorted Broadcast 4" },
+        { type: "vimeo", url: "https://vimeo.com/20381750", alt: "Assorted Broadcast 5" },
+      ],
+      stillsLabel: false,
+      stills: [],
+    },
+  },
 ];
 
 window.PORTFOLIO_PROJECTS = PORTFOLIO_PROJECTS;

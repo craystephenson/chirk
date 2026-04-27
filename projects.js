@@ -657,7 +657,13 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/72761123",
     detail: {
       bodyHTML:
-        "<p>I&rsquo;ve done a lot of broadcast over the years. Here are a few of my favorites.</p>",
+        "<p>The Infiniti spot was directed by Michel Gondry. I interviewed him for a " +
+        '<a href="https://vimeo.com/73543161?fl=ls&amp;fe=ec" target="_blank" rel="noopener noreferrer">BTS video</a> ' +
+        "about the frozen moment technique used in the film.</p>" +
+        "<p>The Lexus spot was directed by Joe Kizinkzi. I also created a " +
+        '<a href="https://vimeo.com/305124488" target="_blank" rel="noopener noreferrer">BTS</a> ' +
+        "because the production was pre-AI, and the swinging cars were shot practically.</p>" +
+        "<p>For audio, I wrote the lyrics for the two HeartOne spots, and I wrote the lyrics, composed and performed the music and co-mix and mastered the song in Funstigator.</p>",
       media: [
         { type: "vimeo", url: "https://vimeo.com/72761123", alt: "Assorted Broadcast 1" },
         { type: "vimeo", url: "https://vimeo.com/19445010", alt: "Assorted Broadcast 2" },

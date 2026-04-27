@@ -448,6 +448,99 @@
     }
   }
 
+  function mountAudioPlaylist(root, playlist) {
+    if (!root || !Array.isArray(playlist) || !playlist.length) return;
+    root.innerHTML = "";
+    const wrap = document.createElement("div");
+    wrap.className = "project-audio";
+
+    const h = document.createElement("p");
+    h.className = "project-rail-h";
+    h.textContent = "Audio";
+    wrap.appendChild(h);
+
+    const srcs = playlist.map(function (t) {
+      if (!t) return "";
+      const file = t.file || t.src;
+      if (!file) return "";
+      if (String(file).indexOf("http") === 0) return file;
+      return staticAssetUrl(file.indexOf("audio/") === 0 ? file : "audio/" + file);
+    });
+
+    const audio = document.createElement("audio");
+    audio.className = "project-audio__el";
+    audio.preload = "metadata";
+    audio.controls = true;
+    audio.setAttribute(
+      "aria-label",
+      "Audio for this project. Select a track from the list below, or use these controls to play, pause, and seek."
+    );
+
+    const list = document.createElement("ol");
+    list.className = "project-audio__list";
+    const buttons = [];
+
+    function setActive(i) {
+      buttons.forEach(function (btn, j) {
+        if (i >= 0 && j === i) {
+          btn.classList.add("is-active");
+          btn.setAttribute("aria-current", "true");
+        } else {
+          btn.classList.remove("is-active");
+          btn.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    function loadTrack(i) {
+      if (i < 0 || i >= srcs.length || !srcs[i]) return;
+      audio.src = srcs[i];
+      audio.dataset.trackIndex = String(i);
+      setActive(i);
+      const p = audio.play();
+      if (p && typeof p.catch === "function") {
+        p.catch(function () {});
+      }
+    }
+
+    wrap.appendChild(audio);
+    wrap.appendChild(list);
+    root.appendChild(wrap);
+
+    playlist.forEach(function (t, i) {
+      if (!srcs[i]) return;
+      const li = document.createElement("li");
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "project-audio__track";
+      btn.textContent = t.label || t.title || t.file;
+      btn.addEventListener("click", function () {
+        const cur = parseInt(audio.dataset.trackIndex, 10);
+        if (cur === i) {
+          if (audio.paused) {
+            const p2 = audio.play();
+            if (p2 && typeof p2.catch === "function") p2.catch(function () {});
+          } else {
+            audio.pause();
+          }
+          return;
+        }
+        loadTrack(i);
+      });
+      li.appendChild(btn);
+      list.appendChild(li);
+      buttons.push(btn);
+    });
+
+    audio.addEventListener("ended", function () {
+      const cur = parseInt(audio.dataset.trackIndex, 10);
+      if (isNaN(cur) || cur < 0) return;
+      if (cur < playlist.length - 1) {
+        loadTrack(cur + 1);
+      }
+    });
+  }
+
   function mountProject(p) {
     currentProject = p;
     currentMedia = normalizeMedia(p);
@@ -503,7 +596,10 @@
 
     renderStills(p);
     if (elRailExtra) {
-      if (d && d.railHTML) {
+      if (d && d.audioPlaylist && d.audioPlaylist.length) {
+        mountAudioPlaylist(elRailExtra, d.audioPlaylist);
+        elRailExtra.hidden = false;
+      } else if (d && d.railHTML) {
         elRailExtra.innerHTML = d.railHTML;
         elRailExtra.hidden = false;
       } else {

@@ -8,6 +8,7 @@
  * p.case-study-sect: <i>Insight</i> / <i>Idea</i> / <i>Objective</i> (italic section labels, not h1–h3).
  * Optional: detail.stageHeading — short label above the hero player (e.g. Dolby Atmos®).
  * Optional: detail.railHTML — HTML in the right column below stills (e.g. extra Vimeo embeds).
+ * Optional: detail.audioPlaylist — [{ file, label }] for MP3s in /audio/; native playlist UI (replaces railHTML when set).
  * Optional: detail.stillsLabel — set to false to hide the “Stills” heading, or a string to replace it.
  * Optional: detail.mediaImageObjectFit — e.g. "contain" for image-only stage slideshows (full image visible in 16:9 frame).
  * Optional stills row: { section: "SITE" } or { subSection: "References" } (headings, no image).
@@ -666,13 +667,14 @@ const PORTFOLIO_PROJECTS = [
       ],
       stillsLabel: false,
       stills: [],
-      railHTML:
-        '<p class="project-rail-h">Audio</p>' +
-        '<div class="project-embed project-embed--soundcloud"><div class="project-embed__inner"><iframe ' +
-        'width="100%" height="300" scrolling="no" allow="autoplay" title="SoundCloud &mdash; Radio Spots" ' +
-        'src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2228618627&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">' +
-        "</iframe></div></div>" +
-        '<div class="project-rail-soundcloud-credit" style="font-size: 10px; color: #ccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/craystephenson" title="craystephenson" target="_blank" rel="noopener noreferrer" style="color: #ccc; text-decoration: none;">craystephenson</a> &middot; <a href="https://soundcloud.com/craystephenson/sets/radio-spots" title="Radio Spots" target="_blank" rel="noopener noreferrer" style="color: #ccc; text-decoration: none;">Radio Spots</a></div>',
+      audioPlaylist: [
+        { file: "1 - Smashed My Heart - HeartOne.mp3", label: "Smashed My Heart — HeartOne" },
+        { file: "2 - Common Sense - NTTA.mp3", label: "Common Sense — NTTA" },
+        { file: "3 - Moonsoon Picnic - Tony Roma's.mp3", label: "Moonsoon Picnic — Tony Roma’s" },
+        { file: "4 - Funstigator -  Main Event.mp3", label: "Funstigator — Main Event" },
+        { file: "5 - Giving You My Heart - HeartOne.mp3", label: "Giving You My Heart — HeartOne" },
+        { file: "6 - Tin Man - Medical City.mp3", label: "Tin Man — Medical City" },
+      ],
     },
   },
 ];

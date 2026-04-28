@@ -705,6 +705,7 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-sect"><i>Perennials Fabrics</i></p>' +
         '<p class="case-study-line">Communication Arts Advertising Annual</p>' +
         '<p class="case-study-sect"><i>STEAM Carnival</i></p>' +
+        '<p class="case-study-sect"><i>Lexus</i></p>' +
         '<p class="case-study-sect"><i>Dallas Symphony Orchestra</i></p>' +
         '<p class="case-study-line"><a href="https://www.oneclub.org/#olmag=/_ajax/archive/?action=arc_work%26value=12795" target="_blank" rel="noopener noreferrer">One Show Merit</a></p>' +
         '<p class="case-study-line">Graphis 100 Best Annual Reports Platinum Award</p>' +
@@ -735,6 +736,16 @@ const PORTFOLIO_PROJECTS = [
             { type: "image", src: "print/Rocker-Scientist-Posters2_1000.jpg", alt: "STEAM Carnival" },
             { type: "image", src: "print/Rocker-Scientist-Posters3_1000.jpg", alt: "STEAM Carnival" },
             { type: "image", src: "print/es_print.png", alt: "STEAM Carnival — engineering school print" },
+          ],
+        },
+        {
+          title: "Lexus",
+          slides: [
+            {
+              type: "image",
+              src: "print/lexus_es350_uncommon_luxury.png",
+              alt: "Lexus print",
+            },
           ],
         },
         {

@@ -14,7 +14,6 @@
  * Optional: detail.mediaImageObjectFit — e.g. "contain" for image-only stage slideshows (full image visible in 16:9 frame).
  * Optional: detail.media item type "video" with src (+ optional poster) for local MP4 in the hero carousel.
  * Optional: detail.printLayout — [{ title, slides: [{type,src,alt,?poster,?url,?h}], carousel?: boolean }]; renders stacked singles or local carousels (empty detail.media).
- * Optional: detail.jambaCubicleFilmVimeoUrl — when set on assorted-print, slide 2 of Jamba (Cubicle Picnic film) embeds Vimeo instead of local MP4.
  * Optional stills row: { section: "SITE" } or { subSection: "References" } (headings, no image).
  * Or { vimeo: "https://vimeo.com/…", vimeoTitle?: "…" } for an embed in the stills column.
  * Optional: onlyInView — e.g. "ai": tile appears only when that workspace filter is active (hidden from All and other tabs).
@@ -706,8 +705,7 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-sect"><i>Perennials Fabrics</i></p>' +
         '<p class="case-study-line">Communication Arts Advertising Annual</p>' +
         '<p class="case-study-sect"><i>STEAM Carnival</i></p>' +
-        '<p class="case-study-sect"><i>Lexus | Dad&rsquo;chelor Party</i></p>' +
-        "<p>To nudge shoppers toward a Lexus hybrid, we leaned into Funny or Die comedy on how painful LA&ndash;Vegas can be in an EV. Supporting print drove to <i>The Dad&rsquo;chelor Party</i> film.</p>" +
+        '<p class="case-study-sect"><i>Lexus</i></p>' +
         '<p class="case-study-sect"><i>Dallas Symphony Orchestra</i></p>' +
         '<p class="case-study-line"><a href="https://www.oneclub.org/#olmag=/_ajax/archive/?action=arc_work%26value=12795" target="_blank" rel="noopener noreferrer">One Show Merit</a></p>' +
         '<p class="case-study-line">Graphis 100 Best Annual Reports Platinum Award</p>' +
@@ -719,7 +717,6 @@ const PORTFOLIO_PROJECTS = [
         "</a></p>" +
         '<p class="case-study-sect"><i>Jamba Juice</i></p>',
       media: [],
-      jambaCubicleFilmVimeoUrl: "",
       printLayout: [
         {
           title: "Tony Roma\u2019s",
@@ -748,12 +745,12 @@ const PORTFOLIO_PROJECTS = [
           ],
         },
         {
-          title: "Lexus | Dad\u2019chelor Party",
+          title: "Lexus",
           slides: [
             {
               type: "image",
-              src: "thumbs/lexus_dadchelor_party.png",
-              alt: "Lexus — The Dad\u2019chelor Party print",
+              src: "print/lexus_es350_uncommon_luxury.png",
+              alt: "Lexus ES 350 — Uncommon Luxury print (header and poster)",
             },
           ],
         },
@@ -787,9 +784,8 @@ const PORTFOLIO_PROJECTS = [
           slides: [
             { type: "image", src: "print/Cubicle Picnic/cubicle_picnic.png", alt: "Jamba Juice — Cubicle Picnic print" },
             {
-              type: "video",
-              src: "print/Cubicle Picnic/cubicle_picnic_web.mp4",
-              poster: "print/Cubicle Picnic/cubicle_picnic.png",
+              type: "vimeo",
+              url: "https://vimeo.com/1187420274",
               alt: "Jamba Juice — Cubicle Picnic film",
             },
           ],

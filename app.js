@@ -1005,8 +1005,6 @@
     const page = document.createElement("div");
     page.className = "project-print-page";
 
-    const jambaVimeo = typeof d.jambaCubicleFilmVimeoUrl === "string" ? d.jambaCubicleFilmVimeoUrl.trim() : "";
-
     (d.printLayout || []).forEach(function (sect) {
       if (
         !sect ||
@@ -1014,23 +1012,6 @@
         sect.slides.length === 0
       ) {
         return;
-      }
-
-      let slidesUse = sect.slides;
-      if (
-        jambaVimeo &&
-        /jamba/i.test(sect.title || "") &&
-        sect.slides[1] &&
-        sect.slides[1].type === "video"
-      ) {
-        slidesUse = sect.slides.slice();
-        slidesUse[1] = {
-          type: "vimeo",
-          url: jambaVimeo,
-          alt: sect.slides[1].alt || "Jamba Juice — Cubicle Picnic film",
-          h:
-            typeof sect.slides[1].h === "string" ? sect.slides[1].h : undefined,
-        };
       }
 
       const sectionEl = document.createElement("section");
@@ -1042,9 +1023,9 @@
       sectionEl.appendChild(ht);
 
       if (sect.carousel) {
-        sectionEl.appendChild(buildPrintCarouselStrip(slidesUse, fitDefault));
+        sectionEl.appendChild(buildPrintCarouselStrip(sect.slides, fitDefault));
       } else {
-        slidesUse.forEach(function (sl) {
+        sect.slides.forEach(function (sl) {
           const holder = document.createElement("div");
           holder.className = "project-print-single";
           holder.appendChild(buildPrintSlideNode(sl, fitDefault));

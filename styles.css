@@ -720,6 +720,97 @@ main {
   line-height: 1.5;
 }
 
+.project-password-gate {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 1.25rem 1.75rem;
+  background: #0a0a0a;
+  color: #e6e6e6;
+  text-align: center;
+}
+
+.project-password-gate__lede {
+  margin: 0 0 1rem;
+  font-size: 0.7rem;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: #ccc;
+}
+
+.project-password-gate__form {
+  width: 100%;
+  max-width: 17rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.project-password-gate__label {
+  flex: 1 0 100%;
+  text-align: left;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.project-password-gate__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.45rem 0.55rem;
+  font: inherit;
+  font-size: 0.75rem;
+  border: 1px solid #333;
+  border-radius: 2px;
+  background: #161616;
+  color: #eee;
+}
+
+.project-password-gate__input:focus {
+  outline: 2px solid #555;
+  outline-offset: 1px;
+}
+
+.project-password-gate__submit {
+  cursor: pointer;
+  padding: 0.45rem 0.85rem;
+  font: inherit;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid #555;
+  border-radius: 2px;
+  background: #1a1a1a;
+  color: #eee;
+}
+
+.project-password-gate__submit:hover,
+.project-password-gate__submit:focus-visible {
+  background: #242424;
+  border-color: #777;
+}
+
+.project-password-gate__error {
+  flex: 1 0 100%;
+  margin: 0.25rem 0 0;
+  font-size: 0.65rem;
+  color: #e88;
+  text-transform: none;
+}
+
+.project-password-gate__error[hidden] {
+  display: none !important;
+}
+
 .project-frame {
   position: absolute;
   inset: 0;

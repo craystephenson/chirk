@@ -113,6 +113,9 @@
   }
 
   function projectMatchesView(project, viewId) {
+    if (project.onlyInView) {
+      return normalizeTag(project.onlyInView) === normalizeTag(viewId);
+    }
     if (viewId === "all") return true;
     return (project.tags || []).map(normalizeTag).includes(viewId);
   }
@@ -541,13 +544,156 @@
     });
   }
 
-  function mountProject(p) {
+  function normalizePasswordPhrase(s) {
+    return String(s || "")
+      .trim()
+      .replace(/\s+/g, " ")
+      .toLowerCase();
+  }
+
+  function passwordStorageKey(slug) {
+    return "portfolioPw:" + slug;
+  }
+
+  function isPasswordUnlocked(slug) {
+    try {
+      return sessionStorage.getItem(passwordStorageKey(slug)) === "1";
+    } catch {
+      return false;
+    }
+  }
+
+  function setPasswordUnlocked(slug) {
+    try {
+      sessionStorage.setItem(passwordStorageKey(slug), "1");
+    } catch {
+      /* */
+    }
+  }
+
+  function mountPasswordGateProject(p) {
+    currentMedia = [];
+    currentSlide = 0;
+
+    if (elBody) {
+      elBody.textContent = "";
+      elBody.innerHTML = "";
+      elBody.hidden = true;
+      elBody.classList.remove("project-detail__body--html");
+    }
+    if (elAwards) {
+      elAwards.innerHTML = "";
+      elAwards.hidden = true;
+    }
+    if (elStagePre) {
+      elStagePre.textContent = "";
+      elStagePre.hidden = true;
+    }
+    if (elStills && elStillsGrid) {
+      elStills.hidden = true;
+      elStillsGrid.innerHTML = "";
+    }
+    if (elStillsEmpty) elStillsEmpty.hidden = true;
+    if (elStillsLabel) {
+      elStillsLabel.hidden = false;
+      elStillsLabel.textContent = "Stills";
+    }
+    if (elRailExtra) {
+      elRailExtra.innerHTML = "";
+      elRailExtra.hidden = true;
+    }
+    if (elThumbs) elThumbs.hidden = true;
+    if (elStageNav) elStageNav.hidden = true;
+
+    elStage.innerHTML = "";
+    const gate = document.createElement("div");
+    gate.className = "project-password-gate";
+
+    const lede = document.createElement("p");
+    lede.className = "project-password-gate__lede";
+    lede.textContent = "This section is password protected.";
+
+    const form = document.createElement("form");
+    form.className = "project-password-gate__form";
+    form.setAttribute("novalidate", "");
+    form.setAttribute("autocomplete", "off");
+
+    const label = document.createElement("label");
+    label.className = "project-password-gate__label";
+    label.htmlFor = "project-password-input";
+    label.textContent = "Password";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.id = "project-password-input";
+    input.className = "project-password-gate__input";
+    input.setAttribute("autocomplete", "off");
+    input.setAttribute("spellcheck", "false");
+
+    const submit = document.createElement("button");
+    submit.type = "submit";
+    submit.className = "project-password-gate__submit";
+    submit.textContent = "Continue";
+
+    const err = document.createElement("p");
+    err.className = "project-password-gate__error";
+    err.setAttribute("role", "alert");
+    err.hidden = true;
+    err.textContent = "That password doesn’t match. Try again.";
+
+    form.appendChild(label);
+    form.appendChild(input);
+    form.appendChild(submit);
+    form.appendChild(err);
+
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      err.hidden = true;
+      const want = normalizePasswordPhrase(p.detail && p.detail.passwordPhrase);
+      const got = normalizePasswordPhrase(input.value);
+      if (want.length && got === want) {
+        setPasswordUnlocked(projectSlug(p));
+        mountProject(p, { forceUnlocked: true });
+      } else {
+        err.hidden = false;
+      }
+    });
+
+    gate.appendChild(lede);
+    gate.appendChild(form);
+    elStage.appendChild(gate);
+
+    if (elBack) elBack.setAttribute("href", workHash());
+    const siteMatch = baseTitle.match(/—\s*(.+)$/);
+    const siteName = siteMatch ? siteMatch[1].trim() : baseTitle;
+    document.title = (p.title || "Project") + " — " + siteName;
+
+    updateCaseStudyNav(p);
+    requestAnimationFrame(function () {
+      input.focus();
+    });
+  }
+
+  function mountProject(p, opts) {
+    opts = opts || {};
     currentProject = p;
-    currentMedia = normalizeMedia(p);
     currentSlide = 0;
     if (elTitle) elTitle.textContent = p.title || "Project";
 
+    const slug = projectSlug(p);
     const d = p.detail;
+    const phrase = d && d.passwordPhrase;
+    if (
+      phrase &&
+      !opts.forceUnlocked &&
+      !isPasswordUnlocked(slug)
+    ) {
+      mountPasswordGateProject(p);
+      return;
+    }
+
+    currentMedia = normalizeMedia(p);
+
     if (elBody) {
       elBody.classList.remove("project-detail__body--html");
     }

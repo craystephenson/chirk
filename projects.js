@@ -13,6 +13,8 @@
  * Optional: detail.mediaImageObjectFit — e.g. "contain" for image-only stage slideshows (full image visible in 16:9 frame).
  * Optional stills row: { section: "SITE" } or { subSection: "References" } (headings, no image).
  * Or { vimeo: "https://vimeo.com/…", vimeoTitle?: "…" } for an embed in the stills column.
+ * Optional: onlyInView — e.g. "ai": tile appears only when that workspace filter is active (hidden from All and other tabs).
+ * Optional: detail.passwordPhrase — viewer must submit this text (phrase match, case-insensitive) to see the page; persists for session in sessionStorage.
  */
 const PORTFOLIO_PROJECTS = [
   {
@@ -681,6 +683,22 @@ const PORTFOLIO_PROJECTS = [
         { file: "5 - Giving You My Heart - HeartOne.mp3", label: "Giving You My Heart — HeartOne" },
         { file: "6 - Tin Man - Medical City.mp3", label: "Tin Man — Medical City" },
       ],
+    },
+  },
+  {
+    id: "ai-films",
+    slug: "ai-films",
+    title: "AI Films",
+    cardTags: "ai films · password protected",
+    tags: ["ai"],
+    onlyInView: "ai",
+    thumb: "thumbs/ai-films.webp",
+    detail: {
+      passwordPhrase: "Show me",
+      bodyHTML: "<p>Selected AI-assisted film projects.</p>",
+      media: [],
+      stillsLabel: false,
+      stills: [],
     },
   },
 ];

@@ -709,12 +709,6 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-sect"><i>Dallas Symphony Orchestra</i></p>' +
         '<p class="case-study-line"><a href="https://www.oneclub.org/#olmag=/_ajax/archive/?action=arc_work%26value=12795" target="_blank" rel="noopener noreferrer">One Show Merit</a></p>' +
         '<p class="case-study-line">Graphis 100 Best Annual Reports Platinum Award</p>' +
-        '<p class="case-study-line case-study-line--fs">' +
-        '<a class="case-study-fs" href="https://issuu.com/charliestephenson/docs/dso_annual_report" target="_blank" rel="noopener noreferrer" title="Open fullscreen on Issuu" aria-label="Open Dallas Symphony annual report fullscreen on Issuu">' +
-        '<svg class="case-study-fs__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-        '<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>' +
-        "</svg>" +
-        "</a></p>" +
         '<p class="case-study-sect"><i>Jamba Juice</i></p>',
       media: [],
       printLayout: [
@@ -741,7 +735,6 @@ const PORTFOLIO_PROJECTS = [
             { type: "image", src: "print/Rocker-Scientist-Posters_1000.jpg", alt: "STEAM Carnival" },
             { type: "image", src: "print/Rocker-Scientist-Posters2_1000.jpg", alt: "STEAM Carnival" },
             { type: "image", src: "print/Rocker-Scientist-Posters3_1000.jpg", alt: "STEAM Carnival" },
-            { type: "image", src: "print/es_print.png", alt: "STEAM Carnival" },
           ],
         },
         {

@@ -586,26 +586,6 @@ main {
   opacity: 0.8;
 }
 
-.project-detail__body--html .case-study-fs {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
-  text-decoration: none;
-  padding: 0.1em 0;
-  margin: -0.1em 0;
-  color: #111;
-}
-
-.project-detail__body--html .case-study-fs:hover,
-.project-detail__body--html .case-study-fs:focus-visible {
-  opacity: 0.72;
-}
-
-.project-detail__body--html .case-study-fs__icon {
-  display: block;
-}
-
 .project-detail__body--html .project-detail__recognition {
   font-size: 0.64rem;
   line-height: 1.5;
@@ -742,6 +722,10 @@ main {
 
 .project-print-sect {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
 }
 
 .project-print-sect__title {
@@ -751,6 +735,8 @@ main {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #111;
+  text-align: center;
+  width: 100%;
 }
 
 .project-print-single {

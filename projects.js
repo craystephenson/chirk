@@ -9,6 +9,7 @@
  * Optional: detail.stageHeading — short label above the hero player (e.g. Dolby Atmos®).
  * Optional: detail.railHTML — HTML in the right column below stills (e.g. extra Vimeo embeds).
  * Optional: detail.audioPlaylist — [{ file, label }] for MP3s in /audio/; native playlist UI (replaces railHTML when set).
+ * Optional on vimeo media: h — privacy token from Vimeo Share → Embed (?h=…) if the player errors but the vimeo.com URL works in a tab.
  * Optional: detail.stillsLabel — set to false to hide the “Stills” heading, or a string to replace it.
  * Optional: detail.mediaImageObjectFit — e.g. "contain" for image-only stage slideshows (full image visible in 16:9 frame).
  * Optional stills row: { section: "SITE" } or { subSection: "References" } (headings, no image).
@@ -708,6 +709,7 @@ const PORTFOLIO_PROJECTS = [
         {
           type: "vimeo",
           url: "https://vimeo.com/1187073837/",
+          /* If embed shows “Sorry…”, open this clip in Vimeo (logged in) → Share → Embed, copy ?h= from the iframe URL and add: h: "…………" here. */
           alt: "Recycle Global Exchange — AI film",
         },
       ],

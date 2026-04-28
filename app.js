@@ -68,9 +68,16 @@
     return p.id;
   }
 
-  function vimeoEmbedSrc(url) {
-    const { id: vid, h } = parseVimeoUrl(url);
+  /** Optional `media` carries `h` — privacy token from Vimeo Embed (?h=…) when the watch URL has no /id/hash in the path. */
+  function vimeoEmbedSrc(url, media) {
+    const parsed = parseVimeoUrl(url);
+    const vid = parsed.id;
     if (!vid) return null;
+    let h = parsed.h;
+    if (media && typeof media.h === "string") {
+      const t = media.h.trim();
+      if (t) h = t;
+    }
     let qs = "title=0&byline=0&portrait=0&dnt=1";
     if (h) qs += "&h=" + encodeURIComponent(h);
     return "https://player.vimeo.com/video/" + encodeURIComponent(vid) + "?" + qs;
@@ -108,7 +115,11 @@
 
   function normalizeMediaItem(m) {
     if (!m || !m.type) return null;
-    if (m.type === "vimeo" && m.url) return { type: "vimeo", url: m.url, alt: m.alt || "" };
+    if (m.type === "vimeo" && m.url) {
+      const o = { type: "vimeo", url: m.url, alt: m.alt || "" };
+      if (typeof m.h === "string" && m.h.trim()) o.h = m.h.trim();
+      return o;
+    }
     if (m.type === "image" && m.src) return { type: "image", src: m.src, alt: m.alt || "" };
     return null;
   }
@@ -117,7 +128,7 @@
     const seen = new Set();
     return list.filter(function (m) {
       var key;
-      if (m.type === "vimeo" && m.url) key = "v:" + m.url;
+      if (m.type === "vimeo" && m.url) key = "v:" + m.url + "\0" + (m.h || "");
       else if (m.type === "image" && m.src) key = "i:" + m.src;
       else return true;
       if (seen.has(key)) return false;
@@ -413,7 +424,7 @@
         return;
       }
       if (s && s.vimeo) {
-        const emb = vimeoEmbedSrc(s.vimeo);
+        const emb = vimeoEmbedSrc(s.vimeo, s);
         const fallbackVid = vimeoIdFromUrl(s.vimeo);
         const srcIframe = emb ||
           (fallbackVid

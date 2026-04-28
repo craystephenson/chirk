@@ -43,9 +43,37 @@
   let currentProject = null;
   let currentMedia = [];
 
+  /**
+   * Video id plus optional privacy / unlisted hash (path or ?h=)
+   * so player URLs work for links like vimeo.com/123/token.
+   */
+  function parseVimeoUrl(url) {
+    const raw = String(url || "").trim();
+    const withQuery = raw.split("#")[0];
+    const idMatch = withQuery.match(/vimeo\.com\/(?:[^\d]*\/)*(\d{5,})\b/);
+    if (!idMatch) return { id: null, h: null };
+    const id = idMatch[1];
+    let h = null;
+    const qp = raw.match(/[?&#]h=([a-z0-9]{4,})\b/i);
+    if (qp) h = qp[1];
+    if (!h) {
+      const pathH = raw.match(/vimeo\.com\/\d+\/([a-z0-9]{4,})\b/i);
+      if (pathH && pathH[1] !== id) h = pathH[1];
+    }
+    return { id: id, h: h };
+  }
+
   function vimeoIdFromUrl(url) {
-    const m = String(url).match(/vimeo\.com\/(?:.*\/)?(\d+)/);
-    return m ? m[1] : null;
+    const p = parseVimeoUrl(url);
+    return p.id;
+  }
+
+  function vimeoEmbedSrc(url) {
+    const { id: vid, h } = parseVimeoUrl(url);
+    if (!vid) return null;
+    let qs = "title=0&byline=0&portrait=0&dnt=1";
+    if (h) qs += "&h=" + encodeURIComponent(h);
+    return "https://player.vimeo.com/video/" + encodeURIComponent(vid) + "?" + qs;
   }
 
   function projectSlug(p) {
@@ -215,14 +243,13 @@
     const i = currentSlide % currentMedia.length;
     const m = currentMedia[i];
     if (m.type === "vimeo") {
-      const id = vimeoIdFromUrl(m.url);
-      if (id) {
+      const srcEmbed = vimeoEmbedSrc(m.url);
+      if (srcEmbed) {
         const frame = document.createElement("div");
         frame.className = "project-frame";
         const iframe = document.createElement("iframe");
         iframe.className = "project-frame__iframe";
-        iframe.src =
-          "https://player.vimeo.com/video/" + id + "?title=0&byline=0&portrait=0&dnt=1";
+        iframe.src = srcEmbed;
         iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
         iframe.setAttribute("allowfullscreen", "");
         iframe.title = (currentProject && currentProject.title) || "Vimeo";
@@ -385,16 +412,20 @@
         return;
       }
       if (s && s.vimeo) {
-        const vid = vimeoIdFromUrl(s.vimeo);
-        if (vid) {
+        const emb = vimeoEmbedSrc(s.vimeo);
+        const fallbackVid = vimeoIdFromUrl(s.vimeo);
+        const srcIframe = emb ||
+          (fallbackVid
+            ? "https://player.vimeo.com/video/" + fallbackVid + "?title=0&byline=0&portrait=0"
+            : null);
+        if (srcIframe) {
           const item = document.createElement("div");
           item.className = "project-stills__item project-stills__item--embed";
           item.setAttribute("role", "listitem");
           const inner = document.createElement("div");
           inner.className = "project-stills__embed";
           const ifr = document.createElement("iframe");
-          ifr.src =
-            "https://player.vimeo.com/video/" + vid + "?title=0&byline=0&portrait=0";
+          ifr.src = srcIframe;
           ifr.title = s.vimeoTitle || "Vimeo";
           ifr.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
           ifr.setAttribute("allowfullscreen", "true");

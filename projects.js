@@ -692,11 +692,25 @@ const PORTFOLIO_PROJECTS = [
     cardTags: "ai films · password protected",
     tags: ["ai"],
     onlyInView: "ai",
+    vimeo: "https://vimeo.com/1187071074/8c701596e2",
     thumb: "thumbs/ai-films.webp",
     detail: {
       passwordPhrase: "Show me",
-      bodyHTML: "<p>Selected AI-assisted film projects.</p>",
-      media: [],
+      bodyHTML:
+        "<p>The first two films I created for my wife, who is a talented strategist and business owner. I concepted, wrote, generated, and edited these first two films for her clients: Avvio and Recycle Global Exchange.</p>" +
+        "<p>The third film I concepted, wrote, and generated assets for to celebrate the extraordinary career of a really great dude, Joe Baratelli. One of the funnest and silliest things I&rsquo;ve made in a while.</p>",
+      media: [
+        {
+          type: "vimeo",
+          url: "https://vimeo.com/1187071074/8c701596e2",
+          alt: "Avvio — AI film",
+        },
+        {
+          type: "vimeo",
+          url: "https://vimeo.com/1187073837",
+          alt: "Recycle Global Exchange — AI film",
+        },
+      ],
       stillsLabel: false,
       stills: [],
     },

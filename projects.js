@@ -285,6 +285,7 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "",
     detail: {
       bodyHTML:
+        '<p class="case-study-line"><a href="https://www.adsoftheworld.com/campaigns/driving-disrupted" target="_blank" rel="noopener noreferrer">Ads of the World</a></p>' +
         '<p class="case-study-line">MediaPost</p>' +
         "<p class=\"case-study-line\">Car and Driver</p>" +
         '<p class="case-study-line"><a href="https://www.luxurydaily.com/lexus-driving-disrupted/" target="_blank" rel="noopener noreferrer">Luxury Daily</a></p>' +

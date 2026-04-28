@@ -708,9 +708,8 @@ const PORTFOLIO_PROJECTS = [
         },
         {
           type: "vimeo",
-          url: "https://vimeo.com/1187073837/",
-          /* If embed shows “Sorry…”, open this clip in Vimeo (logged in) → Share → Embed, copy ?h= from the iframe URL and add: h: "…………" here. */
-          alt: "Recycle Global Exchange — AI film",
+          url: "https://vimeo.com/1187073837/bc27aeb3a4",
+          alt: "Tame Your Beast — Recycling Global Exchange",
         },
       ],
       stillsLabel: false,

@@ -814,6 +814,11 @@ const PORTFOLIO_PROJECTS = [
           url: "https://vimeo.com/1187073837/bc27aeb3a4",
           alt: "Tame Your Beast — Recycling Global Exchange",
         },
+        {
+          type: "vimeo",
+          url: "https://vimeo.com/1187516659/c90597d207",
+          alt: "Joe Baratelli tribute — AI film",
+        },
       ],
       stillsLabel: false,
       stills: [],

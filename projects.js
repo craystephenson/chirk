@@ -319,7 +319,7 @@ const PORTFOLIO_PROJECTS = [
         "<p>When the next-generation Honda Prelude launched, enthusiasts questioned whether it could live up to its legacy of fun.</p>" +
         "<p>So we set out to prove it&mdash;scientifically.</p>" +
         "<p>We built an AI facial-expression analysis system to capture real emotional reactions from drivers on a closed course.</p>" +
-        "<p>The science confirmed it: the Prelude was fun.</p>" +
+        "<p>The science confirmed it: the Prelude is hella fun.</p>" +
         "<p>The client loved it too. According to Ace Metrix, the ad ranked in the top 1% of all Tier 1 automotive ads that year&mdash;and in the 99th percentile of all automotive ads ever tested.</p>" +
         '<p class="case-study-sect"><i>Production Note</i></p>' +
         "<p>We pulled it off on an insanely limited budget, entirely in-house. My VP/CD Sarah May Bates directed the film, and I led the facial-expression analysis, using MorphCast and OpenAI to assess and quantify the emotion metrics.</p>" +

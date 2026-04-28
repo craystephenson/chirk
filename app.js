@@ -252,6 +252,7 @@
         iframe.src = srcEmbed;
         iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
         iframe.setAttribute("allowfullscreen", "");
+        iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
         iframe.title = (currentProject && currentProject.title) || "Vimeo";
         frame.appendChild(iframe);
         elStage.appendChild(frame);
@@ -427,6 +428,7 @@
           const ifr = document.createElement("iframe");
           ifr.src = srcIframe;
           ifr.title = s.vimeoTitle || "Vimeo";
+          ifr.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
           ifr.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
           ifr.setAttribute("allowfullscreen", "true");
           inner.appendChild(ifr);

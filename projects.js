@@ -705,11 +705,9 @@ const PORTFOLIO_PROJECTS = [
           url: "https://vimeo.com/1187071074/8c701596e2",
           alt: "Avvio — AI film",
         },
-        // Privacy / unlisted Vimeo: must use the Share link that includes the path after the id
-        // (e.g. …/1187073837/abc…) or ?h=abc from Embed — plain vimeo.com/id will not load in the player.
         {
           type: "vimeo",
-          url: "https://vimeo.com/1187073837",
+          url: "https://vimeo.com/1187073837/",
           alt: "Recycle Global Exchange — AI film",
         },
       ],

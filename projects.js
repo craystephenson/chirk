@@ -247,8 +247,8 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="http://www.commarts.com/exhibit/musicislifeismusic.html" target="_blank" rel="noopener noreferrer">Communications Arts Exhibit</a></p>' +
         "<p class=\"case-study-line\">D&amp;AD Pencil</p>" +
         "<p class=\"case-study-line\">Webby Awards</p>" +
-        "<p>How do you get music lovers excited about the GRAMMYs again?</p>" +
-        "<p>Let them share the soundtrack of their lives.</p>" +
+        "<p>How do we reignite one's love of music and the GRAMMYs?</p>" +
+        "<p>By letting them share the soundtrack of their lives.</p>" +
         "<p>We built a platform where users tagged songs to places and memories—allowing them to create their own audiobiographies.</p>" +
         "<p>I helped concept and write the site, app, TV, and more—from recording Katy Perry in the basement of Staples Center to recording Samuel L. Jackson at CBS.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/20124076" }],

@@ -705,6 +705,143 @@ main {
   aspect-ratio: 16 / 9;
 }
 
+.project-stage--print-layout {
+  aspect-ratio: auto;
+  height: auto;
+  min-height: 0;
+  background: transparent;
+}
+
+.project-print-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.project-print-sect {
+  width: 100%;
+}
+
+.project-print-sect__title {
+  margin: 0 0 0.65rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.project-print-single {
+  margin-bottom: 0.85rem;
+}
+
+.project-print-single:last-child {
+  margin-bottom: 0;
+}
+
+.project-print-slide__asset {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: min(88vh, 900px);
+  object-fit: contain;
+  margin: 0 auto;
+  background: #e8e8e8;
+  vertical-align: top;
+}
+
+.project-print-carousel {
+  width: 100%;
+}
+
+.project-print-carousel__viewport {
+  margin-bottom: 0.5rem;
+}
+
+.project-print-carousel__pad {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.project-print-carousel__pad > .project-print-slide__iframe,
+.project-print-carousel__pad > .project-print-slide__asset.project-print-slide__asset--video,
+.project-print-carousel__pad > .project-print-slide__asset {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.project-print-carousel__strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.5rem, 1fr));
+  gap: 0.35rem;
+  padding: 0 0 0.25rem;
+  max-width: 100%;
+}
+
+.project-print-carousel__thumb {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  cursor: pointer;
+  background: #111;
+  overflow: hidden;
+  line-height: 0;
+  aspect-ratio: 16 / 9;
+  opacity: 0.75;
+  transition: opacity 0.12s ease, border-color 0.12s ease;
+}
+
+.project-print-carousel__thumb:hover,
+.project-print-carousel__thumb:focus-visible {
+  opacity: 1;
+  outline: none;
+  border-color: #111;
+}
+
+.project-print-carousel__thumb--active {
+  opacity: 1;
+  border-color: #111;
+  box-shadow: inset 0 0 0 2px #111;
+}
+
+.project-print-carousel__thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-print-carousel__thumb-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 2.5rem;
+  font-size: 0.75rem;
+  color: #ccc;
+  background: #222;
+}
+
+.project-print-slide-error {
+  padding: 1rem;
+  font-size: 0.65rem;
+  color: #999;
+}
+
 .project-stage__empty {
   position: absolute;
   inset: 0;

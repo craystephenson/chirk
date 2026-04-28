@@ -249,6 +249,7 @@
   }
 
   function renderStage() {
+    elStage.classList.remove("project-stage--print-layout");
     elStage.innerHTML = "";
     if (!currentMedia.length) {
       const d = document.createElement("div");
@@ -774,7 +775,11 @@
       return;
     }
 
-    currentMedia = normalizeMedia(p);
+    if (d && Array.isArray(d.printLayout) && d.printLayout.length) {
+      currentMedia = [];
+    } else {
+      currentMedia = normalizeMedia(p);
+    }
 
     if (elBody) {
       elBody.classList.remove("project-detail__body--html");
@@ -836,13 +841,206 @@
       }
     }
     updateCaseStudyNav(p);
+
+    if (d && Array.isArray(d.printLayout) && d.printLayout.length) {
+      mountAssortedPrintLayout(p);
+      return;
+    }
     syncGallery();
+  }
+
+  function buildPrintSlideNode(sl, fit) {
+    const fitUse = fit || "contain";
+    if (!sl || !sl.type) {
+      const e = document.createElement("div");
+      e.className = "project-print-slide-error";
+      e.textContent = "Invalid slide";
+      return e;
+    }
+    if (sl.type === "image") {
+      const img = document.createElement("img");
+      img.className = "project-print-slide__asset";
+      img.src = staticAssetUrl(sl.src);
+      img.alt = sl.alt || "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.style.objectFit = fitUse;
+      return img;
+    }
+    if (sl.type === "video") {
+      const vid = document.createElement("video");
+      vid.className = "project-print-slide__asset project-print-slide__asset--video";
+      vid.controls = true;
+      vid.setAttribute("playsinline", "");
+      vid.setAttribute("preload", "metadata");
+      vid.src = staticAssetUrl(sl.src);
+      if (sl.poster) vid.setAttribute("poster", staticAssetUrl(sl.poster));
+      vid.title = sl.alt || "";
+      return vid;
+    }
+    if (sl.type === "vimeo") {
+      const embed = vimeoEmbedSrc(sl.url, sl);
+      if (!embed) {
+        const bad = document.createElement("div");
+        bad.className = "project-stage__empty";
+        bad.textContent = "Invalid Vimeo URL";
+        return bad;
+      }
+      const fr = document.createElement("iframe");
+      fr.className = "project-print-slide__iframe";
+      fr.src = embed;
+      fr.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+      fr.setAttribute("allowfullscreen", "");
+      fr.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      fr.title = sl.alt || "Vimeo";
+      return fr;
+    }
+    const u = document.createElement("div");
+    u.className = "project-print-slide-error";
+    u.textContent = "Unsupported slide type";
+    return u;
+  }
+
+  function buildPrintCarouselStrip(slides, fit) {
+    const root = document.createElement("div");
+    root.className = "project-print-carousel";
+
+    const viewport = document.createElement("div");
+    viewport.className = "project-print-carousel__viewport";
+
+    const pad = document.createElement("div");
+    pad.className = "project-print-carousel__pad";
+
+    const strip = document.createElement("div");
+    strip.className = "project-print-carousel__strip";
+    strip.setAttribute("role", "tablist");
+
+    let idx = 0;
+
+    function show(i) {
+      if (!slides.length) return;
+      idx = ((i % slides.length) + slides.length) % slides.length;
+      pad.innerHTML = "";
+      const node = buildPrintSlideNode(slides[idx], fit);
+      pad.appendChild(node);
+      strip.querySelectorAll(".project-print-carousel__thumb").forEach(function (b, j) {
+        b.classList.toggle("project-print-carousel__thumb--active", j === idx);
+        b.setAttribute("aria-selected", j === idx ? "true" : "false");
+      });
+    }
+
+    slides.forEach(function (sl, k) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className =
+        "project-print-carousel__thumb" + (k === 0 ? " project-print-carousel__thumb--active" : "");
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-label", "Slide " + (k + 1));
+      btn.setAttribute("aria-selected", k === 0 ? "true" : "false");
+
+      if (
+        sl.type === "image" ||
+        (sl.type === "video" && typeof sl.poster === "string" && sl.poster.trim())
+      ) {
+        const tim = document.createElement("img");
+        tim.className = "project-print-carousel__thumb-img";
+        tim.src =
+          sl.type === "image" ? staticAssetUrl(sl.src) : staticAssetUrl(sl.poster.trim());
+        tim.alt = "";
+        tim.loading = "lazy";
+        btn.appendChild(tim);
+      } else if (sl.type === "video") {
+        const ph = document.createElement("div");
+        ph.className = "project-print-carousel__thumb-ph";
+        ph.textContent = "▶";
+        btn.appendChild(ph);
+      } else if (sl.type === "vimeo") {
+        const ph2 = document.createElement("div");
+        ph2.className = "project-print-carousel__thumb-ph";
+        ph2.textContent = "▶";
+        btn.appendChild(ph2);
+        if (sl.url) {
+          fetchVimeoThumb(sl.url).then(function (u2) {
+            if (u2 && ph2.parentNode) {
+              const im2 = document.createElement("img");
+              im2.className = "project-print-carousel__thumb-img";
+              im2.src = u2;
+              im2.alt = "";
+              ph2.replaceWith(im2);
+            }
+          });
+        }
+      }
+
+      btn.addEventListener("click", function () {
+        show(k);
+      });
+      strip.appendChild(btn);
+    });
+
+    viewport.appendChild(pad);
+    root.appendChild(viewport);
+    root.appendChild(strip);
+
+    pad.appendChild(buildPrintSlideNode(slides[0], fit));
+    return root;
+  }
+
+  function mountAssortedPrintLayout(p) {
+    const d = p.detail || {};
+    elStage.innerHTML = "";
+    elStage.classList.add("project-stage--print-layout");
+
+    let fitDefault = "contain";
+    if (typeof d.mediaImageObjectFit === "string" && d.mediaImageObjectFit.trim()) {
+      fitDefault = d.mediaImageObjectFit.trim();
+    }
+
+    const page = document.createElement("div");
+    page.className = "project-print-page";
+
+    (d.printLayout || []).forEach(function (sect) {
+      if (
+        !sect ||
+        !Array.isArray(sect.slides) ||
+        sect.slides.length === 0
+      ) {
+        return;
+      }
+      const sectionEl = document.createElement("section");
+      sectionEl.className = "project-print-sect";
+
+      const ht = document.createElement("h3");
+      ht.className = "project-print-sect__title";
+      ht.textContent = sect.title || "";
+      sectionEl.appendChild(ht);
+
+      if (sect.carousel) {
+        sectionEl.appendChild(buildPrintCarouselStrip(sect.slides, fitDefault));
+      } else {
+        sect.slides.forEach(function (sl) {
+          const holder = document.createElement("div");
+          holder.className = "project-print-single";
+          holder.appendChild(buildPrintSlideNode(sl, fitDefault));
+          sectionEl.appendChild(holder);
+        });
+      }
+      page.appendChild(sectionEl);
+    });
+
+    elStage.appendChild(page);
+    if (elThumbs) elThumbs.hidden = true;
+    if (elStageNav) elStageNav.hidden = true;
   }
 
   function unmountProject() {
     currentProject = null;
     currentMedia = [];
     document.title = baseTitle;
+    if (elStage) {
+      elStage.innerHTML = "";
+      elStage.classList.remove("project-stage--print-layout");
+    }
     if (elBody) {
       elBody.textContent = "";
       elBody.innerHTML = "";

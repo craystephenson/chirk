@@ -734,6 +734,7 @@ const PORTFOLIO_PROJECTS = [
             { type: "image", src: "print/Rocker-Scientist-Posters_1000.jpg", alt: "STEAM Carnival" },
             { type: "image", src: "print/Rocker-Scientist-Posters2_1000.jpg", alt: "STEAM Carnival" },
             { type: "image", src: "print/Rocker-Scientist-Posters3_1000.jpg", alt: "STEAM Carnival" },
+            { type: "image", src: "print/es_print.png", alt: "STEAM Carnival — engineering school print" },
           ],
         },
         {

@@ -529,7 +529,7 @@ const PORTFOLIO_PROJECTS = [
       bodyHTML:
         "<p>For the 20th anniversary of the December to Remember Sales Event, we asked a simple question:</p>" +
         "<p>Before the big driveway reveal, where do you hide a bow that big?</p>" +
-        "<p>That became <i>The Bow Caper</i>&mdash;a holiday story about the elaborate family mission to keep one very oversized Lexus surprise under wraps.</p>",
+        "<p>Our campaign explored all the elaborate ways a family might work together to keep that iconic red bow under wraps.</p>",
       media: [
         { type: "vimeo", url: "https://vimeo.com/375775553", alt: "Lexus — December to Remember" },
         { type: "vimeo", url: "https://vimeo.com/375779234", alt: "Lexus — December to Remember" },

@@ -14,6 +14,7 @@
  * Optional: detail.mediaImageObjectFit — e.g. "contain" for image-only stage slideshows (full image visible in 16:9 frame).
  * Optional: detail.media item type "video" with src (+ optional poster) for local MP4 in the hero carousel.
  * Optional: detail.printLayout — [{ title, slides: [{type,src,alt,?poster,?url,?h}], carousel?: boolean }]; renders stacked singles or local carousels (empty detail.media).
+ * Optional: detail.jambaCubicleFilmVimeoUrl — when set on assorted-print, slide 2 of Jamba (Cubicle Picnic film) embeds Vimeo instead of local MP4.
  * Optional stills row: { section: "SITE" } or { subSection: "References" } (headings, no image).
  * Or { vimeo: "https://vimeo.com/…", vimeoTitle?: "…" } for an embed in the stills column.
  * Optional: onlyInView — e.g. "ai": tile appears only when that workspace filter is active (hidden from All and other tabs).
@@ -705,12 +706,20 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-sect"><i>Perennials Fabrics</i></p>' +
         '<p class="case-study-line">Communication Arts Advertising Annual</p>' +
         '<p class="case-study-sect"><i>STEAM Carnival</i></p>' +
+        '<p class="case-study-sect"><i>Lexus | Dad&rsquo;chelor Party</i></p>' +
+        "<p>To nudge shoppers toward a Lexus hybrid, we leaned into Funny or Die comedy on how painful LA&ndash;Vegas can be in an EV. Supporting print drove to <i>The Dad&rsquo;chelor Party</i> film.</p>" +
         '<p class="case-study-sect"><i>Dallas Symphony Orchestra</i></p>' +
         '<p class="case-study-line"><a href="https://www.oneclub.org/#olmag=/_ajax/archive/?action=arc_work%26value=12795" target="_blank" rel="noopener noreferrer">One Show Merit</a></p>' +
         '<p class="case-study-line">Graphis 100 Best Annual Reports Platinum Award</p>' +
-        '<p class="case-study-line"><a href="https://issuu.com/charliestephenson/docs/dso_annual_report" target="_blank" rel="noopener noreferrer">Full-screen</a></p>' +
+        '<p class="case-study-line case-study-line--fs">' +
+        '<a class="case-study-fs" href="https://issuu.com/charliestephenson/docs/dso_annual_report" target="_blank" rel="noopener noreferrer" title="Open fullscreen on Issuu" aria-label="Open Dallas Symphony annual report fullscreen on Issuu">' +
+        '<svg class="case-study-fs__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>' +
+        "</svg>" +
+        "</a></p>" +
         '<p class="case-study-sect"><i>Jamba Juice</i></p>',
       media: [],
+      jambaCubicleFilmVimeoUrl: "",
       printLayout: [
         {
           title: "Tony Roma\u2019s",
@@ -736,6 +745,16 @@ const PORTFOLIO_PROJECTS = [
             { type: "image", src: "print/Rocker-Scientist-Posters2_1000.jpg", alt: "STEAM Carnival" },
             { type: "image", src: "print/Rocker-Scientist-Posters3_1000.jpg", alt: "STEAM Carnival" },
             { type: "image", src: "print/es_print.png", alt: "STEAM Carnival" },
+          ],
+        },
+        {
+          title: "Lexus | Dad\u2019chelor Party",
+          slides: [
+            {
+              type: "image",
+              src: "thumbs/lexus_dadchelor_party.png",
+              alt: "Lexus — The Dad\u2019chelor Party print",
+            },
           ],
         },
         {

@@ -872,8 +872,14 @@
       vid.className = "project-print-slide__asset project-print-slide__asset--video";
       vid.controls = true;
       vid.setAttribute("playsinline", "");
-      vid.setAttribute("preload", "metadata");
-      vid.src = staticAssetUrl(sl.src);
+      vid.setAttribute("webkit-playsinline", "");
+      vid.preload = "auto";
+      vid.playsInline = true;
+      const srcUrl = staticAssetUrl(sl.src);
+      const source = document.createElement("source");
+      source.src = srcUrl;
+      source.type = "video/mp4";
+      vid.appendChild(source);
       if (sl.poster) vid.setAttribute("poster", staticAssetUrl(sl.poster));
       vid.title = sl.alt || "";
       return vid;
@@ -999,6 +1005,8 @@
     const page = document.createElement("div");
     page.className = "project-print-page";
 
+    const jambaVimeo = typeof d.jambaCubicleFilmVimeoUrl === "string" ? d.jambaCubicleFilmVimeoUrl.trim() : "";
+
     (d.printLayout || []).forEach(function (sect) {
       if (
         !sect ||
@@ -1007,6 +1015,24 @@
       ) {
         return;
       }
+
+      let slidesUse = sect.slides;
+      if (
+        jambaVimeo &&
+        /jamba/i.test(sect.title || "") &&
+        sect.slides[1] &&
+        sect.slides[1].type === "video"
+      ) {
+        slidesUse = sect.slides.slice();
+        slidesUse[1] = {
+          type: "vimeo",
+          url: jambaVimeo,
+          alt: sect.slides[1].alt || "Jamba Juice — Cubicle Picnic film",
+          h:
+            typeof sect.slides[1].h === "string" ? sect.slides[1].h : undefined,
+        };
+      }
+
       const sectionEl = document.createElement("section");
       sectionEl.className = "project-print-sect";
 
@@ -1016,9 +1042,9 @@
       sectionEl.appendChild(ht);
 
       if (sect.carousel) {
-        sectionEl.appendChild(buildPrintCarouselStrip(sect.slides, fitDefault));
+        sectionEl.appendChild(buildPrintCarouselStrip(slidesUse, fitDefault));
       } else {
-        sect.slides.forEach(function (sl) {
+        slidesUse.forEach(function (sl) {
           const holder = document.createElement("div");
           holder.className = "project-print-single";
           holder.appendChild(buildPrintSlideNode(sl, fitDefault));

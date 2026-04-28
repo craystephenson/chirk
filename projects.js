@@ -95,62 +95,6 @@ const PORTFOLIO_PROJECTS = [
     },
   },
   {
-    id: "3",
-    slug: "the-dream-phone",
-    title: "The Dream Phone",
-    thumb: "thumbs/dream_phone.webp",
-    cardTags: "ai, hacking, pi, code",
-    tags: ["ai", "tech"],
-    vimeo: "https://vimeo.com/1171158209",
-    detail: {
-      bodyHTML:
-        "<p>Visionaries like Steve Jobs, Soichiro Honda, and John Lennon once inspired the world.</p>" +
-        "<p>What if their voices could return—so convincingly, they inspire you all over again?</p>" +
-        "<p>The Dream Phone closes the gap between illusion and reality by connecting you with the unmistakable voices and personalities of history&rsquo;s greatest dreamers through an actual Western Electric rotary phone. A device so warm and familiar, the voice on the other end simply has to be real.</p>",
-      media: [{ type: "vimeo", url: "https://vimeo.com/1171158209" }],
-      stills: [
-        { section: "Build" },
-        { src: "stills/the-dream-phone/1_build.jpeg", alt: "The Dream Phone — build 1" },
-        { src: "stills/the-dream-phone/2_build.jpeg", alt: "The Dream Phone — build 2" },
-        { src: "stills/the-dream-phone/3_build.jpeg", alt: "The Dream Phone — build 3" },
-        { src: "stills/the-dream-phone/4_build.jpg", alt: "The Dream Phone — build 4" },
-        { src: "stills/the-dream-phone/5_build.jpeg", alt: "The Dream Phone — build 5" },
-        { section: "Admin" },
-        { src: "stills/the-dream-phone/1_admin.png", alt: "The Dream Phone — admin" },
-      ],
-      stillsLabel: false,
-      railHTML:
-        '<div class="project-detail__body project-detail__body--html">' +
-        '<div class="project-stills__section project-stills__section--in-rail" role="presentation"><h3 class="project-stills__section-title">TECH</h3></div>' +
-        '<p class="phone-tech-h"><i>Hardware</i></p>' +
-        "<p>Raspberry Pi Zero 2 W — the brain inside the phone<br>" +
-        "Rotary dial + hook switch — physical input system<br>" +
-        "Analog handset + speaker — authentic audio I/O<br>" +
-        "12V → 5V power (buck converter) — keeps everything stable<br>" +
-        "Ring hardware + transistor control for real bell actuation</p>" +
-        "<p>👉 Required much hardware research and manipulation. Replacing headset mic and speaker, splicing and soldering new cables from the handset cradle and rotary dial contact terminals, connecting via Dupont to Pi GPIO.</p>" +
-        '<p class="phone-tech-h"><i>Conversation Engine (The Voice Brain)</i></p>' +
-        "<p>Hume EVI — real-time conversational layer<br>" +
-        "WebSocket streaming for live dialogue<br>" +
-        "Emotion + prosody control (tuned down to prevent voice drift)<br>" +
-        "ChatGPT as the language brain</p>" +
-        "<p>👉 Took a lot of trial and error to settle on the best TTS service, but ultimately, Hume won out hands down. Expensive, but makes conversations emotional, interruptible, and believable.</p>" +
-        '<p class="phone-tech-h"><i>Persona System</i></p>' +
-        "<p>Text-based personality files (personality.txt) per caller<br>" +
-        "Modular inserts (micro-lines, triggered dynamically)<br>" +
-        "Knowledge constraints (e.g., stops at year of death)<br>" +
-        "Recognition logic (&ldquo;Who&rsquo;s calling?&rdquo; &rarr; personalized response)</p>" +
-        "<p>👉 Vibe-coded admin page hosted on Cloudflare, enabling admin to add and adjust personas. Pushed and pulled from a GitHub repo.</p>" +
-        '<p class="phone-tech-h"><i>Experience Layer (The Magic)</i></p>' +
-        "<p>Rotary dialing = input (year of death)<br>" +
-        "Ring &rarr; pickup &rarr; voice appears<br>" +
-        "Real-time, unscripted conversation<br>" +
-        "Delivered through analog hardware</p>" +
-        "<p>👉 The trick: modern AI hidden inside a completely analog interaction</p>" +
-        "</div>",
-    },
-  },
-  {
     id: "4",
     slug: "lexus-gamers-is",
     title: "Lexus | Gamers' IS",
@@ -483,6 +427,62 @@ const PORTFOLIO_PROJECTS = [
         { src: "stills/lexus-immersive-sonic-challenge/8_press.png", alt: "Immersive Sonic — press 8" },
         { src: "stills/lexus-immersive-sonic-challenge/9_press.png", alt: "Immersive Sonic — press 9" },
       ],
+    },
+  },
+  {
+    id: "3",
+    slug: "the-dream-phone",
+    title: "The Dream Phone",
+    thumb: "thumbs/dream_phone.webp",
+    cardTags: "ai, hacking, pi, code",
+    tags: ["ai", "tech"],
+    vimeo: "https://vimeo.com/1171158209",
+    detail: {
+      bodyHTML:
+        "<p>Visionaries like Steve Jobs, Soichiro Honda, and John Lennon once inspired the world.</p>" +
+        "<p>What if their voices could return—so convincingly, they inspire you all over again?</p>" +
+        "<p>The Dream Phone closes the gap between illusion and reality by connecting you with the unmistakable voices and personalities of history&rsquo;s greatest dreamers through an actual Western Electric rotary phone. A device so warm and familiar, the voice on the other end simply has to be real.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/1171158209" }],
+      stills: [
+        { section: "Build" },
+        { src: "stills/the-dream-phone/1_build.jpeg", alt: "The Dream Phone — build 1" },
+        { src: "stills/the-dream-phone/2_build.jpeg", alt: "The Dream Phone — build 2" },
+        { src: "stills/the-dream-phone/3_build.jpeg", alt: "The Dream Phone — build 3" },
+        { src: "stills/the-dream-phone/4_build.jpg", alt: "The Dream Phone — build 4" },
+        { src: "stills/the-dream-phone/5_build.jpeg", alt: "The Dream Phone — build 5" },
+        { section: "Admin" },
+        { src: "stills/the-dream-phone/1_admin.png", alt: "The Dream Phone — admin" },
+      ],
+      stillsLabel: false,
+      railHTML:
+        '<div class="project-detail__body project-detail__body--html">' +
+        '<div class="project-stills__section project-stills__section--in-rail" role="presentation"><h3 class="project-stills__section-title">TECH</h3></div>' +
+        '<p class="phone-tech-h"><i>Hardware</i></p>' +
+        "<p>Raspberry Pi Zero 2 W — the brain inside the phone<br>" +
+        "Rotary dial + hook switch — physical input system<br>" +
+        "Analog handset + speaker — authentic audio I/O<br>" +
+        "12V → 5V power (buck converter) — keeps everything stable<br>" +
+        "Ring hardware + transistor control for real bell actuation</p>" +
+        "<p>👉 Required much hardware research and manipulation. Replacing headset mic and speaker, splicing and soldering new cables from the handset cradle and rotary dial contact terminals, connecting via Dupont to Pi GPIO.</p>" +
+        '<p class="phone-tech-h"><i>Conversation Engine (The Voice Brain)</i></p>' +
+        "<p>Hume EVI — real-time conversational layer<br>" +
+        "WebSocket streaming for live dialogue<br>" +
+        "Emotion + prosody control (tuned down to prevent voice drift)<br>" +
+        "ChatGPT as the language brain</p>" +
+        "<p>👉 Took a lot of trial and error to settle on the best TTS service, but ultimately, Hume won out hands down. Expensive, but makes conversations emotional, interruptible, and believable.</p>" +
+        '<p class="phone-tech-h"><i>Persona System</i></p>' +
+        "<p>Text-based personality files (personality.txt) per caller<br>" +
+        "Modular inserts (micro-lines, triggered dynamically)<br>" +
+        "Knowledge constraints (e.g., stops at year of death)<br>" +
+        "Recognition logic (&ldquo;Who&rsquo;s calling?&rdquo; &rarr; personalized response)</p>" +
+        "<p>👉 Vibe-coded admin page hosted on Cloudflare, enabling admin to add and adjust personas. Pushed and pulled from a GitHub repo.</p>" +
+        '<p class="phone-tech-h"><i>Experience Layer (The Magic)</i></p>' +
+        "<p>Rotary dialing = input (year of death)<br>" +
+        "Ring &rarr; pickup &rarr; voice appears<br>" +
+        "Real-time, unscripted conversation<br>" +
+        "Delivered through analog hardware</p>" +
+        "<p>👉 The trick: modern AI hidden inside a completely analog interaction</p>" +
+        "</div>",
     },
   },
   {

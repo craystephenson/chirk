@@ -801,8 +801,8 @@ const PORTFOLIO_PROJECTS = [
     detail: {
       passwordPhrase: "Show me",
       bodyHTML:
-        "<p>The first two films I created for my wife, who is a talented strategist and business owner. I concepted, wrote, generated, and edited these first two films for her clients: Avvio and Recycle Global Exchange.</p>" +
-        "<p>The third film I concepted, wrote, and generated assets for to celebrate the extraordinary career of a really great dude, Joe Baratelli. One of the funnest and silliest things I&rsquo;ve made in a while.</p>",
+        "<p>The first two films I created for my wife, who is a talented strategist and business owner. I concepted, wrote, generated, and edited these films for her clients: Avvio and Recycle Global Exchange.</p>" +
+        "<p>The third film I concepted, wrote, and generated assets alongside my creative partner, Kirk Williams, to celebrate the extraordinary career of a really great dude, Joe Baratelli. One of the funnest and silliest things I&rsquo;ve made in a while.</p>",
       media: [
         {
           type: "vimeo",

@@ -159,6 +159,7 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/670863804",
     detail: {
       bodyHTML:
+        '<p class="case-study-line"><a href="https://winners.webbyawards.com/2022/ai-immersive-games/games-features/best-real-time-experience/211748/twitch-x-lexus-the-ultimate-gamers-is" target="_blank" rel="noopener noreferrer">The Webby Awards</a></p>' +
         '<p class="case-study-line"><a href="https://adage.com/article/cmo-strategy/lexus-made-car-just-gamers/2315656" target="_blank" rel="noopener noreferrer">Ad Age</a></p>' +
         '<p class="case-study-line"><a href="https://www.marketingdive.com/news/lexus-crowdsources-gamer-ready-car-design-on-twitch/593363/" target="_blank" rel="noopener noreferrer">Marketing Dive</a></p>' +
         '<p class="case-study-line"><a href="https://www.theweek.co.uk/952049/lexus-gamers-is-the-ultimate-gaming-space" target="_blank" rel="noopener noreferrer">The Week</a></p>' +

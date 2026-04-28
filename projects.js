@@ -12,6 +12,7 @@
  * Optional on vimeo media: h — privacy token from Vimeo Share → Embed (?h=…) if the player errors but the vimeo.com URL works in a tab.
  * Optional: detail.stillsLabel — set to false to hide the “Stills” heading, or a string to replace it.
  * Optional: detail.mediaImageObjectFit — e.g. "contain" for image-only stage slideshows (full image visible in 16:9 frame).
+ * Optional: detail.media item type "video" with src (+ optional poster) for local MP4 in the hero carousel.
  * Optional stills row: { section: "SITE" } or { subSection: "References" } (headings, no image).
  * Or { vimeo: "https://vimeo.com/…", vimeoTitle?: "…" } for an embed in the stills column.
  * Optional: onlyInView — e.g. "ai": tile appears only when that workspace filter is active (hidden from All and other tabs).
@@ -686,6 +687,64 @@ const PORTFOLIO_PROJECTS = [
         { file: "5 - Giving You My Heart - HeartOne.mp3", label: "Giving You My Heart — HeartOne" },
         { file: "6 - Tin Man - Medical City.mp3", label: "Tin Man — Medical City" },
       ],
+    },
+  },
+  {
+    id: "18",
+    slug: "assorted-print",
+    title: "Assorted Print",
+    thumb: "print/tr_accetable.png",
+    cardTags: "print",
+    tags: ["general"],
+    detail: {
+      mediaImageObjectFit: "contain",
+      bodyHTML:
+        '<p class="case-study-sect"><i>Tony Roma&rsquo;s</i></p>' +
+        '<p class="case-study-line">One Show Merit</p>' +
+        '<p class="case-study-sect"><i>Perennials Fabrics</i></p>' +
+        '<p class="case-study-line">Communication Arts Advertising Annual</p>' +
+        '<p class="case-study-sect"><i>STEAM Carnival</i></p>' +
+        '<p class="case-study-sect"><i>Dallas Symphony Orchestra</i></p>' +
+        '<p class="case-study-line"><a href="https://www.oneclub.org/#olmag=/_ajax/archive/?action=arc_work%26value=12795" target="_blank" rel="noopener noreferrer">One Show Merit</a></p>' +
+        '<p class="case-study-line">Graphis 100 Best Annual Reports Platinum Award</p>' +
+        '<p class="case-study-line"><a href="https://issuu.com/charliestephenson/docs/dso_annual_report" target="_blank" rel="noopener noreferrer">Full-screen</a></p>' +
+        '<p class="case-study-sect"><i>Jamba Juice</i></p>',
+      media: [
+        { type: "image", src: "print/tr_accetable.png", alt: "Tony Roma\u2019s" },
+        { type: "image", src: "print/tr_experience.png", alt: "Tony Roma\u2019s" },
+        { type: "image", src: "print/tr_salad_fork.png", alt: "Tony Roma\u2019s" },
+        { type: "image", src: "print/WBY_Poster_LOREZ A.jpg", alt: "Perennials Fabrics" },
+        { type: "image", src: "print/WBY_Poster_LOREZ B.jpg", alt: "Perennials Fabrics" },
+        { type: "image", src: "print/WBY_Poster_LOREZ C.jpg", alt: "Perennials Fabrics" },
+        { type: "image", src: "print/WBY_Poster_LOREZ D.jpg", alt: "Perennials Fabrics" },
+        { type: "image", src: "print/Rocker-Scientist-Posters_1000.jpg", alt: "STEAM Carnival" },
+        { type: "image", src: "print/Rocker-Scientist-Posters2_1000.jpg", alt: "STEAM Carnival" },
+        { type: "image", src: "print/Rocker-Scientist-Posters3_1000.jpg", alt: "STEAM Carnival" },
+        { type: "image", src: "print/es_print.png", alt: "STEAM Carnival" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_01_working.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_02.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_03.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_04.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_05.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_06.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_07.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_08.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_09.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_10.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_11.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_12.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_13.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/DSO/DSO002-10x14-AR_2009_Page_14.jpg", alt: "Dallas Symphony Orchestra \u2014 annual report pp. 1\u201314" },
+        { type: "image", src: "print/Cubicle Picnic/cubicle_picnic.png", alt: "Jamba Juice \u2014 Cubicle Picnic print" },
+        {
+          type: "video",
+          src: "print/Cubicle Picnic/cubicle_picnic_web.mp4",
+          poster: "print/Cubicle Picnic/cubicle_picnic.png",
+          alt: "Jamba Juice \u2014 Cubicle Picnic film",
+        },
+      ],
+      stillsLabel: false,
+      stills: [],
     },
   },
   {

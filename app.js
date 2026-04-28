@@ -120,6 +120,11 @@
       if (typeof m.h === "string" && m.h.trim()) o.h = m.h.trim();
       return o;
     }
+    if (m.type === "video" && m.src) {
+      const v = { type: "video", src: m.src, alt: m.alt || "" };
+      if (typeof m.poster === "string" && m.poster.trim()) v.poster = m.poster.trim();
+      return v;
+    }
     if (m.type === "image" && m.src) return { type: "image", src: m.src, alt: m.alt || "" };
     return null;
   }
@@ -129,6 +134,7 @@
     return list.filter(function (m) {
       var key;
       if (m.type === "vimeo" && m.url) key = "v:" + m.url + "\0" + (m.h || "");
+      else if (m.type === "video" && m.src) key = "mv:" + m.src;
       else if (m.type === "image" && m.src) key = "i:" + m.src;
       else return true;
       if (seen.has(key)) return false;
@@ -254,7 +260,7 @@
     const i = currentSlide % currentMedia.length;
     const m = currentMedia[i];
     if (m.type === "vimeo") {
-      const srcEmbed = vimeoEmbedSrc(m.url);
+      const srcEmbed = vimeoEmbedSrc(m.url, m);
       if (srcEmbed) {
         const frame = document.createElement("div");
         frame.className = "project-frame";
@@ -273,7 +279,26 @@
         d.textContent = "Invalid Vimeo URL";
         elStage.appendChild(d);
       }
-    } else {
+    } else if (m.type === "video") {
+      const frame = document.createElement("div");
+      frame.className = "project-frame";
+      const vid = document.createElement("video");
+      vid.className = "project-frame__video";
+      vid.controls = true;
+      vid.setAttribute("playsinline", "");
+      vid.setAttribute("preload", "metadata");
+      vid.src = staticAssetUrl(m.src);
+      if (m.poster) vid.setAttribute("poster", staticAssetUrl(m.poster));
+      vid.title = m.alt || "";
+      const dVid = currentProject && currentProject.detail;
+      const vfit =
+        dVid &&
+        typeof dVid.mediaImageObjectFit === "string" &&
+        dVid.mediaImageObjectFit.trim();
+      if (vfit) vid.style.objectFit = vfit.trim();
+      frame.appendChild(vid);
+      elStage.appendChild(frame);
+    } else if (m.type === "image") {
       const fig = document.createElement("div");
       fig.className = "project-figure";
       const img = document.createElement("img");
@@ -324,6 +349,19 @@
             ph.replaceWith(im);
           }
         });
+      } else if (m.type === "video") {
+        if (m.poster) {
+          const im = document.createElement("img");
+          im.className = "project-thumb__img";
+          im.src = staticAssetUrl(m.poster);
+          im.alt = m.alt || "";
+          t.appendChild(im);
+        } else {
+          const ph = document.createElement("div");
+          ph.className = "project-thumb__ph";
+          ph.textContent = "▶";
+          t.appendChild(ph);
+        }
       } else {
         const im = document.createElement("img");
         im.className = "project-thumb__img";

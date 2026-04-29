@@ -742,8 +742,8 @@ const PORTFOLIO_PROJECTS = [
           slides: [
             {
               type: "image",
-              src: "print/lexus_es350_uncommon_luxury.png",
-              alt: "Lexus print",
+              src: "print/es_print.png",
+              alt: "Lexus ES print — Uncommon Luxury",
             },
           ],
         },

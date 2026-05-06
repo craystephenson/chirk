@@ -120,29 +120,11 @@
       </ul>
     </footer>
 
-    <!--
-      Cloudflare Web Analytics — optional visibility into traffic (privacy-focused, cookieless).
-      1. Dashboard → your account → Analytics & logs → Web Analytics → Add a site → copy the beacon token.
-      2. Set CF_WEB_ANALYTICS_TOKEN below. Leave "" to disable (no beacon request).
-
-      Limitation: this site routes with location.hash (#/project/…). Cloudflare SPA tracking uses the
-      History API, not hashes (see https://developers.cloudflare.com/web-analytics/get-started/web-analytics-spa/ ).
-      You still get visits, referrers, and top paths for real URL changes; heavy in-app navigation may bundle into one journey.
-      Cloudflare Pages: you can alternatively enable analytics in the project settings without editing HTML.
-    -->
-    <script>
-      (function () {
-        var CF_WEB_ANALYTICS_TOKEN = "";
-        if (!CF_WEB_ANALYTICS_TOKEN) return;
-        var s = document.createElement("script");
-        s.src = "https://static.cloudflareinsights.com/beacon.min.js";
-        s.defer = true;
-        s.setAttribute(
-          "data-cf-beacon",
-          JSON.stringify({ token: CF_WEB_ANALYTICS_TOKEN })
-        );
-        document.body.appendChild(s);
-      })();
-    </script>
+    <!-- Cloudflare Web Analytics — hash routes (#/project/…) are not split per Cloudflare SPA docs -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "05e84f20dfd94aa4afb6c78fe3e6a3eb"}'
+    ></script>
   </body>
 </html>

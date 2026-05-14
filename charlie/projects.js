@@ -18,15 +18,63 @@
  * Or { vimeo: "https://vimeo.com/…", vimeoTitle?: "…" } for an embed in the stills column.
  * Optional: onlyInView — e.g. "ai": tile appears only when that workspace filter is active (hidden from All and other tabs).
  * Optional: detail.passwordPhrase — viewer must submit this text (phrase match, case-insensitive) to see the page; persists for session in sessionStorage.
+ * Optional: featured + featuredRank — when using the Featured filter, only featured projects show; sort is by featuredRank ascending.
  */
 const PORTFOLIO_PROJECTS = [
+  {
+    id: "19",
+    slug: "apartments-com",
+    title: "Apartments.com",
+    featured: true,
+    featuredRank: 1,
+    thumb:
+      "https://images.squarespace-cdn.com/content/v1/532b2e71e4b0cc77fe846b84/1716492649768-5OA55NKO0XKND5NVDSZG/FRONTIMAGETEMPLATE-Recovered_2.jpg",
+    cardTags: "launch, film, platform",
+    tags: ["culture", "general"],
+    vimeo: "https://vimeo.com/468300501",
+    detail: {
+      bodyHTML:
+        '<p class="case-study-line">Gold Effie</p>' +
+        '<p class="case-study-line">Directed by Bob Odenkirk (Phase II)</p>' +
+        '<p class="case-study-line">Spoofed on SNL</p>' +
+        "<p><strong>Phase I — Change Your Apartment, Change the World.</strong> Brad Bellflower, a Silicon Valley maverick full of ambition (and sometimes straight-up delusion), became the face of the new Apartments.com&mdash;the &ldquo;latest revolution in technology&rdquo; for finding a place.</p>" +
+        "<p><strong>Phase II</strong> built on the launch: renter-and-landlord stories showing why Apartments.com is the go-to choice when you&rsquo;re ready to make a move.</p>",
+      media: [
+        { type: "vimeo", url: "https://vimeo.com/468300501", alt: "Apartments.com — Phase II" },
+        { type: "vimeo", url: "https://vimeo.com/120656523", alt: "Apartments.com — LAUNCH" },
+      ],
+      stillsLabel: false,
+      stills: [
+        { subSection: "Phase II" },
+        {
+          vimeo: "https://vimeo.com/165226830",
+          vimeoTitle: "Battle Ultimo :60",
+        },
+        {
+          vimeo: "https://vimeo.com/161519625",
+          vimeoTitle: "Earth :30",
+        },
+        { subSection: "Phase I" },
+        {
+          vimeo: "https://vimeo.com/125927483",
+          vimeoTitle: "Impossible Apartments :30",
+        },
+        {
+          vimeo: "https://vimeo.com/120818672",
+          vimeoTitle: "Keynote :30",
+        },
+      ],
+    },
+  },
   {
     id: "2",
     slug: "honda-dream-generator",
     title: "Honda Dream Generator",
+    featured: true,
+    featuredRank: 2,
     thumb: "stills/honda-dream-generator/1_site.png",
     cardTags: "ai, interactive",
-    tags: ["ai", "tech"],
+    tags: ["ai", "tech", "automotive"],
     vimeo: "https://vimeo.com/935982647",
     detail: {
       bodyHTML:
@@ -99,9 +147,11 @@ const PORTFOLIO_PROJECTS = [
     id: "4",
     slug: "lexus-gamers-is",
     title: "Lexus | Gamers' IS",
+    featured: true,
+    featuredRank: 4,
     thumb: "thumbs/gamers_is.webp",
     cardTags: "technology, film, twitch",
-    tags: ["tech", "general"],
+    tags: ["tech", "general", "automotive"],
     vimeo: "https://vimeo.com/670863804",
     detail: {
       bodyHTML:
@@ -145,12 +195,77 @@ const PORTFOLIO_PROJECTS = [
     },
   },
   {
+    id: "20",
+    slug: "imaginary-friend-society",
+    title: "The Imaginary Friend Society",
+    featured: true,
+    featuredRank: 5,
+    thumb:
+      "https://images.squarespace-cdn.com/content/v1/532b2e71e4b0cc77fe846b84/1716253339053-C3KNBBKLH9TEN2KO7KK3/image-asset.jpeg",
+    cardTags: "animation, health, film",
+    tags: ["cause", "culture", "general"],
+    vimeo: "https://vimeo.com/276294324",
+    detail: {
+      bodyHTML:
+        '<p class="case-study-line">2× Gold — Cannes</p>' +
+        '<p class="case-study-line">Best in Show — D&amp;AD</p>' +
+        '<p class="case-study-line">2× Grand — Clio</p>' +
+        '<p class="case-study-line">2× Winner — Webby Awards</p>' +
+        "<p>A collaboration between pediatric health partners and dozens of global production studios to help kids facing pediatric brain tumors.</p>" +
+        "<p><strong>The idea.</strong> A cancer diagnosis is overwhelming for anyone; for a child it can feel terrifying. Treatment comes with unfamiliar words and experiences&mdash;radiation, hair loss, transfusions, chemotherapy, surgery.</p>" +
+        "<p>The Imaginary Friend Society introduces a cast of characters drawn from kids&rsquo; own imaginations. Twenty animated short films explain difficult topics in a calm, human way&mdash;because understanding can make the experience a little less scary.</p>" +
+        "<p>Production partners included The Mill, Gentleman Scholar, Lobo, Strange Beast, Trunk, PSYOP, Giant Ant, Roof, Hornet, Elastic, MPC, Titmouse, and many more.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/276294324", alt: "Imaginary Friend Society — case study" }],
+      stillsLabel: false,
+      stills: [
+        {
+          vimeo: "https://vimeo.com/235067817",
+          vimeoTitle: "IFS — MRI",
+        },
+        {
+          vimeo: "https://vimeo.com/235359972",
+          vimeoTitle: "Losing your hair",
+        },
+        {
+          vimeo: "https://vimeo.com/235156455",
+          vimeoTitle: "How to help your brother or sister",
+        },
+      ],
+    },
+  },
+  {
+    id: "21",
+    slug: "infiniti-the-art-of-following",
+    title: "Infiniti | The Art of Following",
+    featured: true,
+    featuredRank: 6,
+    thumb: "https://images.squarespace-cdn.com/content/v1/532b2e71e4b0cc77fe846b84/1460086319386-7F56F1UFZG9LAV3Y6BL1/FRONTIMAGETEMPLATE_SHEP.jpg",
+    cardTags: "web series, comedy",
+    tags: ["automotive", "culture", "general"],
+    vimeo: "https://vimeo.com/68334857",
+    detail: {
+      bodyHTML:
+        "<p>To some, driving a luxury car is a personal reward. To others, it&rsquo;s about status at any cost.</p>" +
+        "<p><em>The Art of Following</em> is a web series that lampoons the luxury mindset through Shep&mdash;your &ldquo;shepherd to luxury.&rdquo; Follow his rules and become a walking clich&eacute;&hellip; or unfollow the pack and find something truer.</p>",
+      media: [
+        { type: "vimeo", url: "https://vimeo.com/68334857", alt: "The Art of Following — Valeting" },
+        { type: "vimeo", url: "https://vimeo.com/68333675", alt: "First impressions" },
+        { type: "vimeo", url: "https://vimeo.com/68333670", alt: "Driving" },
+        { type: "vimeo", url: "https://vimeo.com/68333676", alt: "Posing" },
+        { type: "vimeo", url: "https://vimeo.com/68333671", alt: "Personal style" },
+        { type: "vimeo", url: "https://vimeo.com/68333672", alt: "Making money" },
+      ],
+      stillsLabel: false,
+      stills: [],
+    },
+  },
+  {
     id: "1",
     slug: "honda",
     title: "Honda | Keep Dreaming",
     thumb: "thumbs/keep_dreaming.webp",
     cardTags: "broadcast",
-    tags: ["general"],
+    tags: ["general", "automotive"],
     vimeo: "https://vimeo.com/884917302",
     detail: {
       bodyHTML:
@@ -182,9 +297,11 @@ const PORTFOLIO_PROJECTS = [
     id: "5",
     slug: "grammys",
     title: "GRAMMYs | Music is life is music",
+    featured: true,
+    featuredRank: 8,
     thumb: "thumbs/grammys.webp",
-    cardTags: "integrated",
-    tags: ["general"],
+    cardTags: "platform, integrated",
+    tags: ["general", "culture"],
     vimeo: "https://vimeo.com/20124076",
     detail: {
       bodyHTML:
@@ -193,10 +310,10 @@ const PORTFOLIO_PROJECTS = [
         '<p class="case-study-line"><a href="http://www.commarts.com/exhibit/musicislifeismusic.html" target="_blank" rel="noopener noreferrer">Communications Arts Exhibit</a></p>' +
         "<p class=\"case-study-line\">D&amp;AD Pencil</p>" +
         "<p class=\"case-study-line\">Webby Awards</p>" +
-        "<p>How do we reignite one's love of music and the GRAMMYs?</p>" +
-        "<p>By letting them share the soundtrack of their lives.</p>" +
-        "<p>We built a platform where users tagged songs to places and memories—allowing them to create their own audiobiographies.</p>" +
-        "<p>I helped concept and write the site, app, TV, and more—from recording Katy Perry in the basement of Staples Center to recording Samuel L. Jackson at CBS.</p>",
+        "<p>How do we reignite love of music and the GRAMMYs?</p>" +
+        "<p>By letting people share the soundtrack of their lives.</p>" +
+        "<p>The platform let users tag songs to places and memories&mdash;building living audiobiographies.</p>" +
+        "<p>Work ran across site, app, broadcast, and more.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/20124076" }],
       stills: [],
       railHTML:
@@ -225,9 +342,11 @@ const PORTFOLIO_PROJECTS = [
     id: "6",
     slug: "lexus-driving-disrupted",
     title: "Lexus | Driving Disrupted",
+    featured: true,
+    featuredRank: 7,
     thumb: "thumbs/driving_disrupted.webp",
     cardTags: "technology, film, stunt",
-    tags: ["tech"],
+    tags: ["tech", "automotive"],
     vimeo: "",
     detail: {
       bodyHTML:
@@ -266,12 +385,53 @@ const PORTFOLIO_PROJECTS = [
     },
   },
   {
+    id: "22",
+    slug: "grammys-were-all-fans",
+    title: "GRAMMYs | We're All Fans",
+    featured: true,
+    featuredRank: 3,
+    thumb:
+      "https://images.squarespace-cdn.com/content/v1/532b2e71e4b0cc77fe846b84/1460057453864-ZR0H4RQ0WYN39VGILDRK/FRONTIMAGETEMPLATE_WEREALLFANS.jpg",
+    cardTags: "broadcast, fans, social",
+    tags: ["general", "culture"],
+    vimeo: "https://vimeo.com/161976206",
+    detail: {
+      bodyHTML:
+        '<p class="case-study-line">Webby Winner</p>' +
+        '<p class="case-study-line">Webby People&rsquo;s Voice (×2)</p>' +
+        '<p class="case-study-line">Cannes Finalist</p>' +
+        '<p class="case-study-line">One Show Finalist</p>' +
+        '<p class="case-study-line">FWA Site of the Day</p>' +
+        "<p>Even as the premier music awards show, the GRAMMYs had a reputation for being out of touch with everyday music fans. Social media was shifting power toward those fans&mdash;and the show needed relevance.</p>" +
+        "<p>For the 52nd GRAMMY Awards, fans became part of the story for the first time.</p>" +
+        '<p class="case-study-sect"><i>Results</i></p>' +
+        "<p>When fans saw themselves in the work, they engaged and spread it across their networks. The show earned credibility with fans&mdash;and the telecast turned in its best ratings in nearly a decade.</p>",
+      media: [{ type: "vimeo", url: "https://vimeo.com/161976206" }],
+      stillsLabel: false,
+      stills: [
+        {
+          src: "https://images.squarespace-cdn.com/content/v1/532b2e71e4b0cc77fe846b84/1460055417207-RYUMMHROBMNAHK513M9Y/WEREALLFANS_OOH.jpg",
+          alt: "We're All Fans — OOH",
+        },
+        {
+          src: "https://images.squarespace-cdn.com/content/v1/532b2e71e4b0cc77fe846b84/1460055649638-4RCA8ZQ6H6YKGJG81HXD/WEREALLFANS_WEBSITE.jpg",
+          alt: "We're All Fans — site",
+        },
+      ],
+      railHTML:
+        '<p class="project-rail-h">Film</p>' +
+        '<div class="project-embed"><div class="project-embed__inner"><iframe ' +
+        'src="https://player.vimeo.com/video/161976206?title=0&byline=0&portrait=0&dnt=1" title="GRAMMYs — We&apos;re All Fans" ' +
+        'allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div>',
+    },
+  },
+  {
     id: "7",
     slug: "lexus-is-wax",
     title: "Lexus | IS Wax",
     thumb: "thumbs/lexus_is_wax.webp",
     cardTags: "technology, pitchfork, wired",
-    tags: ["tech", "general"],
+    tags: ["tech", "general", "automotive"],
     vimeo: "https://vimeo.com/670864058",
     detail: {
       bodyHTML:
@@ -312,18 +472,18 @@ const PORTFOLIO_PROJECTS = [
     title: "Engineered For Fun",
     thumb: "thumbs/engineered_for_fun.webp",
     cardTags: "ai, film, facial expression analysis",
-    tags: ["ai", "tech"],
+    tags: ["ai", "tech", "automotive"],
     vimeo: "https://vimeo.com/1171127200",
     detail: {
       bodyHTML:
         "<p>When the next-generation Honda Prelude launched, enthusiasts questioned whether it could live up to its legacy of fun.</p>" +
         "<p>So we set out to prove it&mdash;scientifically.</p>" +
-        "<p>We built an AI facial-expression analysis system to capture real emotional reactions from drivers on a closed course.</p>" +
+        "<p>An AI facial-expression analysis system captured real emotional reactions from drivers on a closed course.</p>" +
         "<p>The science confirmed it: the Prelude is hella fun.</p>" +
         "<p>The client loved it too. According to Ace Metrix, the ad ranked in the top 1% of all Tier 1 automotive ads that year&mdash;and in the 99th percentile of all automotive ads ever tested.</p>" +
         '<p class="case-study-sect"><i>Production Note</i></p>' +
-        "<p>We pulled it off on an insanely limited budget, entirely in-house. My VP/CD Sarah May Bates directed the film, and I led the facial-expression analysis, using MorphCast and OpenAI to assess and quantify the emotion metrics.</p>" +
-        "<p>I can&rsquo;t share the exact budget number. But if I did, your facial-expression analysis would register 98% disbelief.</p>",
+        "<p>The piece was produced in-house on a lean budget. Sarah May Bates directed the film; MorphCast and OpenAI powered the facial-expression pipeline and metrics.</p>" +
+        "<p>The production budget? If the number were public, the facial-expression readouts might hit 98% disbelief.</p>",
       media: [{ type: "vimeo", url: "https://vimeo.com/1171127200" }],
       stillsLabel: false,
       stills: [
@@ -339,7 +499,7 @@ const PORTFOLIO_PROJECTS = [
     title: "Microsoft | Zune Arts",
     thumb: "thumbs/microsoft.webp",
     cardTags: "film, digital",
-    tags: ["general"],
+    tags: ["general", "culture"],
     vimeo: "https://vimeo.com/1186435131",
     detail: {
       bodyHTML:
@@ -351,8 +511,8 @@ const PORTFOLIO_PROJECTS = [
         "<p class=\"case-study-line\">MoMA</p>" +
         "<p class=\"case-study-line\">One Show</p>" +
         "<p>The Zune music player let people share music wirelessly—pretty radical at the time.</p>" +
-        "<p>To drive awareness, my partner and I led an artist program centered on sharing and friendship—collaborating and concepting with culture-shaping artists including Steve Niles and FriendsWithYou.</p>" +
-        "<p>Intense, challenging, and one of the most rewarding projects I’ve worked on.</p>",
+        "<p>To drive awareness, the team led an artist program centered on sharing and friendship—collaborating with culture-shaping artists including Steve Niles and FriendsWithYou.</p>" +
+        "<p>Intense, challenging, and one of the most rewarding bodies of work on the reel.</p>",
       media: [
         { type: "vimeo", url: "https://vimeo.com/1186435131", alt: "Zune Arts — case study" },
         { type: "vimeo", url: "https://vimeo.com/19449868", alt: "Zune Arts — Laika" },
@@ -388,7 +548,7 @@ const PORTFOLIO_PROJECTS = [
     title: "Lexus | Immersive Sonic Challenge",
     thumb: "thumbs/lexus_immersive_sonic.webp",
     cardTags: "experiential",
-    tags: ["general", "tech"],
+    tags: ["general", "tech", "automotive"],
     vimeo: "https://vimeo.com/1186849107",
     detail: {
       bodyHTML:
@@ -521,11 +681,7 @@ const PORTFOLIO_PROJECTS = [
   },
   {
     id: "11",
-    slug: "lexus-december-to-remember",
-    title: "Lexus | December to Remember",
-    thumb: "thumbs/lexus_december_to_remember.jpg",
-    cardTags: "broadcast",
-    tags: ["general"],
+    tags: ["general", "automotive"],
     vimeo: "https://vimeo.com/375775553",
     detail: {
       bodyHTML:
@@ -615,7 +771,7 @@ const PORTFOLIO_PROJECTS = [
     title: "Lexus | Dad'chelor Party",
     thumb: "thumbs/lexus_dadchelor_party.png",
     cardTags: "broadcast, comedy",
-    tags: ["general"],
+    tags: ["general", "automotive"],
     vimeo: "https://vimeo.com/110311988",
     detail: {
       bodyHTML:
@@ -664,13 +820,13 @@ const PORTFOLIO_PROJECTS = [
     vimeo: "https://vimeo.com/72761123",
     detail: {
       bodyHTML:
-        "<p>The Infiniti spot was directed by Michel Gondry. I interviewed him for a " +
+        "<p>The Infiniti spot was directed by Michel Gondry. A " +
         '<a href="https://vimeo.com/73543161?fl=ls&amp;fe=ec" target="_blank" rel="noopener noreferrer">BTS video</a> ' +
-        "about the frozen moment technique used in the film.</p>" +
-        "<p>The Lexus spot was directed by Joe Kizinkzi. I also created a " +
+        "covers the frozen-moment technique used in the film.</p>" +
+        "<p>The Lexus spot was directed by Joe Kizinkzi, with a " +
         '<a href="https://vimeo.com/305124488" target="_blank" rel="noopener noreferrer">BTS</a> ' +
-        "because the production was pre-AI, and the swinging cars were shot practically.</p>" +
-        "<p>For audio, I wrote the lyrics for the two HeartOne spots, and I wrote the lyrics, composed and performed the music and co-mix and mastered the song in Funstigator.</p>",
+        "look at practical swinging-car work from the pre-AI era.</p>" +
+        "<p>For audio: lyrics on the two HeartOne spots; lyrics, composition, performance, co-mix and mastering on Funstigator.</p>",
       media: [
         { type: "vimeo", url: "https://vimeo.com/72761123", alt: "Assorted Broadcast 1" },
         { type: "vimeo", url: "https://vimeo.com/19445010", alt: "Assorted Broadcast 2" },
@@ -782,41 +938,6 @@ const PORTFOLIO_PROJECTS = [
               alt: "Jamba Juice — Cubicle Picnic film",
             },
           ],
-        },
-      ],
-      stillsLabel: false,
-      stills: [],
-    },
-  },
-  {
-    id: "ai-films",
-    slug: "ai-films",
-    title: "AI Films",
-    cardTags: "ai films · password protected",
-    tags: ["ai"],
-    onlyInView: "ai",
-    vimeo: "https://vimeo.com/1187071074/8c701596e2",
-    thumb: "thumbs/ai-films.webp",
-    detail: {
-      passwordPhrase: "Show me",
-      bodyHTML:
-        "<p>The first two films I created for my wife, who is a talented strategist and business owner. I concepted, wrote, generated, and edited these films for her clients: Avvio and Recycle Global Exchange.</p>" +
-        "<p>The third film I concepted, wrote, and generated assets alongside my creative partner, Kirk Williams, to celebrate the extraordinary career of a really great dude, Joe Baratelli. One of the funnest and silliest things I&rsquo;ve made in a while.</p>",
-      media: [
-        {
-          type: "vimeo",
-          url: "https://vimeo.com/1187071074/8c701596e2",
-          alt: "Avvio — AI film",
-        },
-        {
-          type: "vimeo",
-          url: "https://vimeo.com/1187073837/bc27aeb3a4",
-          alt: "Tame Your Beast — Recycling Global Exchange",
-        },
-        {
-          type: "vimeo",
-          url: "https://vimeo.com/1187516659/c90597d207",
-          alt: "Joe Baratelli tribute — AI film",
         },
       ],
       stillsLabel: false,

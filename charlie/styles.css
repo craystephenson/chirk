@@ -77,17 +77,6 @@ img {
   letter-spacing: 0.12em;
 }
 
-.branding__title {
-  margin: 0.35rem 0 0;
-  font-weight: 400;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  color: #6b6b6b;
-  text-transform: none;
-  line-height: 1.4;
-}
-
-/* View filters — same side padding as header */
 .work-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -163,7 +152,7 @@ main {
   min-width: 0;
 }
 
-#work-index {
+#work {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -412,7 +401,7 @@ main {
 }
 
 /* Project case study (detail) */
-#work-index[hidden] {
+#work[hidden] {
   display: none;
 }
 
@@ -1346,4 +1335,47 @@ main {
     /* paragraphs inherit; explicit for clarity with calc */
     font-size: inherit;
   }
+}
+
+body.about-page {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+body.about-page .about-article {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+body.about-page .about-article strong {
+  font-weight: 600;
+}
+
+.home-intro {
+  padding: 0 1.5rem 1.5rem;
+  max-width: 42rem;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.home-intro p {
+  margin: 0;
+}
+
+.home-intro strong {
+  font-weight: 600;
+}
+
+.home-intro a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.home-intro a:hover {
+  opacity: 0.75;
 }

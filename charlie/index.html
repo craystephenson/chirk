@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHIRK</title>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-site-email="charlesraymondstephenson@gmail.com">
+    <header class="site-header">
+      <nav class="nav" aria-label="On this page">
+        <a class="nav__link" href="#about">/ Intro</a>
+        <a class="nav__link nav__link--active" id="nav-work" href="#work">/ Work</a>
+      </nav>
+      <div class="branding">
+        <p class="branding__name">CHIRK</p>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="home-intro" tabindex="-1">
+        <p>
+          <strong>CHIRK:</strong> Two pretty good creatives (<a
+            href="https://www.linkedin.com/in/charliestephenson/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Charlie Stephenson</a> + <a
+            href="https://www.linkedin.com/in/kirkathome/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Kirk Williams</a>) merged to create one super pretty good creative.
+        </p>
+      </section>
+
+      <div id="work">
+        <div class="work-toolbar">
+          <p class="work-toolbar__label" id="work-filters-label">View by</p>
+          <div
+            class="work-filters"
+            id="work-filters"
+            role="group"
+            aria-labelledby="work-filters-label"
+          ></div>
+        </div>
+        <p class="work-empty" id="work-empty" hidden>No work in this view yet.</p>
+        <ul class="work-grid" id="work-grid" role="list"></ul>
+      </div>
+
+      <section class="project-detail" id="project-detail" hidden>
+        <div class="project-detail__inner">
+          <div class="project-detail__left">
+            <nav class="project-detail__navrow" aria-label="Work and nearby case studies">
+              <a class="project-detail__case-pager" id="project-case-prev" href="#" hidden>← Previous</a>
+              <a class="project-detail__back" id="project-back" href="#work">← Work</a>
+              <a class="project-detail__case-pager" id="project-case-next" href="#" hidden>Next →</a>
+            </nav>
+            <h1 class="project-detail__title" id="project-detail-title">Project</h1>
+            <div class="project-detail__body" id="project-detail-body" hidden></div>
+            <ul class="project-detail__awards" id="project-detail-awards" hidden></ul>
+          </div>
+          <div class="project-detail__right">
+            <div class="project-stage-wrap">
+              <p class="project-stage__pre" id="project-stage-pre" hidden></p>
+              <div class="project-stage-nav" id="project-stage-nav" aria-hidden="true">
+                <button type="button" class="project-stage-nav__btn" id="project-slide-prev" aria-label="Previous image">
+                  ‹
+                </button>
+                <button type="button" class="project-stage-nav__btn" id="project-slide-next" aria-label="Next image">
+                  ›
+                </button>
+              </div>
+              <div class="project-stage" id="project-stage"></div>
+            </div>
+            <div class="project-thumbs" id="project-thumbs" role="tablist" aria-label="Project gallery"></div>
+            <section class="project-stills" id="project-stills" hidden>
+              <h2 class="project-stills__label" id="project-stills-label">Stills</h2>
+              <div class="project-stills__grid" id="project-stills-grid" role="list"></div>
+              <p class="project-stills__empty" id="project-stills-empty" hidden>
+                Put image files in <code>stills/</code> (e.g. <code>stills/honda/</code>), then list them in
+                <code>projects.js</code> under <code>detail.stills</code> as
+                <code>{ src, alt }</code> items.
+              </p>
+            </section>
+            <div class="project-rail-extra" id="project-rail-extra" hidden></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="projects.js"></script>
+    <script src="app.js" defer></script>
+
+    <footer class="site-footer">
+      <p class="site-footer__contact">
+        Contact:
+        <a href="mailto:charlesraymondstephenson@gmail.com">charlesraymondstephenson@gmail.com</a>
+        ·
+        <a href="mailto:kirkwmail@gmail.com">kirkwmail@gmail.com</a>
+      </p>
+      <ul class="social" aria-label="Social links">
+        <li>
+          <a
+            class="social__link"
+            href="mailto:charlesraymondstephenson@gmail.com"
+            aria-label="Email Charlie"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="1" />
+              <path d="M3 7l9 6 9-6" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="social__link"
+            href="https://www.linkedin.com/in/charliestephenson/"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="Charlie on LinkedIn"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M6.5 8.5h-3V22h3V8.5zM4.2 3.1c-1 0-1.7.8-1.7 1.7s.7 1.6 1.7 1.6 1.6-.7 1.6-1.6-.6-1.7-1.6-1.7zM20.2 8.5h-2.8c-1.2 0-1.6.6-1.6 1.6V22h3v-6.3c0-1.4.2-2.8 2-2.8 1.7 0 1.7 1.5 1.7 2.6V22h3V14c0-2.4-.5-4.4-3.3-4.4-1.3 0-2.2.7-2.5 1.2h0V8.5h0z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            class="social__link"
+            href="https://www.linkedin.com/in/kirkathome"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="Kirk on LinkedIn"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M6.5 8.5h-3V22h3V8.5zM4.2 3.1c-1 0-1.7.8-1.7 1.7s.7 1.6 1.7 1.6 1.6-.7 1.6-1.6-.6-1.7-1.6-1.7zM20.2 8.5h-2.8c-1.2 0-1.6.6-1.6 1.6V22h3v-6.3c0-1.4.2-2.8 2-2.8 1.7 0 1.7 1.5 1.7 2.6V22h3V14c0-2.4-.5-4.4-3.3-4.4-1.3 0-2.2.7-2.5 1.2h0V8.5h0z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <!-- Cloudflare Web Analytics — hash routes (#/project/…) are not split per Cloudflare SPA docs -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "05e84f20dfd94aa4afb6c78fe3e6a3eb"}'
+    ></script>
+  </body>
+</html>

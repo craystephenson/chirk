@@ -2,16 +2,20 @@
   "use strict";
 
   const VIEWS = [
+    { id: "featured", label: "Featured" },
     { id: "all", label: "All" },
     { id: "ai", label: "AI" },
     { id: "tech", label: "Tech" },
+    { id: "automotive", label: "Automotive" },
+    { id: "culture", label: "Culture" },
+    { id: "cause", label: "Cause" },
   ];
 
   const projects = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
   const gridEl = document.getElementById("work-grid");
   const filterRoot = document.getElementById("work-filters");
   const emptyEl = document.getElementById("work-empty");
-  const workIndexEl = document.getElementById("work-index");
+  const workIndexEl = document.getElementById("work");
   const detailEl = document.getElementById("project-detail");
   const navWork = document.getElementById("nav-work");
   const elTitle = document.getElementById("project-detail-title");
@@ -97,20 +101,23 @@
     const m = /^#\/project\/([^/]+)\/?$/.exec(h);
     if (m) return { kind: "project", slug: decodeURIComponent(m[1]) };
     const raw = h.replace(/^#/, "").toLowerCase();
-    const v = raw === "general" || raw === "" ? "all" : raw;
+    if (raw === "" || raw === "work") return { kind: "grid", view: "featured" };
+    const v = raw === "general" ? "all" : raw;
     if (VIEWS.some((x) => x.id === v)) return { kind: "grid", view: v };
-    return { kind: "grid", view: "all" };
+    return { kind: "grid", view: "featured" };
   }
 
   function lastView() {
     const s = sessionStorage.getItem("portfolioLastView");
-    if (s === "general" || !s) return "all";
+    if (s === "general" || !s) return "featured";
     if (VIEWS.some((x) => x.id === s)) return s;
-    return "all";
+    return "featured";
   }
 
   function workHash() {
-    return "#" + lastView();
+    const v = lastView();
+    if (v === "featured") return "#work";
+    return "#" + v;
   }
 
   function normalizeMediaItem(m) {
@@ -161,6 +168,7 @@
     if (project.onlyInView) {
       return normalizeTag(project.onlyInView) === normalizeTag(viewId);
     }
+    if (viewId === "featured") return project.featured === true;
     if (viewId === "all") return true;
     return (project.tags || []).map(normalizeTag).includes(viewId);
   }
@@ -171,9 +179,17 @@
     return lastView();
   }
 
+  function featuredSortKey(p) {
+    return typeof p.featuredRank === "number" ? p.featuredRank : 9999;
+  }
+
   function getFiltered() {
     const v = getCurrentView();
-    return projects.filter((p) => projectMatchesView(p, v));
+    const list = projects.filter((p) => projectMatchesView(p, v));
+    list.sort(function (a, b) {
+      return featuredSortKey(a) - featuredSortKey(b);
+    });
+    return list;
   }
 
   function setCurrentView(id) {

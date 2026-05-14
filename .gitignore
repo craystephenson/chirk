@@ -4,5 +4,4 @@
 *.log
 node_modules/
 .cache/
-print/Cubicle Picnic/cubicle_picnic.mp4
-charlie/print/Cubicle Picnic/cubicle_picnic.mp4
+**/Cubicle Picnic/*.mp4

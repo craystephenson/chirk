@@ -68,13 +68,18 @@ img {
 
 .branding {
   text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
-.branding__name {
-  margin: 0;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
+.branding__mark {
+  display: block;
+  height: auto;
+  max-height: 3.5rem;
+  width: auto;
+  max-width: min(42vw, 11rem);
+  object-fit: contain;
 }
 
 .work-toolbar {
@@ -1303,7 +1308,13 @@ main {
 
   .branding {
     text-align: left;
+    justify-content: flex-start;
     width: 100%;
+  }
+
+  .branding__mark {
+    max-height: 3rem;
+    max-width: 10rem;
   }
 
   .site-header {

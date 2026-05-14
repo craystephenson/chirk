@@ -76,9 +76,9 @@ img {
 .branding__mark {
   display: block;
   height: auto;
-  max-height: 3.5rem;
+  max-height: 4.25rem;
   width: auto;
-  max-width: min(42vw, 11rem);
+  max-width: min(55vw, 14rem);
   object-fit: contain;
 }
 
@@ -1313,8 +1313,8 @@ main {
   }
 
   .branding__mark {
-    max-height: 3rem;
-    max-width: 10rem;
+    max-height: 3.75rem;
+    max-width: min(70vw, 12rem);
   }
 
   .site-header {
